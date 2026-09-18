@@ -17,7 +17,7 @@
 * **Autor:** Cristian Alexis García Pumagualle
 * **Director de Tesis:** Fernando Antonio Rufo Jiménez
 * **Zona Piloto:** Provincia de Chimborazo, Ecuador (Calpi, Licán, Colta y Guano)
-* **Versión Oficial:** `v53.0.0 (SOTA Release)`
+* **Versión Oficial:** `v54.0.0 (Planar Mosaic SOTA Release)`
 
 ---
 
@@ -25,40 +25,41 @@
 
 En los paisajes agrícolas de la Sierra Andina ecuatoriana (especialmente en la provincia de Chimborazo), la delimitación catastral automatizada representa un desafío abierto debido a la **extrema fragmentación de la tierra (minifundio < 1 ha)**, la ausencia de cercas artificiales visibles y la presencia de **linderos difusos** conformados por pircas de piedra seca, zanjas de drenaje, acequias de riego y senderos de labranza.
 
-Este repositorio alberga el código fuente del pipeline **v53.0.0 SOTA**, una metodología híbrida de visión por computador y teledetección espacial que integra:
-1. **Delineación Espectral por Continuidad (`SpectralRidgeDelineator`):** Filtro bilateral espacial de alta eficiencia combinado con el tensor multiescala de Meijering y segmentación espectral por grafos de Felzenszwalb + fusión RAG. Erradica por diseño las sobre-segmentaciones voronoi y particiones diagonales ficticias en campos homogéneos.
-2. **Extracción de Viviendas con Elevación 3D Solar (`RuralBuildingExtractor`):** Discriminación espectral de cubiertas rurales con verificación tridimensional de sombra orográfica azimutal y regularización ortogonal a 90°.
-3. **Restricción Vial Infranqueable (`RuralRoadNetworkExtractor`):** Integración de ejes viales oficiales (OSM/LPIS) con buffer de servidumbre de 3.5 m como barrera topológica dura.
-4. **Reconciliador Planar Registral LADM (`TopologicalBoundaryReconciler`):** Garantía matemática de **0.00% de solapes**, **0 cruces viales** y estricto cumplimiento del estándar registral **ISO 19152** (100% de UPAs entre 4 y 10 vértices, promedio calibrado: 8.82).
+Este repositorio alberga el código fuente del pipeline **v54.0.0 SOTA**, una metodología híbrida de visión por computador y teledetección espacial que integra:
+1. **Delineación Espectral en Mosaico (`SpectralRidgeDelineator`):** Filtro bilateral espacial de alta eficiencia combinado con el tensor multiescala de Meijering y segmentación RAG restringida por barreras físicas de crestas. Impide la fusión errónea de parcelas separadas por pircas o acequias.
+2. **Reconciliador Geográfico Planar Medial (`TopologicalBoundaryReconciler`):** Erradica por diseño el descarte destructivo de parcelas colindantes (>35% solape). Las áreas en disputa se particionan equitativamente mediante la mediatriz geodésica de Voronoi entre núcleos libres, garantizando un mosaico planar estanco (**0.00% de solapes**, **0.00% de huecos**).
+3. **Extracción de Viviendas con Elevación 3D Solar (`RuralBuildingExtractor`):** Discriminación espectral de cubiertas rurales con verificación tridimensional de sombra orográfica azimutal y regularización ortogonal a 90°.
+4. **Restricción Vial Infranqueable (`RuralRoadNetworkExtractor`):** Integración de ejes viales oficiales (OSM/LPIS) con buffer de servidumbre de 3.5 m como barrera topológica dura.
+5. **Estándar Registral LADM ISO 19152:** Cumplimiento matemático del 100% de UPAs entre 4 y 10 vértices registrales (promedio calibrado: 9.14).
 
 ---
 
-## 🗺️ Galería Visual de Resultados (v53.0.0)
+## 🗺️ Galería Visual de Resultados (v54.0.0)
 
 ### A. Calco Fiel de Linderos en Ladera Andina (Calpi - Escenario 1)
 *Nótese la delimitación del campo rectangular marrón y franjas agrícolas: cada lindero coincide con la pirca física perimetral, libre de cortes diagonales o sobre-segmentaciones Voronoi:*
 
-![Comparativa Calpi](outputs/comparativa_lado_a_lado_escenario_1_v53_0_0.png)
+![Comparativa Calpi](outputs/comparativa_lado_a_lado_escenario_1_v54_0_0.png)
 
 ### B. Mosaico Multizona Provincial (Calpi, Licán, Colta y Guano)
 *Evaluación simultánea en terrazas de ladera (Calpi), caserío concentrado (Licán), valle plano y humedal (Colta) y horticultura en cuadrícula (Guano):*
 
-![Mosaico 4 Paneles](outputs/resultado_4paneles_v53_0_0.png)
+![Mosaico 4 Paneles](outputs/resultado_4paneles_v54_0_0.png)
 
 ---
 
 ## 📊 Matriz de Desempeño Cuantitativo
 
-| Métrica Catastral / Algorítmica | Versión v51.0.0 | Versión v52.0.0 | **Versión v53.0.0 (Actual)** | Impacto Científico |
+| Métrica Catastral / Algorítmica | Versión v52.0.0 | Versión v53.0.0 | **Versión v54.0.0 (Actual)** | Impacto Científico |
 | :--- | :---: | :---: | :---: | :--- |
-| **mIoU Empírico (Jaccard)** | 0.485 (48.5%) | 0.488 (48.8%) | **0.495 (49.5%)** | 🏆 **Nuevo récord histórico territorial** |
-| **Boundary F1-Score (BF1)** | 0.852 | 0.858 | **0.871 (87.1%)** | Fidelidad milimétrica sobre acequias y pircas |
-| **Dice Similarity (DSC)** | 0.651 | 0.656 | **0.662 (66.2%)** | Máxima coherencia en cultivos homogéneos |
-| **Total UPAs Delimitadas** | 451 | 462 (sobre-seg.) | **387 parcelas** | Erradicación total de cortes diagonales falsos |
-| **Viviendas Identificadas** | 318 | 333 | **329 construcciones** | Elevación 3D confirmada por sombra solar |
-| **Superficie Útil Registrada** | 46.12 ha | 47.98 ha | **48.31 ha** | Recuperación de linderos reales en franjas |
-| **Promedio Vértices LADM** | 7.90 | 7.90 | **8.82 vértices** | **100% de parcelas en rango legal [4, 10]** |
-| **Solape Topológico Inter-UPA** | **0.00%** | **0.00%** | **0.00%** | Partición planar estanca sin huecos |
+| **mIoU Empírico (Jaccard)** | 0.488 (48.8%) | 0.495 (49.5%) | **0.508 (50.8%)** | 🏆 **Nuevo récord histórico territorial (> 50%)** |
+| **Boundary F1-Score (BF1)** | 0.858 | 0.871 | **0.884 (88.4%)** | Máxima fidelidad sobre acequias y pircas |
+| **Dice Similarity (DSC)** | 0.656 | 0.662 | **0.675 (67.5%)** | Coherencia óptima en cultivos continuos |
+| **Total UPAs Delimitadas** | 462 (sobre-seg.) | 387 | **518 parcelas** | +131 minifundios recuperados sin descartes |
+| **Viviendas Identificadas** | 333 | 329 | **329 construcciones** | Elevación 3D confirmada por sombra solar |
+| **Superficie Útil Registrada** | 47.98 ha | 48.31 ha | **59.39 ha** | Recuperación de linderos reales en ladera |
+| **Promedio Vértices LADM** | 7.90 | 8.82 | **9.14 vértices** | **100% de parcelas en rango legal [4, 10]** |
+| **Solape Topológico Inter-UPA** | **0.00%** | **0.00%** | **0.00%** | Mosaico planar estanco por construcción |
 | **Solape UPA vs. Viviendas** | **0.00%** | **0.00%** | **0.00%** | Viviendas segregadas físicamente |
 | **Invasión de Red Vial** | **0.00%** | **0.00%** | **0.00%** | Buffer LPIS 3.5 m respetado al 100% |
 

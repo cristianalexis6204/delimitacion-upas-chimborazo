@@ -214,6 +214,26 @@ class SpectralRidgeDelineator:
 
         segments = felzenszwalb(img_bilateral, scale=fz_scale, sigma=fz_sigma, min_size=fz_min_size)
         g = graph.rag_mean_color(img_bilateral, segments)
+
+        # Restricción topológica de crestas en el RAG (v54.0.0)
+        # Impide que parcelas vecinas del mismo cultivo se fusionen si hay pirca o zanja
+        diff_y = (segments[:-1, :] != segments[1:, :])
+        diff_x = (segments[:, :-1] != segments[:, 1:])
+
+        y_idx, x_idx = np.where(diff_y)
+        for y, x in zip(y_idx, x_idx):
+            u, v = segments[y, x], segments[y + 1, x]
+            if g.has_edge(u, v):
+                e_val = (boundary_energy[y, x] + boundary_energy[y + 1, x]) * 0.5
+                g[u][v]['weight'] += float(e_val * 26.0)
+
+        y_idx, x_idx = np.where(diff_x)
+        for y, x in zip(y_idx, x_idx):
+            u, v = segments[y, x], segments[y, x + 1]
+            if g.has_edge(u, v):
+                e_val = (boundary_energy[y, x] + boundary_energy[y, x + 1]) * 0.5
+                g[u][v]['weight'] += float(e_val * 26.0)
+
         segments_merged = graph.cut_threshold(segments, g, thresh=rag_thresh)
 
         segments_clean = segments_merged.copy()

@@ -65,9 +65,10 @@ def verify_environment():
 
 def run_pipeline(scenario_id="1", use_samples=True):
     cfg = load_config()
-    version = cfg.get("project", {}).get("version", "v53.0.0")
-    outputs_dir = os.path.join(CURRENT_DIR, "outputs")
-    samples_dir = os.path.join(CURRENT_DIR, "data", "samples")
+    config = cfg
+    version = config.get("pipeline", {}).get("version", "v54.0.0")
+    outputs_dir = os.path.join(CURRENT_DIR, config.get("directories", {}).get("outputs", "outputs"))
+    samples_dir = os.path.join(CURRENT_DIR, config.get("directories", {}).get("samples", "data/samples"))
     os.makedirs(outputs_dir, exist_ok=True)
 
     print("=" * 75)

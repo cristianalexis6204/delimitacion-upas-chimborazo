@@ -13,8 +13,8 @@ advisor:
   family-names: "Rufo Jiménez"
   given-names: "Fernando Antonio"
 year: 2026
-version: "v53.0.0"
-date-released: 2026-09-15
+version: "v54.0.0"
+date-released: 2026-09-18
 url: "https://github.com/cristianalexis6204/delimitacion-upas-chimborazo"
 keywords:
   - "Visión por Computador"

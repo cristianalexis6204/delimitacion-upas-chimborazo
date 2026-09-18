@@ -36,6 +36,32 @@ def test_zero_overlap_guarantee():
     inter = g1.intersection(g2)
     assert inter.area == pytest.approx(0.0, abs=1e-7), f"El solape debe ser 0.000%, obtenido: {inter.area}"
 
+def test_large_overlap_preservation_via_voronoi_split():
+    """
+    Verifica que parcelas con solape sustancial (40%) no sean descartadas,
+    sino particionadas equitativamente por la mediatriz geodésica sin solapes.
+    """
+    reconciler = TopologicalBoundaryReconciler()
+    
+    # Dos parcelas cuadradas con solape del 40% (x in [0.6, 1.0])
+    p1 = box(0.0, 0.0, 1.0, 1.0)
+    p2 = box(0.6, 0.0, 1.6, 1.0)
+    
+    input_list = [
+        {"geometry": p1, "area_ha": 1.0, "num_vertices": 4, "clase": "Cultivo"},
+        {"geometry": p2, "area_ha": 1.0, "num_vertices": 4, "clase": "Cultivo"}
+    ]
+    
+    reconciled = reconciler.reconcile_polygons(input_list)
+    assert len(reconciled) == 2, "Ambas parcelas deben preservarse mediante partición equitativa"
+    
+    g1 = reconciled[0]["geometry"]
+    g2 = reconciled[1]["geometry"]
+    
+    assert g1.intersection(g2).area == pytest.approx(0.0, abs=1e-7)
+    assert 4 <= len(g1.exterior.coords) - 1 <= 10
+    assert 4 <= len(g2.exterior.coords) - 1 <= 10
+
 def test_ladm_vertex_bounds():
     """
     Comprueba que el regularizador mantenga los polígonos estrictamente
