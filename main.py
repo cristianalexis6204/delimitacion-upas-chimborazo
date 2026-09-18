@@ -1,7 +1,7 @@
 """
 ===================================================================================================
 PIPELINE MAESTRO DE DELIMITACIÓN AUTOMATIZADA DE UPAS (TFM UNIR)
-Versión: v53.0.0 SOTA | Estándar: ISO 19152 LADM
+Versión: v2.0.0 SOTA (Exp 54) | Estándar: ISO 19152 LADM
 Autor: Cristian Alexis García Pumagualle
 Director: Fernando Antonio Rufo Jiménez
 Universidad Internacional de La Rioja (UNIR)
@@ -66,7 +66,7 @@ def verify_environment():
 def run_pipeline(scenario_id="1", use_samples=True):
     cfg = load_config()
     config = cfg
-    version = config.get("pipeline", {}).get("version", "v54.0.0")
+    version = config.get("project", {}).get("version", "v2.0.0")
     outputs_dir = os.path.join(CURRENT_DIR, config.get("directories", {}).get("outputs", "outputs"))
     samples_dir = os.path.join(CURRENT_DIR, config.get("directories", {}).get("samples", "data/samples"))
     os.makedirs(outputs_dir, exist_ok=True)

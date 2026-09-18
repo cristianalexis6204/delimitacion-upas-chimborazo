@@ -6,7 +6,8 @@
 
 project:
   name: "Delimitación de UPAs en Minifundios Andinos"
-  version: "v54.0.0"
+  version: "v2.0.0"
+  experiment_tag: "Exp-54-SOTA"
   study_area: "Provincia de Chimborazo, Ecuador"
   crs: "EPSG:4326"
 
