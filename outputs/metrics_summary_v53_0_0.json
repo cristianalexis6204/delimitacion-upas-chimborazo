@@ -1,0 +1,90 @@
+{
+  "version": "v53.0.0",
+  "total_polygons": 387,
+  "total_buildings": 329,
+  "total_area_ha": 48.31,
+  "mean_vertices": 8.82,
+  "duplicated_polygons": 0,
+  "miou_empirico": 0.495,
+  "dice_coefficient": 0.662,
+  "boundary_f1_score": 0.871,
+  "escenarios_info": {
+    "1_Cultivos_Ladera_Calpi": {
+      "upas": 54,
+      "ha": 10.45,
+      "vert": 8.3
+    },
+    "2_Caserio_Rural_Lican": {
+      "upas": 135,
+      "ha": 12.22,
+      "vert": 8.9
+    },
+    "3_Valle_Agricola_Colta": {
+      "upas": 66,
+      "ha": 14.58,
+      "vert": 9.2
+    },
+    "4_Valle_Hortifruticola_Guano": {
+      "upas": 132,
+      "ha": 11.06,
+      "vert": 8.8
+    }
+  },
+  "monte_carlo_gps_sensitivity": [
+    {
+      "error_gps_m": 0,
+      "mean_iou": 0.492,
+      "std_iou": 0.005,
+      "retencion_exactitud_pct": 100.0
+    },
+    {
+      "error_gps_m": 5,
+      "mean_iou": 0.489,
+      "std_iou": 0.003,
+      "retencion_exactitud_pct": 99.4
+    },
+    {
+      "error_gps_m": 10,
+      "mean_iou": 0.486,
+      "std_iou": 0.003,
+      "retencion_exactitud_pct": 98.8
+    },
+    {
+      "error_gps_m": 15,
+      "mean_iou": 0.484,
+      "std_iou": 0.002,
+      "retencion_exactitud_pct": 98.4
+    },
+    {
+      "error_gps_m": 20,
+      "mean_iou": 0.481,
+      "std_iou": 0.003,
+      "retencion_exactitud_pct": 97.8
+    },
+    {
+      "error_gps_m": 25,
+      "mean_iou": 0.479,
+      "std_iou": 0.002,
+      "retencion_exactitud_pct": 97.3
+    },
+    {
+      "error_gps_m": 30,
+      "mean_iou": 0.46,
+      "std_iou": 0.003,
+      "retencion_exactitud_pct": 93.5
+    },
+    {
+      "error_gps_m": 40,
+      "mean_iou": 0.422,
+      "std_iou": 0.003,
+      "retencion_exactitud_pct": 85.7
+    },
+    {
+      "error_gps_m": 50,
+      "mean_iou": 0.384,
+      "std_iou": 0.003,
+      "retencion_exactitud_pct": 78.1
+    }
+  ],
+  "timestamp": "2026-09-07 12:59:27"
+}

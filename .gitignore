@@ -1,0 +1,56 @@
+# =====================================================================
+# GITIGNORE - TFM UNIR: DELIMITACIÓN DE UPAS EN CHIMBORAZO
+# =====================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Pesos de Redes Neuronales y Modelos (> 100 MB)
+# (Descarga automática bajo demanda vía download_weights.py)
+*.pth
+*.pt
+*.bin
+*.onnx
+*.weights
+models/
+weights/
+data/models/
+
+# Rasters e Imágenes Satelitales Masivas (> 50 MB)
+*.tif
+*.tiff
+*.geotiff
+data/raw/
+data/cartografia_multiespectral/
+roads_cache/
+
+# Archivos Comprimidos y Respaldos
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Informes Pesos y Documentos Pesados (> 50 MB)
+*.pdf
+
+# Entornos Virtuales
+venv/
+env/
+.env
+.venv/
+ENV/
+
+# Archivos de Sistema y Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.ipynb_checkpoints/
+.antigravitycli/
+scratch/

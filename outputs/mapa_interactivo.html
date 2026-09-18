@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a2fcee90edbe00b0ce2a6b73c6586e31 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a2fcee90edbe00b0ce2a6b73c6586e31" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a2fcee90edbe00b0ce2a6b73c6586e31 = L.map(
+                "map_a2fcee90edbe00b0ce2a6b73c6586e31",
+                {
+                    center: [-1.635, -78.785],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_a2fcee90edbe00b0ce2a6b73c6586e31);
+
+            
+
+        
+    
+            var tile_layer_1273028e4d0cca07f1f0ff35ae74e19f = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri World Imagery",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1273028e4d0cca07f1f0ff35ae74e19f.addTo(map_a2fcee90edbe00b0ce2a6b73c6586e31);
+        
+    
+            var tile_layer_036bed1cf4be877f86987df4e73cdca7 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_036bed1cf4be877f86987df4e73cdca7.addTo(map_a2fcee90edbe00b0ce2a6b73c6586e31);
+        
+    
+            var feature_group_42a475f3ae74f3c33ae164328d181fbb = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_6fd2f27c3d6daadfe5df6ce264d09684 = L.polyline(
+                [[-1.635252, -78.7843861], [-1.6357594553122194, -78.78391891891891]],
+                {"bubblingMouseEvents": true, "color": "#00FFFF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00FFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3.2}
+            ).addTo(feature_group_42a475f3ae74f3c33ae164328d181fbb);
+        
+    
+            poly_line_6fd2f27c3d6daadfe5df6ce264d09684.bindTooltip(
+                `<div>
+                     Via Rural Oficial (1_Cultivos_Ladera_Calpi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_b7ee2b647c7ff3e813d6df1886503393 = L.polyline(
+                [[-1.633918918918919, -78.78501627535375], [-1.6344798, -78.784691], [-1.6351448, -78.7842619]],
+                {"bubblingMouseEvents": true, "color": "#00FFFF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00FFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3.2}
+            ).addTo(feature_group_42a475f3ae74f3c33ae164328d181fbb);
+        
+    
+            poly_line_b7ee2b647c7ff3e813d6df1886503393.bindTooltip(
+                `<div>
+                     Via Rural Oficial (1_Cultivos_Ladera_Calpi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_143383327fbdf17712b4f2b04ab62950 = L.polyline(
+                [[-1.636081081081081, -78.78518639756135], [-1.635252, -78.7843861], [-1.6351448, -78.7842619], [-1.634820841301862, -78.78391891891891]],
+                {"bubblingMouseEvents": true, "color": "#00FFFF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00FFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3.2}
+            ).addTo(feature_group_42a475f3ae74f3c33ae164328d181fbb);
+        
+    
+            poly_line_143383327fbdf17712b4f2b04ab62950.bindTooltip(
+                `<div>
+                     Via Rural Oficial (1_Cultivos_Ladera_Calpi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_771bd98d3ecc6dc8a49004d9f09511c5 = L.polyline(
+                [[-1.6344798, -78.784691], [-1.633918918918919, -78.78414170356821]],
+                {"bubblingMouseEvents": true, "color": "#00FFFF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00FFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3.2}
+            ).addTo(feature_group_42a475f3ae74f3c33ae164328d181fbb);
+        
+    
+            poly_line_771bd98d3ecc6dc8a49004d9f09511c5.bindTooltip(
+                `<div>
+                     Via Rural Oficial (1_Cultivos_Ladera_Calpi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_42a475f3ae74f3c33ae164328d181fbb.addTo(map_a2fcee90edbe00b0ce2a6b73c6586e31);
+        
+    
+            var feature_group_74fc393d65ea34b811c5790fb96e2803 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var polygon_1f13bc851a7c48e949e184a0a5361ab5 = L.polygon(
+                [[-1.6354615688323975, -78.78417205810547], [-1.6354354619979858, -78.7842025756836], [-1.6353771686553955, -78.78414916992188], [-1.6354032754898071, -78.78411865234375], [-1.6354615688323975, -78.78417205810547]],
+                {"bubblingMouseEvents": true, "color": "#D946EF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D946EF", "fillOpacity": 0.45, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.0}
+            ).addTo(feature_group_74fc393d65ea34b811c5790fb96e2803);
+        
+    
+        var popup_d2349055402caedab088cdb418ec2066 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6c8555b7352f818d0df7d7bb5890062f = $(`<div id="html_6c8555b7352f818d0df7d7bb5890062f" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 11px; width: 220px;">                     <b style="color: #9333EA;">Edificacion LADM: Edif_001</b><br/>                     <b>Tipologia:</b> Vivienda_Campesina<br/>                     <b>Superficie Cubierta:</b> 29.6 m2<br/>                     <b>Elevacion 3D:</b> Verificada (Sombra 3D)<br/>                     <b>Geometria:</b> Ortogonal 90 deg<br/>                     <b>Estado:</b> 100% Segregada (Bufer 1.5m)                 </div>                 </div>`)[0];
+                popup_d2349055402caedab088cdb418ec2066.setContent(html_6c8555b7352f818d0df7d7bb5890062f);
+            
+        
+
+        polygon_1f13bc851a7c48e949e184a0a5361ab5.bindPopup(popup_d2349055402caedab088cdb418ec2066)
+        ;
+
+        
+    
+    
+            polygon_1f13bc851a7c48e949e184a0a5361ab5.bindTooltip(
+                `<div>
+                     Vivienda 30 m2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_6a65741fb2dd0a66c662640004a52875 = L.polygon(
+                [[-1.6347137689590454, -78.78428649902344], [-1.6346861124038696, -78.78431701660156], [-1.6346241235733032, -78.78425598144531], [-1.634651780128479, -78.78422546386719], [-1.6347137689590454, -78.78428649902344]],
+                {"bubblingMouseEvents": true, "color": "#D946EF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D946EF", "fillOpacity": 0.45, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.0}
+            ).addTo(feature_group_74fc393d65ea34b811c5790fb96e2803);
+        
+    
+        var popup_ee8f289433a7580248a5cd91d7ef4970 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3405ca5543590945476771da4aee73b2 = $(`<div id="html_3405ca5543590945476771da4aee73b2" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 11px; width: 220px;">                     <b style="color: #9333EA;">Edificacion LADM: Edif_002</b><br/>                     <b>Tipologia:</b> Vivienda_Campesina<br/>                     <b>Superficie Cubierta:</b> 30.4 m2<br/>                     <b>Elevacion 3D:</b> Verificada (Sombra 3D)<br/>                     <b>Geometria:</b> Ortogonal 90 deg<br/>                     <b>Estado:</b> 100% Segregada (Bufer 1.5m)                 </div>                 </div>`)[0];
+                popup_ee8f289433a7580248a5cd91d7ef4970.setContent(html_3405ca5543590945476771da4aee73b2);
+            
+        
+
+        polygon_6a65741fb2dd0a66c662640004a52875.bindPopup(popup_ee8f289433a7580248a5cd91d7ef4970)
+        ;
+
+        
+    
+    
+            polygon_6a65741fb2dd0a66c662640004a52875.bindTooltip(
+                `<div>
+                     Vivienda 30 m2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_c1ced96f55e774aabb8d6713c5daaba8 = L.polygon(
+                [[-1.6345864534378052, -78.785400390625], [-1.634475588798523, -78.78551483154297], [-1.634314775466919, -78.78535461425781], [-1.6344256401062012, -78.78524017333984], [-1.6345864534378052, -78.785400390625]],
+                {"bubblingMouseEvents": true, "color": "#D946EF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D946EF", "fillOpacity": 0.45, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.0}
+            ).addTo(feature_group_74fc393d65ea34b811c5790fb96e2803);
+        
+    
+        var popup_ec78bbde4d9350efd0553922cd584a29 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0a7dc31c37f5e18ddedce758411e695c = $(`<div id="html_0a7dc31c37f5e18ddedce758411e695c" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 11px; width: 220px;">                     <b style="color: #9333EA;">Edificacion LADM: Edif_003</b><br/>                     <b>Tipologia:</b> Vivienda_Campesina<br/>                     <b>Superficie Cubierta:</b> 269.1 m2<br/>                     <b>Elevacion 3D:</b> Firma Espectral<br/>                     <b>Geometria:</b> Ortogonal 90 deg<br/>                     <b>Estado:</b> 100% Segregada (Bufer 1.5m)                 </div>                 </div>`)[0];
+                popup_ec78bbde4d9350efd0553922cd584a29.setContent(html_0a7dc31c37f5e18ddedce758411e695c);
+            
+        
+
+        polygon_c1ced96f55e774aabb8d6713c5daaba8.bindPopup(popup_ec78bbde4d9350efd0553922cd584a29)
+        ;
+
+        
+    
+    
+            polygon_c1ced96f55e774aabb8d6713c5daaba8.bindTooltip(
+                `<div>
+                     Vivienda 269 m2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_f0093ea89cce4e1745688810d1b09d23 = L.polygon(
+                [[-1.6342953443527222, -78.78408813476562], [-1.6342546939849854, -78.78411865234375], [-1.6341913938522339, -78.7840347290039], [-1.6342320442199707, -78.78400421142578], [-1.6342953443527222, -78.78408813476562]],
+                {"bubblingMouseEvents": true, "color": "#D946EF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D946EF", "fillOpacity": 0.45, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.0}
+            ).addTo(feature_group_74fc393d65ea34b811c5790fb96e2803);
+        
+    
+        var popup_ac4b3b83d75246e191d3f010c029664e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ba349c21f912947d3c32ce141a8d7c2c = $(`<div id="html_ba349c21f912947d3c32ce141a8d7c2c" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 11px; width: 220px;">                     <b style="color: #9333EA;">Edificacion LADM: Edif_004</b><br/>                     <b>Tipologia:</b> Vivienda_Campesina<br/>                     <b>Superficie Cubierta:</b> 38.7 m2<br/>                     <b>Elevacion 3D:</b> Firma Espectral<br/>                     <b>Geometria:</b> Ortogonal 90 deg<br/>                     <b>Estado:</b> 100% Segregada (Bufer 1.5m)                 </div>                 </div>`)[0];
+                popup_ac4b3b83d75246e191d3f010c029664e.setContent(html_ba349c21f912947d3c32ce141a8d7c2c);
+            
+        
+
+        polygon_f0093ea89cce4e1745688810d1b09d23.bindPopup(popup_ac4b3b83d75246e191d3f010c029664e)
+        ;
+
+        
+    
+    
+            polygon_f0093ea89cce4e1745688810d1b09d23.bindTooltip(
+                `<div>
+                     Vivienda 39 m2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_74fc393d65ea34b811c5790fb96e2803.addTo(map_a2fcee90edbe00b0ce2a6b73c6586e31);
+        
+    
+            var feature_group_f6f5023c7ec21229da8313be1ab054bb = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var polygon_9feb8ae0ac0873ec366deb99f936b1d2 = L.polygon(
+                [[-1.6359324324324325, -78.78488648648649], [-1.6356430693580108, -78.78471976736414], [-1.635297964056207, -78.7843866432129], [-1.635324629441856, -78.7843620941277], [-1.6357, -78.7841972972973], [-1.6359432432432433, -78.78442432432432], [-1.6358081081081082, -78.7846054054054], [-1.636081081081081, -78.78486486486486], [-1.636076411001459, -78.78513806452274], [-1.6358957620704266, -78.7849636872486], [-1.6359324324324325, -78.78488648648649]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_912f1a658de756b4005cedca42a4cb45 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e8c6d618b6fcccf67e417346e616992a = $(`<div id="html_e8c6d618b6fcccf67e417346e616992a" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-001</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.3231 ha</b> (3231.0 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>10 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_912f1a658de756b4005cedca42a4cb45.setContent(html_e8c6d618b6fcccf67e417346e616992a);
+            
+        
+
+        polygon_9feb8ae0ac0873ec366deb99f936b1d2.bindPopup(popup_912f1a658de756b4005cedca42a4cb45)
+        ;
+
+        
+    
+    
+            polygon_9feb8ae0ac0873ec366deb99f936b1d2.bindTooltip(
+                `<div>
+                     UPA-001: 0.32 ha (10 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_74ad91f72e1d0655e66c215ff56f5c92 = L.polygon(
+                [[-1.6342324324324324, -78.7843], [-1.634354054054054, -78.78391891891891], [-1.6347324324324324, -78.78391891891891], [-1.6345594594594595, -78.78407837837837], [-1.6350567567567567, -78.78428108108108], [-1.6346351351351351, -78.78436216216215], [-1.634481081081081, -78.78413783783783], [-1.6342057318441003, -78.78437845834222], [-1.6339361776292802, -78.78411531575928], [-1.6339945945945946, -78.78407567567567], [-1.6342324324324324, -78.7843]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_a6dfdace29cbe774b6697a47ca1783bb = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_30dd3aa26f6cd95bddd4db95425f1662 = $(`<div id="html_30dd3aa26f6cd95bddd4db95425f1662" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-002</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.2254 ha</b> (2254.2 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>10 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_a6dfdace29cbe774b6697a47ca1783bb.setContent(html_30dd3aa26f6cd95bddd4db95425f1662);
+            
+        
+
+        polygon_74ad91f72e1d0655e66c215ff56f5c92.bindPopup(popup_a6dfdace29cbe774b6697a47ca1783bb)
+        ;
+
+        
+    
+    
+            polygon_74ad91f72e1d0655e66c215ff56f5c92.bindTooltip(
+                `<div>
+                     UPA-002: 0.23 ha (10 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_077f2fa400af9bea409cefdd57155f67 = L.polygon(
+                [[-1.6346513513513514, -78.78568378378378], [-1.634572972972973, -78.78565405405405], [-1.6346027027027028, -78.78578648648649], [-1.634472972972973, -78.78581351351352], [-1.6341432432432432, -78.78552432432433], [-1.6340135135135134, -78.78528378378378], [-1.6343, -78.78512972972973], [-1.634393302224988, -78.78525413269638], [-1.6342945945945946, -78.78534594594595], [-1.6343035665560357, -78.78536216246053], [-1.6346513513513514, -78.78568378378378]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_32b1a4d33d8ec86c3bf0d0b278a1ad03 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d95cba937bc55f0cf33c95ed8526e33e = $(`<div id="html_d95cba937bc55f0cf33c95ed8526e33e" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-003</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.2159 ha</b> (2158.6 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>10 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_32b1a4d33d8ec86c3bf0d0b278a1ad03.setContent(html_d95cba937bc55f0cf33c95ed8526e33e);
+            
+        
+
+        polygon_077f2fa400af9bea409cefdd57155f67.bindPopup(popup_32b1a4d33d8ec86c3bf0d0b278a1ad03)
+        ;
+
+        
+    
+    
+            polygon_077f2fa400af9bea409cefdd57155f67.bindTooltip(
+                `<div>
+                     UPA-003: 0.22 ha (10 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_1a3d24993b3c3d481b2d57c22f0fbde9 = L.polygon(
+                [[-1.635972972972973, -78.78434324324324], [-1.636081081081081, -78.78486486486486], [-1.6358081081081082, -78.7846054054054], [-1.6359702702702703, -78.78438378378378], [-1.6358031895559964, -78.78429360754956], [-1.635910810810811, -78.78412972972973], [-1.6357108108108107, -78.7842027027027], [-1.6356648648648648, -78.78413783783783], [-1.635790585483645, -78.78392380119786], [-1.636081081081081, -78.78391891891891], [-1.635972972972973, -78.78434324324324]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_cbeea64fec8af24650b58e4012f39a71 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c356b505af19fd45e5e5433dc42a0356 = $(`<div id="html_c356b505af19fd45e5e5433dc42a0356" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-004</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.2011 ha</b> (2010.6 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>10 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_cbeea64fec8af24650b58e4012f39a71.setContent(html_c356b505af19fd45e5e5433dc42a0356);
+            
+        
+
+        polygon_1a3d24993b3c3d481b2d57c22f0fbde9.bindPopup(popup_cbeea64fec8af24650b58e4012f39a71)
+        ;
+
+        
+    
+    
+            polygon_1a3d24993b3c3d481b2d57c22f0fbde9.bindTooltip(
+                `<div>
+                     UPA-004: 0.20 ha (10 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_938dd113ce2d38de90b641379ccf746c = L.polygon(
+                [[-1.6355032318940035, -78.78507880331503], [-1.6353332216005068, -78.7852177541372], [-1.6349444091796874, -78.78474203062315], [-1.6351144194731841, -78.78460307980099], [-1.6355032318940035, -78.78507880331503]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_ab1348227efa919b9545471c88629eeb = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3e82b052171a2b4c66379ba5fdd52519 = $(`<div id="html_3e82b052171a2b4c66379ba5fdd52519" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-005</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.1662 ha</b> (1662.1 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>4 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_ab1348227efa919b9545471c88629eeb.setContent(html_3e82b052171a2b4c66379ba5fdd52519);
+            
+        
+
+        polygon_938dd113ce2d38de90b641379ccf746c.bindPopup(popup_ab1348227efa919b9545471c88629eeb)
+        ;
+
+        
+    
+    
+            polygon_938dd113ce2d38de90b641379ccf746c.bindTooltip(
+                `<div>
+                     UPA-005: 0.17 ha (4 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_1fd72a948270a201ad54baf7dfd233f1 = L.polygon(
+                [[-1.6359648648648648, -78.78513243243243], [-1.6356783783783784, -78.78519729729729], [-1.6354972972972972, -78.78499189189189], [-1.6355324324324325, -78.78495405405405], [-1.6356594594594596, -78.78505405405406], [-1.6354243243243243, -78.78479999999999], [-1.6354513513513513, -78.78476486486485], [-1.635546799182736, -78.78471448962051], [-1.635938614477315, -78.78509270211615], [-1.6359648648648648, -78.78513243243243]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_7813b46cc049d0cfc03b4041c1199e1b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_21efd6032bf3d07716999dac25b48e53 = $(`<div id="html_21efd6032bf3d07716999dac25b48e53" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-006</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.1395 ha</b> (1394.5 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>9 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_7813b46cc049d0cfc03b4041c1199e1b.setContent(html_21efd6032bf3d07716999dac25b48e53);
+            
+        
+
+        polygon_1fd72a948270a201ad54baf7dfd233f1.bindPopup(popup_7813b46cc049d0cfc03b4041c1199e1b)
+        ;
+
+        
+    
+    
+            polygon_1fd72a948270a201ad54baf7dfd233f1.bindTooltip(
+                `<div>
+                     UPA-006: 0.14 ha (9 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_b0d592cfcd7f6adb60dd88abd563c67e = L.polygon(
+                [[-1.6360640171360326, -78.78583742762385], [-1.635827213926573, -78.78591979398985], [-1.6356897178856102, -78.78552449295456], [-1.6359265210950698, -78.78544212658856], [-1.6360640171360326, -78.78583742762385]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_45823184be8b4806993b0908fd77db13 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_481fb26989c4de5c25e668eeb14eac69 = $(`<div id="html_481fb26989c4de5c25e668eeb14eac69" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-007</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.1293 ha</b> (1292.9 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>4 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_45823184be8b4806993b0908fd77db13.setContent(html_481fb26989c4de5c25e668eeb14eac69);
+            
+        
+
+        polygon_b0d592cfcd7f6adb60dd88abd563c67e.bindPopup(popup_45823184be8b4806993b0908fd77db13)
+        ;
+
+        
+    
+    
+            polygon_b0d592cfcd7f6adb60dd88abd563c67e.bindTooltip(
+                `<div>
+                     UPA-007: 0.13 ha (4 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_22821c160de60cd0e557716635fb5fcd = L.polygon(
+                [[-1.636081081081081, -78.7858054054054], [-1.636081081081081, -78.78608108108108], [-1.6357756756756756, -78.78608108108108], [-1.6355783783783784, -78.78565945945945], [-1.6356216216216217, -78.78573783783783], [-1.635745945945946, -78.78568918918918], [-1.635827213926573, -78.78591979398985], [-1.635881081081081, -78.7859918918919], [-1.6359, -78.7859081081081], [-1.6360640171360326, -78.78583742762385], [-1.636081081081081, -78.7858054054054]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_57fa44690d3f6d05ac3d7b2578a33260 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1ecd17ccd729c1b8001d6bb955a2f88c = $(`<div id="html_1ecd17ccd729c1b8001d6bb955a2f88c" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-008</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.1121 ha</b> (1120.5 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>10 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_57fa44690d3f6d05ac3d7b2578a33260.setContent(html_1ecd17ccd729c1b8001d6bb955a2f88c);
+            
+        
+
+        polygon_22821c160de60cd0e557716635fb5fcd.bindPopup(popup_57fa44690d3f6d05ac3d7b2578a33260)
+        ;
+
+        
+    
+    
+            polygon_22821c160de60cd0e557716635fb5fcd.bindTooltip(
+                `<div>
+                     UPA-008: 0.11 ha (10 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_73fce9c038ebc9de51b4998f6af7ae85 = L.polygon(
+                [[-1.6342054054054054, -78.78493783783783], [-1.6343081081081081, -78.78505135135134], [-1.6342891891891893, -78.78508648648648], [-1.6341135135135136, -78.78519729729729], [-1.6340054054054054, -78.78517297297297], [-1.6340216216216217, -78.78521351351351], [-1.633918918918919, -78.7853054054054], [-1.633918918918919, -78.78504777218107], [-1.6341610991529674, -78.78491227653835], [-1.6342054054054054, -78.78493783783783]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_6a111e6b5a3758fa4bc90cfe02ee3104 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_b4f04e6d5ecf0af2c319ae2574510632 = $(`<div id="html_b4f04e6d5ecf0af2c319ae2574510632" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-009</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0967 ha</b> (966.9 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>9 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_6a111e6b5a3758fa4bc90cfe02ee3104.setContent(html_b4f04e6d5ecf0af2c319ae2574510632);
+            
+        
+
+        polygon_73fce9c038ebc9de51b4998f6af7ae85.bindPopup(popup_6a111e6b5a3758fa4bc90cfe02ee3104)
+        ;
+
+        
+    
+    
+            polygon_73fce9c038ebc9de51b4998f6af7ae85.bindTooltip(
+                `<div>
+                     UPA-009: 0.10 ha (9 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_74cbcd9e76ca10a0f20975bd94b103bc = L.polygon(
+                [[-1.6344162162162161, -78.78435135135135], [-1.6345108108108108, -78.78426486486487], [-1.634481081081081, -78.78413783783783], [-1.634556634517966, -78.78424785424593], [-1.6344405405405407, -78.78436216216215], [-1.6346, -78.78452432432432], [-1.634764864864865, -78.78435135135135], [-1.6348495662818785, -78.78441487741411], [-1.6345097949879013, -78.78463411931222], [-1.6342783783783783, -78.78440270270269], [-1.6344162162162161, -78.78435135135135]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_c21cdb7312b6086358ad198ceaabc0b4 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_b30d357cc57d618d58358fb3a4afac16 = $(`<div id="html_b30d357cc57d618d58358fb3a4afac16" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-010</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0845 ha</b> (844.9 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>10 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_c21cdb7312b6086358ad198ceaabc0b4.setContent(html_b30d357cc57d618d58358fb3a4afac16);
+            
+        
+
+        polygon_74cbcd9e76ca10a0f20975bd94b103bc.bindPopup(popup_c21cdb7312b6086358ad198ceaabc0b4)
+        ;
+
+        
+    
+    
+            polygon_74cbcd9e76ca10a0f20975bd94b103bc.bindTooltip(
+                `<div>
+                     UPA-010: 0.08 ha (10 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_608975dc3929544fa1c08dd3ebcc6270 = L.polygon(
+                [[-1.635371218181115, -78.78413533755278], [-1.6353655848071533, -78.7841561290531], [-1.6354101113250585, -78.78419767786468], [-1.6352545963944431, -78.78434085034048], [-1.6350344558067775, -78.78409915637228], [-1.635189189354149, -78.78395135118639], [-1.635371218181115, -78.78413533755278]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_10aae42f35d4456c138edf1b80714a63 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_552c6b0c8b402874301227da3bfdf2f7 = $(`<div id="html_552c6b0c8b402874301227da3bfdf2f7" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-011</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0880 ha</b> (880.4 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>6 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_10aae42f35d4456c138edf1b80714a63.setContent(html_552c6b0c8b402874301227da3bfdf2f7);
+            
+        
+
+        polygon_608975dc3929544fa1c08dd3ebcc6270.bindPopup(popup_10aae42f35d4456c138edf1b80714a63)
+        ;
+
+        
+    
+    
+            polygon_608975dc3929544fa1c08dd3ebcc6270.bindTooltip(
+                `<div>
+                     UPA-011: 0.09 ha (6 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_0b7395a9c425ccfdaef1fa59dd92748f = L.polygon(
+                [[-1.634354054054054, -78.78518378378378], [-1.6343297297297297, -78.7851081081081], [-1.6344162162162161, -78.78505135135134], [-1.6344864864864865, -78.78512432432431], [-1.6345513513513514, -78.78507837837837], [-1.6347216216216216, -78.78524324324324], [-1.6346837837837838, -78.78528918918919], [-1.634708108108108, -78.78536486486486], [-1.6345611224982977, -78.78544596037374], [-1.6345968760597662, -78.78539178922982], [-1.634354054054054, -78.78518378378378]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_31413c958e284bf0fc77d9e549f5e035 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_41ea09ace690a6e970d4a47475d493db = $(`<div id="html_41ea09ace690a6e970d4a47475d493db" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-012</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0901 ha</b> (901.2 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>10 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_31413c958e284bf0fc77d9e549f5e035.setContent(html_41ea09ace690a6e970d4a47475d493db);
+            
+        
+
+        polygon_0b7395a9c425ccfdaef1fa59dd92748f.bindPopup(popup_31413c958e284bf0fc77d9e549f5e035)
+        ;
+
+        
+    
+    
+            polygon_0b7395a9c425ccfdaef1fa59dd92748f.bindTooltip(
+                `<div>
+                     UPA-012: 0.09 ha (10 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_31b7dc60bbbf8b032a698651b2d6c574 = L.polygon(
+                [[-1.634227027027027, -78.78466216216216], [-1.6341324324324324, -78.78479189189189], [-1.6339756756756756, -78.78462432432433], [-1.6341081081081081, -78.78448918918919], [-1.634127027027027, -78.78448918918919], [-1.6342243243243244, -78.78457567567567], [-1.634227027027027, -78.78451891891892], [-1.634251798039457, -78.78451184148679], [-1.6344281194669321, -78.78468452110504], [-1.6343135876413366, -78.7847509422794], [-1.634227027027027, -78.78466216216216]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_0689770b06faec16cbea062921bf2c9f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d2e78f6ae558236a42e4e22ecd1fa62e = $(`<div id="html_d2e78f6ae558236a42e4e22ecd1fa62e" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-013</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0846 ha</b> (845.5 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>10 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_0689770b06faec16cbea062921bf2c9f.setContent(html_d2e78f6ae558236a42e4e22ecd1fa62e);
+            
+        
+
+        polygon_31b7dc60bbbf8b032a698651b2d6c574.bindPopup(popup_0689770b06faec16cbea062921bf2c9f)
+        ;
+
+        
+    
+    
+            polygon_31b7dc60bbbf8b032a698651b2d6c574.bindTooltip(
+                `<div>
+                     UPA-013: 0.08 ha (10 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_acac42454bdbef82a1606d40242fd5c5 = L.polygon(
+                [[-1.633918918918919, -78.78533783783783], [-1.6340486486486487, -78.78524054054054], [-1.6340054054054054, -78.78517297297297], [-1.6341135135135136, -78.78519729729729], [-1.6342891891891893, -78.78508648648648], [-1.6343108108108109, -78.7849972972973], [-1.6345945945945946, -78.78491891891892], [-1.6346621621621622, -78.78478648648648], [-1.6348567567567567, -78.78479459459459], [-1.633918918918919, -78.78533783783783]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_0b231f98eec8e259d98f99c05d2bf21a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_273fb38ee7e51bf771053ffe61ecdde9 = $(`<div id="html_273fb38ee7e51bf771053ffe61ecdde9" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-014</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0619 ha</b> (619.5 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>9 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_0b231f98eec8e259d98f99c05d2bf21a.setContent(html_273fb38ee7e51bf771053ffe61ecdde9);
+            
+        
+
+        polygon_acac42454bdbef82a1606d40242fd5c5.bindPopup(popup_0b231f98eec8e259d98f99c05d2bf21a)
+        ;
+
+        
+    
+    
+            polygon_acac42454bdbef82a1606d40242fd5c5.bindTooltip(
+                `<div>
+                     UPA-014: 0.06 ha (9 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_7c7ca9926bf4dd8409cb2f7edec10469 = L.polygon(
+                [[-1.634341150041796, -78.78395935149065], [-1.6343036828301374, -78.78407674875386], [-1.6342365045222114, -78.78399145522135], [-1.6341786401617102, -78.78403026151854], [-1.6342478340523217, -78.78413029521158], [-1.6342944391984897, -78.78410571213301], [-1.6342765195059326, -78.78416186050303], [-1.6339945945945946, -78.78407567567567], [-1.6341432432432432, -78.78391891891891], [-1.634341150041796, -78.78395935149065]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_d48cfe5307c7b93788478f69164b4d4d = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_0b8ca861ac645195b3a6199896335ba0 = $(`<div id="html_0b8ca861ac645195b3a6199896335ba0" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-015</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0504 ha</b> (503.6 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>9 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_d48cfe5307c7b93788478f69164b4d4d.setContent(html_0b8ca861ac645195b3a6199896335ba0);
+            
+        
+
+        polygon_7c7ca9926bf4dd8409cb2f7edec10469.bindPopup(popup_d48cfe5307c7b93788478f69164b4d4d)
+        ;
+
+        
+    
+    
+            polygon_7c7ca9926bf4dd8409cb2f7edec10469.bindTooltip(
+                `<div>
+                     UPA-015: 0.05 ha (9 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_24dbfa8d0f1e2fca0cc225b2946710f0 = L.polygon(
+                [[-1.6344783783783783, -78.78475405405405], [-1.6345513513513514, -78.78472432432432], [-1.6346405405405406, -78.78481621621621], [-1.6345918918918918, -78.78489729729729], [-1.6343485194096736, -78.78498688254142], [-1.6342783783783783, -78.78492432432432], [-1.6343783783783783, -78.78482162162162], [-1.6343617446316852, -78.78479591492219], [-1.6344089528601762, -78.7847685371522], [-1.6344513513513514, -78.78480540540541], [-1.6344783783783783, -78.78475405405405]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_51ad76ba8297e981b800cd45509c38c7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_26b5ac22a4f891d6192221ce3cfcdb8e = $(`<div id="html_26b5ac22a4f891d6192221ce3cfcdb8e" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-016</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0618 ha</b> (617.7 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>10 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_51ad76ba8297e981b800cd45509c38c7.setContent(html_26b5ac22a4f891d6192221ce3cfcdb8e);
+            
+        
+
+        polygon_24dbfa8d0f1e2fca0cc225b2946710f0.bindPopup(popup_51ad76ba8297e981b800cd45509c38c7)
+        ;
+
+        
+    
+    
+            polygon_24dbfa8d0f1e2fca0cc225b2946710f0.bindTooltip(
+                `<div>
+                     UPA-016: 0.06 ha (10 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_229450beb7397006c330fdbff52e631a = L.polygon(
+                [[-1.635369107138144, -78.78543148110879], [-1.6351665812724345, -78.78521882885082], [-1.6352607781972028, -78.78512911748737], [-1.6353332216005068, -78.7852177541372], [-1.6353605229370434, -78.78519544052853], [-1.6354824857144743, -78.78532350150444], [-1.635369107138144, -78.78543148110879]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_2b722a715da5121186869001ad5305dc = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f97779f06d10ed1e27a0b13d62993ae3 = $(`<div id="html_f97779f06d10ed1e27a0b13d62993ae3" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-017</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0523 ha</b> (522.6 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>6 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_2b722a715da5121186869001ad5305dc.setContent(html_f97779f06d10ed1e27a0b13d62993ae3);
+            
+        
+
+        polygon_229450beb7397006c330fdbff52e631a.bindPopup(popup_2b722a715da5121186869001ad5305dc)
+        ;
+
+        
+    
+    
+            polygon_229450beb7397006c330fdbff52e631a.bindTooltip(
+                `<div>
+                     UPA-017: 0.05 ha (6 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_0e748570e7c3797b3efc176e52742a83 = L.polygon(
+                [[-1.6348216216216216, -78.78593513513513], [-1.6349432432432434, -78.78594864864864], [-1.6349621621621622, -78.78606756756757], [-1.6350972972972972, -78.78608108108108], [-1.6351054054054055, -78.78602702702702], [-1.6349783783783784, -78.78581351351352], [-1.6348405405405406, -78.78582162162162], [-1.6348783783783785, -78.78586756756756], [-1.6348216216216216, -78.78593513513513]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_64a4b144120fecbfda24a2e722c73957 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a63d4c97c500cdc2a9c1fc3e4ba6f280 = $(`<div id="html_a63d4c97c500cdc2a9c1fc3e4ba6f280" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-018</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0475 ha</b> (475.1 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>8 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_64a4b144120fecbfda24a2e722c73957.setContent(html_a63d4c97c500cdc2a9c1fc3e4ba6f280);
+            
+        
+
+        polygon_0e748570e7c3797b3efc176e52742a83.bindPopup(popup_64a4b144120fecbfda24a2e722c73957)
+        ;
+
+        
+    
+    
+            polygon_0e748570e7c3797b3efc176e52742a83.bindTooltip(
+                `<div>
+                     UPA-018: 0.05 ha (8 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_79d9c2969865c39b901e0dde4f5af38a = L.polygon(
+                [[-1.6354054054054055, -78.78408108108107], [-1.6354054054054055, -78.78391891891891], [-1.6357129012144243, -78.78391891891891], [-1.6355367595555317, -78.78408108108107], [-1.6354054054054055, -78.78408108108107]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_7d27a8e3b8a913de3657b555575baf17 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_56cda10b564234df1a732f90963b003a = $(`<div id="html_56cda10b564234df1a732f90963b003a" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-019</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0438 ha</b> (438.4 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>4 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_7d27a8e3b8a913de3657b555575baf17.setContent(html_56cda10b564234df1a732f90963b003a);
+            
+        
+
+        polygon_79d9c2969865c39b901e0dde4f5af38a.bindPopup(popup_7d27a8e3b8a913de3657b555575baf17)
+        ;
+
+        
+    
+    
+            polygon_79d9c2969865c39b901e0dde4f5af38a.bindTooltip(
+                `<div>
+                     UPA-019: 0.04 ha (4 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_571d6d5f03045ca07de33b5e71cfb466 = L.polygon(
+                [[-1.6339243243243244, -78.78465135135134], [-1.6339513513513513, -78.78466756756757], [-1.633954054054054, -78.78468648648648], [-1.6340405405405405, -78.78476216216215], [-1.6340702702702703, -78.78480540540541], [-1.634081081081081, -78.78478918918918], [-1.6341, -78.78486756756756], [-1.6340651732425837, -78.78489500683098], [-1.633921848759445, -78.78497812591544], [-1.6339243243243244, -78.78465135135134]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_41dec0ab8256d362fc5923c532d46d33 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_403754bb94170c1c9631462b0010d8f5 = $(`<div id="html_403754bb94170c1c9631462b0010d8f5" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-020</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0407 ha</b> (406.8 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>9 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_41dec0ab8256d362fc5923c532d46d33.setContent(html_403754bb94170c1c9631462b0010d8f5);
+            
+        
+
+        polygon_571d6d5f03045ca07de33b5e71cfb466.bindPopup(popup_41dec0ab8256d362fc5923c532d46d33)
+        ;
+
+        
+    
+    
+            polygon_571d6d5f03045ca07de33b5e71cfb466.bindTooltip(
+                `<div>
+                     UPA-020: 0.04 ha (9 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_2ed12d13f039a346f2dbef3e55d30455 = L.polygon(
+                [[-1.6341, -78.78486756756756], [-1.634081081081081, -78.78478918918918], [-1.6340702702702703, -78.78480540540541], [-1.6339918918918919, -78.78471891891891], [-1.6340297297297297, -78.78473513513514], [-1.634018918918919, -78.78467297297297], [-1.6341324324324324, -78.78479189189189], [-1.6342405405405405, -78.78468378378378], [-1.6343032457827085, -78.78475693989964], [-1.6340651732425837, -78.78489500683098], [-1.6341, -78.78486756756756]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_1455c83c62f52641ae23520e225e1261 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e282db86b3a2c36895e286e82299d553 = $(`<div id="html_e282db86b3a2c36895e286e82299d553" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-021</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0271 ha</b> (271.1 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>10 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_1455c83c62f52641ae23520e225e1261.setContent(html_e282db86b3a2c36895e286e82299d553);
+            
+        
+
+        polygon_2ed12d13f039a346f2dbef3e55d30455.bindPopup(popup_1455c83c62f52641ae23520e225e1261)
+        ;
+
+        
+    
+    
+            polygon_2ed12d13f039a346f2dbef3e55d30455.bindTooltip(
+                `<div>
+                     UPA-021: 0.03 ha (10 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_d68710f5d3151754584e03defa8b7aef = L.polygon(
+                [[-1.6350594594594594, -78.7851054054054], [-1.6349743243243244, -78.78502027027027], [-1.6350783783783784, -78.78491621621622], [-1.635124324459485, -78.78496216229732], [-1.6351595738698383, -78.78500529099503], [-1.6350594594594594, -78.7851054054054]],
+                {"bubblingMouseEvents": true, "color": "#FACC15", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FACC15", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.95, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(feature_group_f6f5023c7ec21229da8313be1ab054bb);
+        
+    
+        var popup_00764055343c1c73639e8330e02757a2 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7fcafc29a9cc23a2fb7e01b93ee58d19 = $(`<div id="html_7fcafc29a9cc23a2fb7e01b93ee58d19" style="width: 100.0%; height: 100.0%;">                 <div style="font-family: Arial; font-size: 12px; width: 240px;">                     <h4 style="color: #0F766E; margin-bottom: 4px; border-bottom: 2px solid #0F766E;">FICHA PREDIAL: UPA-022</h4>                     <table style="width: 100%; font-size: 11px; border-collapse: collapse;">                         <tr bgcolor="#F8FAFC"><td><b>Escenario:</b></td><td>1_Cultivos_Ladera_Calpi</td></tr>                         <tr><td><b>Superficie Util:</b></td><td><b>0.0216 ha</b> (216.4 m2)</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Vertices LADM:</b></td><td>5 vertices</td></tr>                         <tr><td><b>Uso de Suelo:</b></td><td>Cultivo_Verde</td></tr>                         <tr bgcolor="#F8FAFC"><td><b>Solape:</b></td><td>0.00% (Estanco LADM)</td></tr>                         <tr><td><b>Estandar:</b></td><td>Conforme ISO 19152</td></tr>                     </table>                 </div>                 </div>`)[0];
+                popup_00764055343c1c73639e8330e02757a2.setContent(html_7fcafc29a9cc23a2fb7e01b93ee58d19);
+            
+        
+
+        polygon_d68710f5d3151754584e03defa8b7aef.bindPopup(popup_00764055343c1c73639e8330e02757a2)
+        ;
+
+        
+    
+    
+            polygon_d68710f5d3151754584e03defa8b7aef.bindTooltip(
+                `<div>
+                     UPA-022: 0.02 ha (5 vertices)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_f6f5023c7ec21229da8313be1ab054bb.addTo(map_a2fcee90edbe00b0ce2a6b73c6586e31);
+        
+    
+            var layer_control_ab6bf1ba8d661b06cfaa8bcdba9875a6_layers = {
+                base_layers : {
+                    "Satelital Esri HD" : tile_layer_1273028e4d0cca07f1f0ff35ae74e19f,
+                    "OpenStreetMap Carto" : tile_layer_036bed1cf4be877f86987df4e73cdca7,
+                },
+                overlays :  {
+                    "Red Vial y Caminos (OSM)" : feature_group_42a475f3ae74f3c33ae164328d181fbb,
+                    "Viviendas Campesinas (3D Sombra)" : feature_group_74fc393d65ea34b811c5790fb96e2803,
+                    "UPAs Agricolas Delimitadas (LADM)" : feature_group_f6f5023c7ec21229da8313be1ab054bb,
+                },
+            };
+            let layer_control_ab6bf1ba8d661b06cfaa8bcdba9875a6 = L.control.layers(
+                layer_control_ab6bf1ba8d661b06cfaa8bcdba9875a6_layers.base_layers,
+                layer_control_ab6bf1ba8d661b06cfaa8bcdba9875a6_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_a2fcee90edbe00b0ce2a6b73c6586e31);
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topright",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_a2fcee90edbe00b0ce2a6b73c6586e31);
+        
+    
+            var measure_control_051f4ac59c76d97d55d47db069a6fab9 = new L.Control.Measure(
+                {
+  "position": "bottomleft",
+  "primaryLengthUnit": "meters",
+  "secondaryLengthUnit": "miles",
+  "primaryAreaUnit": "sqmeters",
+  "secondaryAreaUnit": "acres",
+});
+            map_a2fcee90edbe00b0ce2a6b73c6586e31.addControl(measure_control_051f4ac59c76d97d55d47db069a6fab9);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+</script>
+</html>

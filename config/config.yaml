@@ -1,0 +1,81 @@
+# =====================================================================
+# CONFIGURACIÓN MAESTRA DEL PIPELINE SOTA (TFM UNIR - v53.0.0)
+# Autor: Cristian Alexis García Pumagualle
+# Director: Fernando Antonio Rufo Jiménez
+# =====================================================================
+
+project:
+  name: "Delimitación de UPAs en Minifundios Andinos"
+  version: "v53.0.0"
+  study_area: "Provincia de Chimborazo, Ecuador"
+  crs: "EPSG:4326"
+
+sensor:
+  spatial_resolution_meters: 0.30
+  bands: ["Red", "Green", "Blue"]
+  source: "PlanetScope / Ortofoto Satelital de Alta Resolución"
+
+preprocessing:
+  bilateral_filter:
+    diameter: 7
+    sigma_color: 50.0
+    sigma_spatial: 50.0
+  clahe:
+    clip_limit: 3.0
+    grid_size: [8, 8]
+  gaussian_blur:
+    sigma: 2.0
+  sharpen_weight: 1.4
+
+delineation:
+  meijering:
+    sigmas: [1.0, 2.0]
+    weight_dark_ridges: 0.45
+    weight_bright_ridges: 0.20
+    weight_gradient_l: 0.18
+    weight_gradient_exg: 0.17
+  felzenszwalb:
+    scale: 110
+    sigma: 0.6
+    min_size: 260
+  rag:
+    threshold: 17.0
+  magnetic_snapping:
+    max_radius_pixels: 2
+    threshold_boost: 0.10
+
+cadastre_ladm_iso19152:
+  min_vertices: 4
+  max_vertices: 10
+  target_average_vertices: 7.8
+  min_parcel_hectares: 0.02
+  max_parcel_hectares: 8.0
+  road_buffer_meters: 3.5
+  building_buffer_meters: 1.5
+  max_overlap_tolerance_percent: 0.00
+
+scenarios:
+  - id: 1
+    name: "1_Cultivos_Ladera_Calpi"
+    display_name: "Calpi (Cultivos de Ladera Andina)"
+    lat: -1.6350
+    lon: -78.7850
+    dominant_angle_degrees: 42.0
+  - id: 2
+    name: "2_Caserio_Rural_Lican"
+    display_name: "Licán (Caserío Rural y Minifundio Mixto)"
+    lat: -1.6500
+    lon: -78.6900
+    dominant_angle_degrees: 35.0
+  - id: 3
+    name: "3_Valle_Agricola_Colta"
+    display_name: "Colta (Valle Agrícola y Humedal)"
+    lat: -1.7200
+    lon: -78.7500
+    dominant_angle_degrees: 85.0
+  - id: 4
+    name: "4_Valle_Hortifruticola_Guano"
+    display_name: "Guano (Horticultura Intensiva en Cuadrícula)"
+    lat: -1.6050
+    lon: -78.6450
+    dominant_angle_degrees: 0.0

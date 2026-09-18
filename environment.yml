@@ -1,0 +1,22 @@
+name: tfm_cadastre
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.12
+  - pytorch>=2.4.0
+  - torchvision>=0.19.0
+  - gdal>=3.8.0
+  - geopandas>=1.0.0
+  - shapely>=2.0.0
+  - rasterio>=1.4.0
+  - scikit-image>=0.24.0
+  - opencv>=4.10.0
+  - reportlab>=4.2.0
+  - folium>=0.17.0
+  - pyyaml>=6.0.0
+  - pytest>=8.0.0
+  - pip
+  - pip:
+      - segment-anything>=1.0.0

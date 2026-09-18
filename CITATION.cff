@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Si utilizas este software o metodología, por favor cita este Trabajo Fin de Máster de la siguiente manera:"
+title: "Delimitación Automatizada de Unidades de Producción Agropecuaria mediante Segmentación Espectral, Filtros Morfológicos y Regularización Catastral LADM ISO 19152"
+authors:
+  - family-names: "García Pumagualle"
+    given-names: "Cristian Alexis"
+    affiliation: "Universidad Internacional de La Rioja (UNIR)"
+thesis-type: "Trabajo Fin de Máster (TFM)"
+institution:
+  name: "Universidad Internacional de La Rioja (UNIR)"
+  department: "Escuela Superior de Ingeniería y Tecnología"
+advisor:
+  family-names: "Rufo Jiménez"
+  given-names: "Fernando Antonio"
+year: 2026
+version: "v53.0.0"
+date-released: 2026-09-15
+url: "https://github.com/cristianalexis6204/delimitacion-upas-chimborazo"
+keywords:
+  - "Visión por Computador"
+  - "Teledetección Agrícola"
+  - "ISO 19152 LADM"
+  - "Minifundio Andino"
+  - "Segment Anything Model"
+  - "Catastro Rural"
