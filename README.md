@@ -115,30 +115,45 @@ flowchart TD
 El marco metodológico evalúa tres dimensiones de desempeño: exactitud de segmentación, conformidad catastral y robustez estocástica.
 
 ### 1. Métricas de Exactitud de Segmentación
-* **Mean Intersection over Union (mIoU / Índice de Jaccard):**  
-  Mide la concordancia espacial global entre la partición predicha ($P$) y la verdad terreno ($G$):
-  $$\text{mIoU} = \frac{1}{N} \sum_{i=1}^{N} \frac{|P_i \cap G_i|}{|P_i \cup G_i|}$$
-* **Boundary F1-Score (BF1):**  
-  Evalúa la fidelidad geométrica de los linderos dentro de una tolerancia euclidiana de precisión $\tau = 1.2\text{ m}$ (4 píxeles):
-  $$\text{Precision}_\tau = \frac{|\partial P \cap \text{Buffer}_\tau(\partial G)|}{|\partial P|}, \quad \text{Recall}_\tau = \frac{|\partial G \cap \text{Buffer}_\tau(\partial P)|}{|\partial G|}$$
-  $$\text{BF1} = 2 \cdot \frac{\text{Precision}_\tau \cdot \text{Recall}_\tau}{\text{Precision}_\tau + \text{Recall}_\tau}$$
-* **Dice Similarity Coefficient (DSC):** Coherencia y continuidad de los núcleos de cultivo.
+
+#### A. Mean Intersection over Union (mIoU / Índice de Jaccard)
+Mide la concordancia espacial global y el solapamiento volumétrico entre la partición predicha ($P$) y la verdad terreno oficial ($G$):
+
+$$
+\text{mIoU} = \frac{1}{N} \sum_{i=1}^{N} \frac{|P_i \cap G_i|}{|P_i \cup G_i|}
+$$
+
+#### B. Boundary F1-Score (BF1 a 1.5 m)
+Evalúa la fidelidad geométrica y el alineamiento perimetral de los linderos dentro de una tolerancia euclidiana de precisión $\tau = 1.2\text{ m}$ (4 píxeles):
+
+$$
+\text{Precision}_\tau = \frac{|\partial P \cap \text{Buffer}_\tau(\partial G)|}{|\partial P|}, \quad \text{Recall}_\tau = \frac{|\partial G \cap \text{Buffer}_\tau(\partial P)|}{|\partial G|}
+$$
+
+$$
+\text{BF1} = 2 \cdot \frac{\text{Precision}_\tau \cdot \text{Recall}_\tau}{\text{Precision}_\tau + \text{Recall}_\tau}
+$$
+
+#### C. Dice Similarity Coefficient (DSC)
+Evalúa la coherencia, continuidad y homogeneidad de la biomasa fotosintética en los núcleos prediales:
+
+$$
+\text{DSC} = \frac{2 \cdot |P \cap G|}{|P| + |G|}
+$$
 
 ### 2. Rúbrica de Conformidad Catastral LADM ISO 19152
-* **Tasa de Solape Inter-parcelario:** Criterio eliminatorio. Exigencia del **0.00%** de superposición entre UPAs colindantes para constituir un mosaico planar válido.
-* **Simplicidad Registral:** 100% de las UPAs deben poseer entre 4 y 10 vértices registrales, optimizando el almacenamiento catastral y erradicando micro-ondulaciones de digitalización.
+* **Tasa de Solape Inter-parcelario:** Criterio eliminatorio. Exigencia del **0.00%** de superposición entre UPAs colindantes para constituir un mosaico planar topológicamente válido.
+* **Simplicidad Registral:** 100% de las UPAs deben poseer entre 4 y 8 vértices registrales (promedio: 6.99 vértices), optimizando el almacenamiento catastral y erradicando micro-ondulaciones de digitalización.
 * **Segregación Funcional:** Ninguna vivienda campesina ni eje vial debe formar parte del área útil computable de la UPA agrícola.
 
 ### 3. Protocolo Estocástico Monte Carlo para Ruido GPS
 Siguiendo las directrices de De Bruin et al. (2008), se modela el desplazamiento aleatorio del punto GPS de encuesta mediante vectores estocásticos bidimensionales:
-$$\vec{x}_{sim} = \vec{x}_0 + \mathcal{N}(0, \sigma_r^2), \quad r \in [0, 50]\text{ metros}$$
+
+$$
+\vec{x}_{\text{sim}} = \vec{x}_0 + \mathcal{N}(0, \sigma_r^2), \quad r \in [0, 50]\text{ metros}
+$$
+
 Para cada radio $r$ se ejecutan 20 simulaciones con semillas independientes, extrayendo la media de retención de exactitud y la desviación estándar ($\pm 1\sigma$).
-
----
-
-## 🗺️ Galería Científica de Resultados (v2.0.0 / Exp 54)
-
-A continuación se presentan y analizan detalladamente las 4 figuras oficiales generadas por el pipeline:
 
 ---
 
