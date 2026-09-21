@@ -1,5 +1,5 @@
-# 🌾 Delimitación Automatizada de Unidades de Producción Agropecuaria (UPAs) en Minifundios Andinos
-### Segmentación Semántica Fundacional (Meta SAM ViT-B), Crestas de Meijering, Restricciones Duras y Mosaico Planar LADM ISO 19152
+# 🌾 Delimitación Automatizada de Unidades de Producción Agropecuaria mediante Segmentación Espectral, Filtros Morfológicos y Regularización Catastral LADM ISO 19152
+### Aplicación en Minifundios Andinos de la Provincia de Chimborazo con Meta SAM ViT-B, Crestas de Meijering y Mosaico Planar Argmax
 
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch 2.6](https://img.shields.io/badge/PyTorch-2.6%20CUDA%2012.4-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
@@ -12,7 +12,9 @@
 ---
 
 ## 🏛️ Información Institucional
-* **Proyecto:** Trabajo Fin de Máster (TFM)
+* **Proyecto:** Trabajo Fin de Máster (TFM) - Convocatoria Ordinaria 2026-2027
+* **Título Oficial de la Memoria:** Delimitación Automatizada de Unidades de Producción Agropecuaria mediante Segmentación Espectral, Filtros Morfológicos y Regularización Catastral LADM ISO 19152
+* **Título de la Propuesta Aprobada (Fase 1):** Reconstrucción y delimitación automatizada de parcelas agrícolas mediante filtros morfológicos e imágenes espectrales
 * **Programa:** Maestría Universitaria en Inteligencia Artificial (Aula Máster IA)
 * **Universidad:** [Universidad Internacional de La Rioja (UNIR)](https://www.unir.net/)
 * **Autor:** Cristian Alexis García Pumagualle (`cristianalexis.6204@comunidadunir.net`)
@@ -361,7 +363,7 @@ Si utilizas este software, modelo o metodología en investigaciones académicas 
 ```bibtex
 @mastersthesis{garcia2026delimitacion,
   author       = {Garc{\'i}a Pumagualle, Cristian Alexis},
-  title        = {Delimitaci{\'o}n Automatizada de Unidades de Producci{\'o}n Agropecuaria en Minifundios Andinos mediante Segmentaci{\'o}n Espectral, Filtros Morfol{\'o}gicos y Regularizaci{\'o}n Catastral LADM ISO 19152},
+  title        = {Delimitaci{\'o}n Automatizada de Unidades de Producci{\'o}n Agropecuaria mediante Segmentaci{\'o}n Espectral, Filtros Morfol{\'o}gicos y Regularizaci{\'o}n Catastral LADM ISO 19152},
   school       = {Universidad Internacional de La Rioja (UNIR)},
   year         = {2026},
   type         = {Trabajo Fin de M{\'a}ster},
