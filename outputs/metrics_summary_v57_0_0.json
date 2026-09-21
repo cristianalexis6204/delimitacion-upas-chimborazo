@@ -1,0 +1,94 @@
+{
+  "version": "v57.0.0",
+  "total_polygons": 354,
+  "total_buildings": 51,
+  "total_area_ha": 35.88,
+  "mean_vertices": 6.99,
+  "duplicated_polygons": 0,
+  "miou_real_ground_truth": 0.805,
+  "dice_real_ground_truth": 0.892,
+  "boundary_f1_score_real": 0.898,
+  "precision_real": 0.848,
+  "recall_real": 0.94,
+  "ladm_compliance_pct": 100.0,
+  "overlap_pct": 0.17,
+  "escenarios_info": {
+    "1_Cultivos_Ladera_Calpi": {
+      "upas": 103,
+      "ha": 12.45,
+      "vert": 6.9
+    },
+    "2_Caserio_Rural_Lican": {
+      "upas": 33,
+      "ha": 4.38,
+      "vert": 7.2
+    },
+    "3_Valle_Agricola_Colta": {
+      "upas": 106,
+      "ha": 12.96,
+      "vert": 7.1
+    },
+    "4_Valle_Hortifruticola_Guano": {
+      "upas": 112,
+      "ha": 6.1,
+      "vert": 7.0
+    }
+  },
+  "monte_carlo_gps_sensitivity": [
+    {
+      "error_gps_m": 0,
+      "mean_iou": 0.805,
+      "std_iou": 0.005,
+      "retencion_exactitud_pct": 100.0
+    },
+    {
+      "error_gps_m": 5,
+      "mean_iou": 0.8005,
+      "std_iou": 0.0028,
+      "retencion_exactitud_pct": 99.4
+    },
+    {
+      "error_gps_m": 10,
+      "mean_iou": 0.7962,
+      "std_iou": 0.0028,
+      "retencion_exactitud_pct": 98.9
+    },
+    {
+      "error_gps_m": 15,
+      "mean_iou": 0.7928,
+      "std_iou": 0.0024,
+      "retencion_exactitud_pct": 98.5
+    },
+    {
+      "error_gps_m": 20,
+      "mean_iou": 0.7888,
+      "std_iou": 0.0033,
+      "retencion_exactitud_pct": 98.0
+    },
+    {
+      "error_gps_m": 25,
+      "mean_iou": 0.7848,
+      "std_iou": 0.002,
+      "retencion_exactitud_pct": 97.5
+    },
+    {
+      "error_gps_m": 30,
+      "mean_iou": 0.7552,
+      "std_iou": 0.003,
+      "retencion_exactitud_pct": 93.8
+    },
+    {
+      "error_gps_m": 40,
+      "mean_iou": 0.6952,
+      "std_iou": 0.0031,
+      "retencion_exactitud_pct": 86.4
+    },
+    {
+      "error_gps_m": 50,
+      "mean_iou": 0.6361,
+      "std_iou": 0.0026,
+      "retencion_exactitud_pct": 79.0
+    }
+  ],
+  "timestamp": "2026-09-21 12:19:20"
+}

@@ -1,13 +1,13 @@
 # =====================================================================
-# CONFIGURACIÓN MAESTRA DEL PIPELINE SOTA (TFM UNIR - v54.0.0)
+# CONFIGURACIÓN MAESTRA DEL PIPELINE SOTA (TFM UNIR - v57.0.0)
 # Autor: Cristian Alexis García Pumagualle
 # Director: Fernando Antonio Rufo Jiménez
 # =====================================================================
 
 project:
   name: "Delimitación de UPAs en Minifundios Andinos"
-  version: "v2.0.0"
-  experiment_tag: "Exp-54-SOTA"
+  version: "v57.0.0"
+  experiment_tag: "Exp-57-SOTA"
   study_area: "Provincia de Chimborazo, Ecuador"
   crs: "EPSG:4326"
 

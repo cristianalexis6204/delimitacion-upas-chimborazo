@@ -1,7 +1,7 @@
 """
 ===================================================================================================
 PIPELINE MAESTRO DE DELIMITACIÓN AUTOMATIZADA DE UPAS (TFM UNIR)
-Versión: v2.0.0 SOTA (Exp 54) | Estándar: ISO 19152 LADM
+Versión: v57.0.0 SOTA | Estándar: ISO 19152 LADM
 Autor: Cristian Alexis García Pumagualle
 Director: Fernando Antonio Rufo Jiménez
 Universidad Internacional de La Rioja (UNIR)
@@ -25,6 +25,7 @@ import matplotlib.patches as mpatches
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(CURRENT_DIR, "src"))
 
+from sam_ridge_hybrid_segmenter import SamRidgeHybridSegmenter
 from spectral_ridge_delineator import SpectralRidgeDelineator
 from topological_boundary_reconciler import TopologicalBoundaryReconciler
 from kml_multilayer_exporter import KMLMultilayerExporter
@@ -247,11 +248,14 @@ def run_pipeline(scenario_id="1", use_samples=True):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Pipeline Maestro SOTA de Delimitación de UPAs en Minifundios Andinos (TFM UNIR)"
+        description="Pipeline Maestro SOTA de Delimitación de UPAs en Minifundios Andinos (TFM UNIR - v57.0.0)"
     )
     parser.add_argument("--scenario", type=str, default="1", help="Escenario a ejecutar: 1 (Calpi), 2 (Licán), 3 (Colta), 4 (Guano) o 'all'")
     parser.add_argument("--verify", action="store_true", help="Verifica el entorno de ejecución, CUDA y librerías")
     parser.add_argument("--map", action="store_true", help="Genera/actualiza el visor cartográfico web interactivo HTML")
+    parser.add_argument("--v57", action="store_true", help="Ejecuta el pipeline oficial completo v57.0.0 sobre toda la provincia")
+    parser.add_argument("--stages", action="store_true", help="Genera las 4 figuras analíticas independientes a 300 DPI")
+    parser.add_argument("--benchmark", action="store_true", help="Ejecuta el benchmark comparativo de los 5 modelos de segmentación")
 
     args = parser.parse_args()
 
@@ -259,14 +263,32 @@ def main():
         verify_environment()
         return
 
+    if args.stages:
+        from generate_v57_individual_stages import generate_v57_stages
+        generate_v57_stages()
+        return
+
+    if args.benchmark:
+        from run_comparative_benchmark_5_models import run_comparative_benchmark
+        run_comparative_benchmark()
+        return
+
+    if args.v57:
+        from run_v57_0_0_master_pipeline import run_master_pipeline_v57
+        run_master_pipeline_v57()
+        return
+
     if args.map:
         outputs_dir = os.path.join(CURRENT_DIR, "outputs")
-        gpkg_path = os.path.join(outputs_dir, "upas_chimborazo_v53_0_0.gpkg")
+        gpkg_path = os.path.join(outputs_dir, "upas_chimborazo_v57_0_0.gpkg")
+        if not os.path.exists(gpkg_path):
+            gpkg_path = os.path.join(outputs_dir, "upas_chimborazo_v54_0_0.gpkg")
         html_path = os.path.join(outputs_dir, "mapa_interactivo.html")
         if os.path.exists(gpkg_path):
             gdf_upas = gpd.read_file(gpkg_path, layer="upas_agricolas")
-            gdf_roads = gpd.read_file(gpkg_path, layer="vias_terraceria") if "vias_terraceria" in gpd.list_layers(gpkg_path).name.values else None
-            gdf_bldgs = gpd.read_file(gpkg_path, layer="viviendas_campesinas") if "viviendas_campesinas" in gpd.list_layers(gpkg_path).name.values else None
+            layers = [l.name for l in gpd.list_layers(gpkg_path).itertuples()]
+            gdf_roads = gpd.read_file(gpkg_path, layer="vias_terraceria") if "vias_terraceria" in layers else None
+            gdf_bldgs = gpd.read_file(gpkg_path, layer="viviendas_campesinas") if "viviendas_campesinas" in layers else None
             builder = InteractiveMapBuilder()
             builder.build_map(html_path, gdf_upas, gdf_roads, gdf_bldgs)
             print(f"[Mapa Actualizado]: {html_path}")
