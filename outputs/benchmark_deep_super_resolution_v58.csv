@@ -1,0 +1,3 @@
+Configuracion,Resolucion_m_px,mIoU_pct,Boundary_F1_pct,Dice_pct,Tenengrad_Sharpness,Tiempo_Segmentacion_s,VRAM_Pico_MB
+v57.0.0 (Baseline VHR 0.30m),0.3,80.0,87.7,88.9,3194.61523125,16.026044845581055,3086.0869140625
+v58.0.0 (Deep SR EDSR 2x 0.15m),0.15,76.5,86.2,86.7,1918.02252890625,25.477014780044556,3086.0869140625
