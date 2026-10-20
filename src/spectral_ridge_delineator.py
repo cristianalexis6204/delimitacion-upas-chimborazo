@@ -81,91 +81,88 @@ class SpectralRidgeDelineator:
 
         return cloud_mask
 
-    def regularize_polygon_ladm(self, poly_px, dominant_angle_deg=None, min_v=4, max_v=10):
+    def regularize_polygon_ladm(self, poly_px, dominant_angle_deg=None, min_v=4, max_v=8):
+        """
+        Regulariza el polígono agrícola conforme a LADM ISO 19152 (Persello et al., 2019):
+        - Douglas-Peucker adaptativo para mantener 4 a 8 vértices dominantes.
+        - Poda de esquinas hiper-agudas (<35°) para suprimir espinas y dientes de sierra.
+        - Preserva la forma real del bancal andino sin expansiones artificiales.
+        """
         poly_px = ensure_single_polygon(poly_px)
         if poly_px is None:
             return None
 
-        coords = np.array(poly_px.exterior.coords)[:-1]
+        coords = list(poly_px.exterior.coords)[:-1]
         if len(coords) < 3:
             return poly_px
 
         area = poly_px.area
         peri = poly_px.length
 
-        rect = cv2.minAreaRect(coords.astype(np.float32))
-        rect_pts = cv2.boxPoints(rect)
-        rect_poly = Polygon(rect_pts)
-        rectangularity = area / (rect_poly.area + 1e-8)
+        # 1. Simplificación adaptativa con Douglas-Peucker
+        best_poly = poly_px
+        for eps_factor in [0.012, 0.018, 0.025, 0.035, 0.045]:
+            simp = poly_px.simplify(eps_factor * peri, preserve_topology=True)
+            simp = ensure_single_polygon(simp)
+            if simp is not None and hasattr(simp, 'exterior'):
+                n_pts = len(simp.exterior.coords) - 1
+                if min_v <= n_pts <= max_v:
+                    best_poly = simp
+                    break
+                elif n_pts > max_v:
+                    best_poly = simp
 
-        if rectangularity > 0.72:
-            return rect_poly
+        c_pts = list(best_poly.exterior.coords)[:-1]
 
-        eps = max(1.8, 0.016 * peri)
-        simplified = poly_px.simplify(eps, preserve_topology=True)
-        simplified = ensure_single_polygon(simplified)
-        if simplified is None:
-            return rect_poly
+        # 2. Poda de esquinas agudas (<35°) y espinas parásitas
+        if len(c_pts) > min_v:
+            cleaned_pts = []
+            K = len(c_pts)
+            for k in range(K):
+                p_prev = np.array(c_pts[(k - 1) % K])
+                p_curr = np.array(c_pts[k])
+                p_next = np.array(c_pts[(k + 1) % K])
 
-        simp_coords = list(simplified.exterior.coords)[:-1]
+                v1 = p_prev - p_curr
+                v2 = p_next - p_curr
+                n1, n2 = np.linalg.norm(v1), np.linalg.norm(v2)
 
-        while len(simp_coords) > max_v:
-            K = len(simp_coords)
-            min_tri = 999999.0
+                if n1 > 1e-4 and n2 > 1e-4:
+                    cos_theta = np.clip(np.dot(v1, v2) / (n1 * n2), -1.0, 1.0)
+                    angle_deg = np.degrees(np.arccos(cos_theta))
+                    # Si el ángulo es menor a 35°, es una espina o aguja no agrícola
+                    if angle_deg < 35.0:
+                        continue
+                cleaned_pts.append(c_pts[k])
+
+            if len(cleaned_pts) >= min_v:
+                c_pts = cleaned_pts
+
+        # 3. Reducción Visvalingam-Whyatt si aún supera max_v
+        while len(c_pts) > max_v:
+            K = len(c_pts)
+            min_tri = float('inf')
             worst_k = -1
             for k in range(K):
-                p0 = simp_coords[(k - 1) % K]
-                p1 = simp_coords[k]
-                p2 = simp_coords[(k + 1) % K]
+                p0 = c_pts[(k - 1) % K]
+                p1 = c_pts[k]
+                p2 = c_pts[(k + 1) % K]
                 tri = abs((p1[0] - p0[0]) * (p2[1] - p0[1]) - (p1[1] - p0[1]) * (p2[0] - p0[0])) * 0.5
                 if tri < min_tri:
                     min_tri = tri
                     worst_k = k
-            if worst_k >= 0:
-                simp_coords.pop(worst_k)
+            if worst_k >= 0 and len(c_pts) > min_v:
+                c_pts.pop(worst_k)
             else:
                 break
 
-        if len(simp_coords) < min_v:
-            return rect_poly
+        if len(c_pts) >= min_v:
+            c_pts.append(c_pts[0])
+            res_poly = ensure_single_polygon(Polygon(c_pts))
+            if res_poly is not None and res_poly.is_valid and res_poly.area > 0:
+                return res_poly
 
-        simp_coords.append(simp_coords[0])
-        res_poly = ensure_single_polygon(Polygon(simp_coords))
-        return res_poly if res_poly is not None else rect_poly
-
-    def snap_polygon_to_ridges(self, poly, ridge_energy, max_snap_px=2):
-        poly = ensure_single_polygon(poly)
-        if poly is None:
-            return None
-
-        h_img, w_img = ridge_energy.shape
-        coords = np.array(poly.exterior.coords)[:-1]
-        snapped_coords = []
-
-        for pt in coords:
-            px, py = int(round(pt[0])), int(round(pt[1]))
-            best_x, best_y = pt[0], pt[1]
-            best_e = ridge_energy[np.clip(py, 0, h_img - 1), np.clip(px, 0, w_img - 1)]
-
-            y_min, y_max = max(0, py - max_snap_px), min(h_img, py + max_snap_px + 1)
-            x_min, x_max = max(0, px - max_snap_px), min(w_img, px + max_snap_px + 1)
-
-            window = ridge_energy[y_min:y_max, x_min:x_max]
-            if window.size > 0:
-                max_loc = np.unravel_index(np.argmax(window), window.shape)
-                cand_e = window[max_loc]
-                if cand_e > (best_e + 0.10):
-                    best_y = y_min + max_loc[0]
-                    best_x = x_min + max_loc[1]
-
-            snapped_coords.append((best_x, best_y))
-
-        if len(snapped_coords) < 3:
-            return poly
-
-        snapped_coords.append(snapped_coords[0])
-        snapped_poly = ensure_single_polygon(Polygon(snapped_coords))
-        return snapped_poly if snapped_poly is not None else poly
+        return best_poly
 
     def delineate_parcels(self, crop_rgb, l_clahe, exg, bbox, road_mask=None, bldg_mask=None, esc_id=1, esc_name=""):
         min_lon, max_lon, top_lat, bot_lat = bbox
@@ -254,17 +251,14 @@ class SpectralRidgeDelineator:
 
             raw_count += 1
 
-            reg_px = self.regularize_polygon_ladm(raw_poly, dominant_angle_deg=dom_angle, min_v=4, max_v=10)
-            if reg_px is None:
-                continue
-                
-            snapped_px = self.snap_polygon_to_ridges(reg_px, boundary_energy, max_snap_px=2)
-            snapped_px = ensure_single_polygon(snapped_px)
-            if snapped_px is None or not hasattr(snapped_px, 'exterior'):
+            reg_px = self.regularize_polygon_ladm(raw_poly, dominant_angle_deg=dom_angle, min_v=4, max_v=8)
+            if reg_px is None or not hasattr(reg_px, 'exterior'):
                 continue
 
+            clean_px = reg_px
+
             mask_roi = np.zeros((h_img, w_img), dtype=np.uint8)
-            cv2.fillPoly(mask_roi, [np.array(snapped_px.exterior.coords).astype(np.int32)], 1)
+            cv2.fillPoly(mask_roi, [np.array(clean_px.exterior.coords).astype(np.int32)], 1)
             roi_bool = (mask_roi > 0)
 
             mean_exg = float(np.mean(exg[roi_bool])) if np.any(roi_bool) else 0.0
@@ -286,7 +280,7 @@ class SpectralRidgeDelineator:
                 clase = 'Suelo_Arado'
 
             geo_coords = []
-            for px, py in snapped_px.exterior.coords:
+            for px, py in clean_px.exterior.coords:
                 lon = min_lon + (px / w_img) * (max_lon - min_lon)
                 lat = top_lat - (py / h_img) * (top_lat - bot_lat)
                 geo_coords.append((lon, lat))

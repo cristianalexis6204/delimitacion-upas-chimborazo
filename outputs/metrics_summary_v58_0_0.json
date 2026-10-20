@@ -1,0 +1,20 @@
+{
+  "version": "v58.0.0",
+  "date_execution": "2026-10-20 13:41:42",
+  "accelerator": "NVIDIA A100-SXM4-80GB (Google Colab Pro)",
+  "total_models_evaluated": 7,
+  "miou_sota_m7": 0.836,
+  "dice_sota_m7": 0.911,
+  "boundary_f1_score_sota_m7": 0.924,
+  "precision_sota_m7": 0.885,
+  "recall_sota_m7": 0.952,
+  "ladm_compliance_pct": 100.0,
+  "overlap_pct": 0.11,
+  "sam2_speedup_vs_sam1": 2.33,
+  "key_findings": {
+    "miou_gain_vs_sam1_pure": "+20.1% (de 63.5% a 83.6%)",
+    "bf1_gain_vs_sam1_pure": "+11.8% (de 80.6% a 92.4%)",
+    "fps_sam2_vs_sam1": "11.2 FPS vs 4.8 FPS (2.33x aceleración)",
+    "vram_peak_sam2": "2.15 GB vs 3.42 GB (37% reducción de memoria)"
+  }
+}
