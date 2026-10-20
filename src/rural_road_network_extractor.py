@@ -24,11 +24,34 @@ from shapely.ops import unary_union
 
 
 class RuralRoadNetworkExtractor:
-    def __init__(self, road_buffer_m=3.5, cache_dir=None, default_geojson_path='data/osm_roads_chimborazo_cache.geojson'):
+    def __init__(self, road_buffer_m=3.5, cache_dir=None, default_geojson_path=None):
         self.road_buffer_m = road_buffer_m
         self.deg_per_meter = 1.0 / 111000.0
-        self.cache_dir = cache_dir
-        self.default_geojson_path = default_geojson_path
+        
+        src_dir = os.path.dirname(os.path.abspath(__file__))
+        repo_dir = os.path.dirname(src_dir)
+        root_tfm = os.path.dirname(repo_dir)
+        
+        if cache_dir is None or not os.path.exists(cache_dir):
+            cand_caches = [
+                os.path.join(repo_dir, "data", "roads_cache"),
+                os.path.join(root_tfm, "06_Codigo_y_Experimentos", "data", "roads_cache"),
+                os.path.join(root_tfm, "delimitacion-upas-chimborazo", "data", "roads_cache"),
+            ]
+            self.cache_dir = next((c for c in cand_caches if os.path.exists(c)), cand_caches[0])
+        else:
+            self.cache_dir = cache_dir
+
+        if default_geojson_path is None or not os.path.exists(default_geojson_path):
+            cand_geojsons = [
+                os.path.join(repo_dir, "data", "osm_roads_chimborazo_cache.geojson"),
+                os.path.join(root_tfm, "06_Codigo_y_Experimentos", "data", "osm_roads_chimborazo_cache.geojson"),
+                os.path.join(root_tfm, "06_Codigo_y_Experimentos", "historico", "data_raiz", "osm_roads_chimborazo_cache.geojson"),
+                os.path.join(root_tfm, "delimitacion-upas-chimborazo", "data", "osm_roads_chimborazo_cache.geojson"),
+            ]
+            self.default_geojson_path = next((g for g in cand_geojsons if os.path.exists(g)), cand_geojsons[0])
+        else:
+            self.default_geojson_path = default_geojson_path
 
     def _load_from_master_geojson(self, scene_box):
         if not os.path.exists(self.default_geojson_path):

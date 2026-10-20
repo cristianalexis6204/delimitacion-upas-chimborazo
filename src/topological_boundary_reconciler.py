@@ -17,6 +17,7 @@ import numpy as np
 from shapely.geometry import Polygon, MultiPolygon, box, LineString
 from shapely.validation import make_valid
 from shapely.ops import unary_union
+import shapely
 
 def ensure_clean_polygon(geom):
     if geom is None or geom.is_empty:
@@ -113,6 +114,11 @@ class TopologicalBoundaryReconciler:
         geom = ensure_clean_polygon(geom)
         if geom is None:
             return None
+
+        try:
+            geom = shapely.remove_repeated_points(geom, tolerance=1e-6)
+        except Exception:
+            pass
 
         coords = list(geom.exterior.coords)[:-1]
         n_v = len(coords)
@@ -233,12 +239,19 @@ class TopologicalBoundaryReconciler:
                     continue
                 g_reg = g_diff
 
+            try:
+                g_reg = shapely.remove_repeated_points(g_reg, tolerance=1e-6)
+            except Exception:
+                pass
+
             n_v = len(g_reg.exterior.coords) - 1
             area_ha = (g_reg.area * self.deg2m2) / 10000.0
 
             out_item = item.copy()
             out_item['geometry'] = g_reg
-            out_item['num_vertices'] = n_v
+            out_item['n_vertices'] = n_v
+            if 'num_vertices' in out_item:
+                del out_item['num_vertices']
             out_item['area_ha'] = round(area_ha, 4)
             final_reconciled.append(out_item)
 

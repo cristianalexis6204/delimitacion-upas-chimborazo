@@ -41,7 +41,7 @@ class KMLMultilayerExporter:
         # ---------------------------------------------------------------------
         # ESTILOS GLOBALES
         # ---------------------------------------------------------------------
-        # 1. UPAs: Sin relleno (<fill>0</fill>), contorno amarillo oro #FACC15
+        # 1. UPAs Base: Sin relleno (<fill>0</fill>), contorno amarillo oro #FACC15
         lines.append('  <Style id="upa_wireframe_style">')
         lines.append('    <LineStyle>')
         lines.append('      <color>ff15ccfa</color>') # KML aabbggrr: ff-15-cc-fa (#FACC15)
@@ -53,10 +53,47 @@ class KMLMultilayerExporter:
         lines.append('    </PolyStyle>')
         lines.append('  </Style>')
 
-        # 2. Calles y Caminos Rurales: Blanco brillante continuo 3.2px
+        # 1B. UPAs Cultivos Verdes: Contorno verde intenso #22C55E
+        lines.append('  <Style id="upa_cultivo_verde">')
+        lines.append('    <LineStyle>')
+        lines.append('      <color>ff5ec522</color>') # KML aabbggrr: ff-5e-c5-22 (#22C55E)
+        lines.append('      <width>2.4</width>')
+        lines.append('    </LineStyle>')
+        lines.append('    <PolyStyle>')
+        lines.append('      <fill>0</fill>')
+        lines.append('      <outline>1</outline>')
+        lines.append('    </PolyStyle>')
+        lines.append('  </Style>')
+
+        # 1C. UPAs Vegetación Arbórea: Contorno verde bosque #15803D
+        lines.append('  <Style id="upa_vegetacion_arborea">')
+        lines.append('    <LineStyle>')
+        lines.append('      <color>ff3d8015</color>') # KML aabbggrr: ff-3d-80-15 (#15803D)
+        lines.append('      <width>2.4</width>')
+        lines.append('    </LineStyle>')
+        lines.append('    <PolyStyle>')
+        lines.append('      <fill>0</fill>')
+        lines.append('      <outline>1</outline>')
+        lines.append('    </PolyStyle>')
+        lines.append('  </Style>')
+
+        # 1D. Reservorios Hídricos Segregados: Azul zafiro #2563EB con relleno translúcido
+        lines.append('  <Style id="upa_reservorio_hidrico">')
+        lines.append('    <LineStyle>')
+        lines.append('      <color>ffeb6325</color>') # KML aabbggrr: ff-eb-63-25 (#2563EB)
+        lines.append('      <width>2.4</width>')
+        lines.append('    </LineStyle>')
+        lines.append('    <PolyStyle>')
+        lines.append('      <color>a0eb6325</color>') # Relleno translúcido
+        lines.append('      <fill>1</fill>')
+        lines.append('      <outline>1</outline>')
+        lines.append('    </PolyStyle>')
+        lines.append('  </Style>')
+
+        # 2. Calles y Caminos Rurales: Cian neón brillante continuo (#00FFFF) 3.2px
         lines.append('  <Style id="road_style">')
         lines.append('    <LineStyle>')
-        lines.append('      <color>ffffffff</color>') # Blanco puro
+        lines.append('      <color>ffffff00</color>') # Cian neón #00FFFF (AABBGGRR: ff-ff-ff-00)
         lines.append('      <width>3.2</width>')
         lines.append('    </LineStyle>')
         lines.append('  </Style>')
@@ -145,13 +182,22 @@ class KMLMultilayerExporter:
                 for idx, row in esc_upas.iterrows():
                     geom = row['geometry']
                     area_ha = row.get('area_ha', 0.0)
-                    n_vert = row.get('num_vertices', 4)
-                    clase = row.get('clase', 'Cultivo_Verde')
+                    n_vert = row.get('n_vertices', row.get('num_vertices', 4))
+                    clase = str(row.get('clase', 'Cultivo_Verde'))
                     upa_id = f"UPA-{idx+1:03d}"
+
+                    if 'Arborea' in clase or 'Arbórea' in clase or 'Bosque' in clase:
+                        st_url = '#upa_vegetacion_arborea'
+                    elif 'Reservorio' in clase or 'Agua' in clase or 'Hidrico' in clase:
+                        st_url = '#upa_reservorio_hidrico'
+                    elif 'Verde' in clase or 'Cultivo' in clase:
+                        st_url = '#upa_cultivo_verde'
+                    else:
+                        st_url = '#upa_wireframe_style'
 
                     kml_lines.append('      <Placemark>')
                     kml_lines.append(f'        <name>{upa_id} ({area_ha:.2f} ha)</name>')
-                    kml_lines.append('        <styleUrl>#upa_wireframe_style</styleUrl>')
+                    kml_lines.append(f'        <styleUrl>{st_url}</styleUrl>')
                     kml_lines.append('        <description><![CDATA[')
                     kml_lines.append('          <div style="font-family: Arial, sans-serif; font-size: 12px; color: #1E293B;">')
                     kml_lines.append(f'            <h3 style="color: #0F766E; margin-bottom: 4px;">FICHA PREDIAL: {upa_id}</h3>')

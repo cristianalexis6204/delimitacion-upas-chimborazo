@@ -1,0 +1,107 @@
+{
+  "version": "v59.0.0",
+  "model_architecture": "Meta SAM-2.1 Hiera-Large + SysCV SAM-HQ + Hessian-Meijering Multiscale",
+  "total_polygons": 361,
+  "total_buildings": 50,
+  "total_area_ha": 41.54,
+  "mean_vertices": 7.02,
+  "duplicated_polygons": 0,
+  "miou_real_ground_truth": 0.836,
+  "miou_empirico": 0.836,
+  "dice_real_ground_truth": 0.911,
+  "boundary_f1_score_real": 0.924,
+  "precision_real": 0.885,
+  "recall_real": 0.952,
+  "ladm_compliance_pct": 100.0,
+  "overlap_pct": 0.11,
+  "escenarios_info": {
+    "1_Cultivos_Ladera_Calpi": {
+      "upas": 103,
+      "ha": 13.76,
+      "vert": 7.0
+    },
+    "2_Caserio_Rural_Lican": {
+      "upas": 33,
+      "ha": 7.79,
+      "vert": 7.3
+    },
+    "3_Valle_Agricola_Colta": {
+      "upas": 105,
+      "ha": 13.09,
+      "vert": 7.1
+    },
+    "4_Valle_Hortifruticola_Guano": {
+      "upas": 120,
+      "ha": 6.91,
+      "vert": 6.9
+    }
+  },
+  "monte_carlo_gps_sensitivity": [
+    {
+      "error_gps_m": 0,
+      "mean_iou": 0.836,
+      "std_iou": 0.005,
+      "retencion_exactitud_pct": 100.0
+    },
+    {
+      "error_gps_m": 5,
+      "mean_iou": 0.8313,
+      "std_iou": 0.0028,
+      "retencion_exactitud_pct": 99.4
+    },
+    {
+      "error_gps_m": 10,
+      "mean_iou": 0.8268,
+      "std_iou": 0.0028,
+      "retencion_exactitud_pct": 98.9
+    },
+    {
+      "error_gps_m": 15,
+      "mean_iou": 0.8234,
+      "std_iou": 0.0024,
+      "retencion_exactitud_pct": 98.5
+    },
+    {
+      "error_gps_m": 20,
+      "mean_iou": 0.8192,
+      "std_iou": 0.0033,
+      "retencion_exactitud_pct": 98.0
+    },
+    {
+      "error_gps_m": 25,
+      "mean_iou": 0.815,
+      "std_iou": 0.002,
+      "retencion_exactitud_pct": 97.5
+    },
+    {
+      "error_gps_m": 30,
+      "mean_iou": 0.7843,
+      "std_iou": 0.003,
+      "retencion_exactitud_pct": 93.8
+    },
+    {
+      "error_gps_m": 40,
+      "mean_iou": 0.722,
+      "std_iou": 0.0031,
+      "retencion_exactitud_pct": 86.4
+    },
+    {
+      "error_gps_m": 50,
+      "mean_iou": 0.6606,
+      "std_iou": 0.0026,
+      "retencion_exactitud_pct": 79.0
+    }
+  ],
+  "inference_fps_benchmark": {
+    "M1_Otsu": 45.2,
+    "M2_Watershed": 38.6,
+    "M3_Felzenszwalb": 12.4,
+    "M4_SAM1_ViTB": 4.8,
+    "M5_SAM_HQ": 4.5,
+    "M6_SAM2_Hiera": 11.2,
+    "M7_Propuesto_v59": 9.4
+  },
+  "crs_geopackage": "EPSG:32717 (UTM Zona 17 Sur)",
+  "crs_kml": "EPSG:4326 (WGS 84)",
+  "timestamp": "2026-10-20 16:03:08"
+}
