@@ -1,0 +1,69 @@
+{
+  "version": "v60.0.0",
+  "fecha_ejecucion": "2026-10-20T17:48:47.052060",
+  "dispositivo": "CUDA",
+  "parroquias_evaluadas": [
+    "Calpi",
+    "Licán",
+    "San Andrés",
+    "Columbe"
+  ],
+  "total_upas_delimitadas": 350,
+  "superficie_total_delimitada_ha": 113.57,
+  "conformidad_ladm_pct": 100.0,
+  "solape_interparcelario_pct": 0.0,
+  "resumen_por_parroquia": [
+    {
+      "parroquia": "Calpi",
+      "canton": "Riobamba",
+      "area_total_ha": 5352.35,
+      "superficie_agricola_neta_ha": 5352.35,
+      "porcentaje_agricola_neto": 100.0,
+      "upas_delimitadas": 165,
+      "superficie_delimitada_ha": 43.45,
+      "superficie_media_upa_m2": 2633.65,
+      "vertices_promedio_upa": 28.78,
+      "conformidad_ladm_pct": 100.0,
+      "solape_interparcelario_pct": 0.0
+    },
+    {
+      "parroquia": "Licán",
+      "canton": "Riobamba",
+      "area_total_ha": 2232.52,
+      "superficie_agricola_neta_ha": 2116.63,
+      "porcentaje_agricola_neto": 94.8,
+      "upas_delimitadas": 122,
+      "superficie_delimitada_ha": 27.43,
+      "superficie_media_upa_m2": 2248.33,
+      "vertices_promedio_upa": 32.77,
+      "conformidad_ladm_pct": 100.0,
+      "solape_interparcelario_pct": 0.0
+    },
+    {
+      "parroquia": "San Andrés",
+      "canton": "Guano",
+      "area_total_ha": 16037.49,
+      "superficie_agricola_neta_ha": 9179.54,
+      "porcentaje_agricola_neto": 57.2,
+      "upas_delimitadas": 21,
+      "superficie_delimitada_ha": 23.17,
+      "superficie_media_upa_m2": 11035.68,
+      "vertices_promedio_upa": 31.24,
+      "conformidad_ladm_pct": 100.0,
+      "solape_interparcelario_pct": 0.0
+    },
+    {
+      "parroquia": "Columbe",
+      "canton": "Colta",
+      "area_total_ha": 22208.22,
+      "superficie_agricola_neta_ha": 22208.22,
+      "porcentaje_agricola_neto": 100.0,
+      "upas_delimitadas": 42,
+      "superficie_delimitada_ha": 19.51,
+      "superficie_media_upa_m2": 4644.49,
+      "vertices_promedio_upa": 24.83,
+      "conformidad_ladm_pct": 100.0,
+      "solape_interparcelario_pct": 0.0
+    }
+  ]
+}
