@@ -1,0 +1,22 @@
+{
+  "version": "v60.0.0",
+  "fecha_ejecucion": "2026-10-20T19:14:35.285883",
+  "dispositivo": "CUDA",
+  "demarcacion_evaluada": {
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "area_total_ha": 16037.49,
+    "area_excluida_snap_ha": 6857.95,
+    "superficie_agricola_neta_ha": 9179.54,
+    "porcentaje_agricola_neto": 57.2
+  },
+  "teselas_procesadas": 25,
+  "tiempo_total_seg": 1746.5,
+  "total_upas_delimitadas": 281,
+  "superficie_total_delimitada_ha": 188.05,
+  "superficie_media_upa_m2": 6692.17,
+  "vertices_promedio_upa": 47.87,
+  "conformidad_ladm_pct": 100.0,
+  "solape_interparcelario_pct": 0.0
+}
