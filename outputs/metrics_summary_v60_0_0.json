@@ -1,0 +1,47 @@
+{
+  "version": "v60.0.0",
+  "model_architecture": "Meta SAM-2.1 Hiera-Large + Hessian-Meijering Multiscale + LADM Argmax Reconciler",
+  "parroquia": "San Andr\u00e9s",
+  "canton": "Guano",
+  "provincia": "Chimborazo",
+  "total_polygons": 359,
+  "total_buildings": 60,
+  "total_roads_segments": 156,
+  "total_area_ha": 40.22,
+  "mean_vertices": 7.1,
+  "duplicated_polygons": 0,
+  "miou_real_ground_truth": 0.836,
+  "dice_real_ground_truth": 0.911,
+  "boundary_f1_score_real": 0.924,
+  "precision_real": 0.885,
+  "recall_real": 0.952,
+  "ladm_compliance_pct": 100.0,
+  "overlap_pct": 0.0,
+  "road_invasion_pct": 0.0,
+  "building_overlap_pct": 0.0,
+  "escenarios_info": {
+    "1_San_Andres_Centro_Valle_Aluvial": {
+      "upas": 100,
+      "ha": 9.81,
+      "vert": 7.1
+    },
+    "2_Chocavi_Laderas_Andinas": {
+      "upas": 58,
+      "ha": 14.89,
+      "vert": 7.2
+    },
+    "3_Pulucate_Piedemonte_Chimborazo": {
+      "upas": 138,
+      "ha": 8.86,
+      "vert": 7.1
+    },
+    "4_Batzacon_Interfase_Vial_Rural": {
+      "upas": 63,
+      "ha": 6.66,
+      "vert": 7.2
+    }
+  },
+  "crs_geopackage": "EPSG:32717 (UTM Zona 17 Sur)",
+  "crs_kml": "EPSG:4326 (WGS 84)",
+  "timestamp": "2026-10-20 23:01:25"
+}
