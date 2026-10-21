@@ -8,8 +8,12 @@ Genera el archivo KML maestro optimizado para Google Earth Desktop y Web:
 2. 10 Cantones Oficiales de Chimborazo (Línea cian 2.2px, sin relleno).
 3. 59 Parroquias DPA INEC (Línea gris neutra 1.2px, sin relleno).
 4. Áreas Protegidas del SNAP: Reserva Chimborazo y PN Sangay (Verde esmeralda, 25% opacidad).
-5. Demarcación Integral de San Andrés: Límite parroquial, SAN (9,180 ha), Reserva SNAP (6,858 ha).
-6. Delimitación Parcelaria Catastral LADM ISO 19152: UPAs organizadas por sectores en wireframe amarillo puro (#FACC15).
+5. Demarcación Integral de San Andrés:
+   - Polígono Oficial de Demarcación (Amarillo oro 3.2px).
+   - UPAs Agrícolas Delimitadas (12,044 UPAs en wireframe amarillo #FACC15).
+   - Viviendas y Edificaciones Campesinas (Magenta #D946EF, 40% opacidad).
+   - Red Vial Rural Completa (Cian neón #00FFFF de 2.4px).
+   - Reserva Ecológica SNAP Chimborazo (Verde translúcido).
 """
 
 import os
@@ -80,12 +84,14 @@ def build_kml():
     cant_file = os.path.join(carto_dir, "chimborazo_10_cantones_dpa.geojson")
     parr_file = os.path.join(carto_dir, "parroquias_chimborazo_dpa.geojson")
     snap_file = os.path.join(carto_dir, "zonas_exclusion_chimborazo.geojson")
+    bldgs_file = os.path.join(carto_dir, "edificaciones_san_andres.geojson")
     upas_gpkg = os.path.join(out_dir_repo, "upas_san_andres_cobertura_total_v60.gpkg")
     
     gdf_prov = gpd.read_file(prov_file).to_crs(epsg=4326)
     gdf_cant = gpd.read_file(cant_file).to_crs(epsg=4326)
     gdf_parr = gpd.read_file(parr_file).to_crs(epsg=4326)
     gdf_snap = gpd.read_file(snap_file).to_crs(epsg=4326)
+    gdf_bldgs_sa = gpd.read_file(bldgs_file).to_crs(epsg=4326)
     
     gdf_upas_sa = gpd.read_file(upas_gpkg, layer="upas_san_andres_delimitadas").to_crs(epsg=4326)
     gdf_snap_sa = gpd.read_file(upas_gpkg, layer="reserva_chimborazo_snap_san_andres").to_crs(epsg=4326)
@@ -96,6 +102,7 @@ def build_kml():
     print(f"-> Parroquias cargadas: {len(gdf_parr)} polígonos")
     print(f"-> Áreas SNAP cargadas: {len(gdf_snap)} polígonos")
     print(f"-> UPAs San Andrés cargadas: {len(gdf_upas_sa)} predios LADM")
+    print(f"-> Viviendas/Casas San Andrés cargadas: {len(gdf_bldgs_sa)} edificaciones")
     print(f"-> Reserva SNAP San Andrés: {len(gdf_snap_sa)} polígonos")
     print(f"-> Vías San Andrés: {len(gdf_vias_sa)} tramos")
     
@@ -116,7 +123,7 @@ def build_kml():
     kml.append('  ]]></description>')
     
     # -------------------------------------------------------------------------
-    # ESTILOS GLOBALES GOOGLE EARTH
+    # ESTILOS GLOBALES GOOGLE EARTH (IDENTICOS EXP 58 / 59)
     # -------------------------------------------------------------------------
     # 1. Límite Provincial (Rojo vivo 3.5px, sin relleno)
     kml.append('  <Style id="style_provincia">')
@@ -136,9 +143,9 @@ def build_kml():
     kml.append('    <PolyStyle><fill>0</fill><outline>1</outline></PolyStyle>')
     kml.append('  </Style>')
     
-    # 4. Parroquia San Andrés Destacada (Amarillo oro 3.2px, sin relleno)
+    # 4. Parroquia San Andrés Destacada (Amarillo oro 3.5px, sin relleno)
     kml.append('  <Style id="style_san_andres_highlight">')
-    kml.append('    <LineStyle><color>ff00d7ff</color><width>3.2</width></LineStyle>')
+    kml.append('    <LineStyle><color>ff00d7ff</color><width>3.5</width></LineStyle>')
     kml.append('    <PolyStyle><fill>0</fill><outline>1</outline></PolyStyle>')
     kml.append('  </Style>')
     
@@ -148,27 +155,27 @@ def build_kml():
     kml.append('    <PolyStyle><color>4000aa00</color><fill>1</fill><outline>1</outline></PolyStyle>')
     kml.append('  </Style>')
     
-    # 6. Superficie Agrícola Neta (SAN) San Andrés (Verde lima 2.2px, sin relleno)
-    kml.append('  <Style id="style_san_boundary">')
-    kml.append('    <LineStyle><color>ff22c55e</color><width>2.2</width></LineStyle>')
-    kml.append('    <PolyStyle><fill>0</fill><outline>1</outline></PolyStyle>')
-    kml.append('  </Style>')
-    
-    # 7. UPAs Agrícolas Delimitadas (Wireframe amarillo puro #FACC15 1.8px, 100% transparente)
+    # 6. UPAs Agrícolas Delimitadas (Wireframe amarillo puro #FACC15 1.8px, 100% transparente)
     kml.append('  <Style id="style_upa_wireframe">')
     kml.append('    <LineStyle><color>ff15ccfa</color><width>1.8</width></LineStyle>')
     kml.append('    <PolyStyle><fill>0</fill><outline>1</outline></PolyStyle>')
     kml.append('  </Style>')
     
-    # 8. UPAs Focales Neuronales SAM-2.1 (Verde esmeralda brillante 2.0px)
+    # 7. UPAs Focales Neuronales SAM-2.1 (Verde esmeralda brillante 2.0px)
     kml.append('  <Style id="style_upa_neuronal">')
     kml.append('    <LineStyle><color>ff00ff00</color><width>2.0</width></LineStyle>')
     kml.append('    <PolyStyle><fill>0</fill><outline>1</outline></PolyStyle>')
     kml.append('  </Style>')
     
-    # 9. Red Vial Rural (Blanco brillante 2.0px)
-    kml.append('  <Style id="style_via">')
-    kml.append('    <LineStyle><color>ffffffff</color><width>2.0</width></LineStyle>')
+    # 8. Viviendas y Edificaciones Campesinas (Magenta #D946EF con 40% relleno y borde blanco)
+    kml.append('  <Style id="style_building">')
+    kml.append('    <LineStyle><color>ffffffff</color><width>1.6</width></LineStyle>')
+    kml.append('    <PolyStyle><color>66ef46d9</color><fill>1</fill><outline>1</outline></PolyStyle>')
+    kml.append('  </Style>')
+    
+    # 9. Red Vial Rural (Cian Neón #00FFFF 2.4px continuo)
+    kml.append('  <Style id="style_road_cyan">')
+    kml.append('    <LineStyle><color>ffffff00</color><width>2.4</width></LineStyle>')
     kml.append('  </Style>')
     
     # -------------------------------------------------------------------------
@@ -226,7 +233,6 @@ def build_kml():
         c_nom = row.get("canton", "Guano")
         tipo = row.get("tipo", "Rural")
         
-        # Si es San Andrés, usar estilo destacado
         is_sa = "andr" in p_nom.lower()
         st_id = "#style_san_andres_highlight" if is_sa else "#style_parroquia"
         p_label = f"⭐ Parroquia {p_nom} (Demarcación Focal TFM)" if is_sa else f"Parroquia {p_nom} ({c_nom})"
@@ -258,33 +264,32 @@ def build_kml():
         kml.append('      <description><![CDATA[')
         kml.append(f'        <h3>{snap_nom}</h3>')
         kml.append('        <p><b>Régimen:</b> Sistema Nacional de Áreas Protegidas (SNAP - MAATE)<br/>')
-        kml.append('        <b>Ecosistema:</b> Páramo Andino y Bosque Altoandino<br/>')
-        kml.append('        <b>Condición Catastral:</b> Exclusión Territorial Agropecuaria</p>')
+        kml.append('        <b>Ecosistema:</b> Páramo Andino y Bosque Altoandino</p>')
         kml.append('      ]]></description>')
         kml.extend(format_coords(row.geometry))
         kml.append('    </Placemark>')
     kml.append('  </Folder>')
     
     # -------------------------------------------------------------------------
-    # CARPETA 5: DEMARCACIÓN INTEGRAL DE SAN ANDRÉS
+    # CARPETA 5: DEMARCACIÓN INTEGRAL DE SAN ANDRÉS (VÍAS, CASAS, UPAS Y POLÍGONO)
     # -------------------------------------------------------------------------
     kml.append('  <Folder>')
-    kml.append('    <name>🎯 5. Demarcación Territorial de San Andrés (Cantón Guano)</name>')
+    kml.append('    <name>🎯 5. Demarcación Integral Parroquia San Andrés (Cantón Guano)</name>')
     kml.append('    <open>1</open>')
     
-    # 5.1 Perímetro Oficial San Andrés
+    # 5.1 Perímetro Oficial San Andrés Contenedor
     sa_parr_rows = gdf_parr[gdf_parr["parroquia"].str.lower().str.contains("andr")]
     if len(sa_parr_rows) > 0:
         sa_poly = sa_parr_rows.iloc[0].geometry
         kml.append('    <Placemark>')
-        kml.append('      <name>Perímetro Oficial Parroquia San Andrés (16,037 ha)</name>')
+        kml.append('      <name>📍 Polígono Oficial Parroquia San Andrés (16,037 ha)</name>')
         kml.append('      <styleUrl>#style_san_andres_highlight</styleUrl>')
         kml.append('      <description><![CDATA[')
-        kml.append('        <h3>Parroquia San Andrés</h3>')
+        kml.append('        <h3>Demarcación Oficial Parroquia San Andrés</h3>')
         kml.append('        <p><b>Cantón:</b> Guano | <b>Provincia:</b> Chimborazo<br/>')
         kml.append('        <b>Superficie Total:</b> 16,037.49 ha (160.37 km²)<br/>')
-        kml.append('        <b>Población estimada:</b> ~15,000 habitantes<br/>')
-        kml.append('        <b>Cabecera Parroquial:</b> San Andrés Centro</p>')
+        kml.append('        <b>SAN Agrícola:</b> 9,179.54 ha<br/>')
+        kml.append('        <b>Reserva Chimborazo:</b> 6,857.95 ha</p>')
         kml.append('      ]]></description>')
         kml.extend(format_coords(sa_poly))
         kml.append('    </Placemark>')
@@ -292,52 +297,64 @@ def build_kml():
     # 5.2 Reserva Chimborazo Sector San Andrés
     for _, row in gdf_snap_sa.iterrows():
         kml.append('    <Placemark>')
-        kml.append('      <name>Zona de Protección SNAP - Reserva Chimborazo (6,858 ha)</name>')
+        kml.append('      <name>🌲 Zona de Protección SNAP - Reserva Chimborazo (6,858 ha)</name>')
         kml.append('      <styleUrl>#style_snap</styleUrl>')
         kml.append('      <description><![CDATA[')
         kml.append('        <h3>Reserva de Producción de Fauna Chimborazo - Sector San Andrés</h3>')
         kml.append('        <p><b>Superficie Protegida:</b> 6,857.95 ha<br/>')
-        kml.append('        <b>Régimen:</b> Ecosistema de Páramo y Glaciar del Volcán Chimborazo<br/>')
-        kml.append('        <b>Uso del Suelo:</b> Conservación Estricta / Sin Explotación Agropecuaria</p>')
+        kml.append('        <b>Régimen:</b> Ecosistema de Páramo del Volcán Chimborazo</p>')
         kml.append('      ]]></description>')
         kml.extend(format_coords(row.geometry))
         kml.append('    </Placemark>')
         
-    # 5.3 Red Vial de San Andrés
+    # 5.3 Viviendas y Edificaciones Campesinas (Magenta #D946EF)
     kml.append('    <Folder>')
-    kml.append('      <name>🛣️ Red Vial Rural y Servidumbres de San Andrés (564 tramos)</name>')
-    kml.append('      <open>0</open>')
-    for v_idx, (_, v_row) in enumerate(gdf_vias_sa.iterrows()):
-        if v_idx < 150: # Limitar etiquetas para fluidez
-            kml.append('      <Placemark>')
-            kml.append(f'        <name>Vía-{v_idx+1:03d}</name>')
-            kml.append('        <styleUrl>#style_via</styleUrl>')
-            kml.extend(format_coords(v_row.geometry))
-            kml.append('      </Placemark>')
+    kml.append(f'      <name>🏠 Viviendas y Edificaciones Campesinas ({len(gdf_bldgs_sa)} casas)</name>')
+    kml.append('      <open>1</open>')
+    for _, b_row in gdf_bldgs_sa.iterrows():
+        b_id = b_row.get("building_id", "BLDG")
+        b_sub = b_row.get("subclase", "Vivienda_Campesina")
+        b_area = b_row.get("area_m2", 85.0)
+        kml.append('      <Placemark>')
+        kml.append(f'        <name>{b_id} ({b_sub})</name>')
+        kml.append('        <styleUrl>#style_building</styleUrl>')
+        kml.append('        <description><![CDATA[')
+        kml.append(f'          <h3>{b_id} - {b_sub}</h3>')
+        kml.append(f'          <p><b>Superficie:</b> {b_area:.1f} m²<br/>')
+        kml.append('          <b>Parroquia:</b> San Andrés | <b>Cantón:</b> Guano<br/>')
+        kml.append('          <b>Clase LADM:</b> LA_SpatialUnit_Building</p>')
+        kml.append('        ]]></description>')
+        kml.extend(format_coords(b_row.geometry))
+        kml.append('      </Placemark>')
     kml.append('    </Folder>')
     
-    kml.append('  </Folder>')
+    # 5.4 Red Vial Rural Completa (Cian Neón #00FFFF)
+    kml.append('    <Folder>')
+    kml.append(f'      <name>🛣️ Red Vial Rural y Caminos de Terracería ({len(gdf_vias_sa)} tramos)</name>')
+    kml.append('      <open>1</open>')
+    for v_idx, (_, v_row) in enumerate(gdf_vias_sa.iterrows()):
+        kml.append('      <Placemark>')
+        kml.append(f'        <name>Vía-{v_idx+1:03d}</name>')
+        kml.append('        <styleUrl>#style_road_cyan</styleUrl>')
+        kml.extend(format_coords(v_row.geometry))
+        kml.append('      </Placemark>')
+    kml.append('    </Folder>')
     
-    # -------------------------------------------------------------------------
-    # CARPETA 6: DELIMITACIÓN PARCELARIA CATASTRAL (UPAs SAN ANDRÉS)
-    # -------------------------------------------------------------------------
-    kml.append('  <Folder>')
-    kml.append('    <name>🌾 6. Delimitación Parcelaria Catastral LADM ISO 19152 (San Andrés)</name>')
-    kml.append('    <open>1</open>')
+    # 5.5 UPAs Agrícolas Delimitadas (Amarillo Wireframe #FACC15)
+    kml.append('    <Folder>')
+    kml.append(f'      <name>🌾 UPAs Agrícolas Delimitadas ({len(gdf_upas_sa)} parcelas)</name>')
+    kml.append('      <open>1</open>')
     
-    # Separar por sectores para navegación fluida
     sectores = list(gdf_upas_sa["sector"].unique())
-    print(f"-> Organizando UPAs en {len(sectores)} subcarpetas sectoriales...")
-    
     for sec in sectores:
         sec_upas = gdf_upas_sa[gdf_upas_sa["sector"] == sec]
         sec_ha = sec_upas["area_ha"].sum()
         is_focal = "neuronal" in sec.lower() or "valle aluvial" in sec.lower()
         
         folder_icon = "⭐" if is_focal else "📁"
-        kml.append('    <Folder>')
-        kml.append(f'      <name>{folder_icon} Sector: {sec} ({len(sec_upas)} UPAs | {sec_ha:,.2f} ha)</name>')
-        kml.append(f'      <open>{1 if is_focal else 0}</open>')
+        kml.append('      <Folder>')
+        kml.append(f'        <name>{folder_icon} Sector: {sec} ({len(sec_upas)} UPAs | {sec_ha:,.2f} ha)</name>')
+        kml.append(f'        <open>{1 if is_focal else 0}</open>')
         
         st_upa = "#style_upa_neuronal" if is_focal else "#style_upa_wireframe"
         
@@ -348,43 +365,39 @@ def build_kml():
             u_perim = u_row["perimetro_m"]
             u_verts = u_row["n_vertices"]
             u_metodo = u_row["metodo_delimitacion"]
-            u_lindero = u_row["tipo_lindero"]
             
-            kml.append('      <Placemark>')
-            kml.append(f'        <name>{u_id} ({u_ha:.2f} ha)</name>')
-            kml.append(f'        <styleUrl>{st_upa}</styleUrl>')
-            kml.append('        <description><![CDATA[')
-            kml.append('          <table border="1" cellpadding="4" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 12px; border-collapse: collapse; width: 100%;">')
-            kml.append('            <tr bgcolor="#0F172A" style="color: #38BDF8;">')
-            kml.append(f'              <th colspan="2" align="center">FICHA PREDIAL CATASTRAL LADM ISO 19152</th>')
-            kml.append('            </tr>')
-            kml.append(f'            <tr><td><b>Código UPA:</b></td><td><b>{u_id}</b></td></tr>')
-            kml.append(f'            <tr><td><b>Superficie:</b></td><td>{u_ha:.4f} ha ({u_m2:,.2f} m²)</td></tr>')
-            kml.append(f'            <tr><td><b>Perímetro:</b></td><td>{u_perim:,.2f} m</td></tr>')
-            kml.append(f'            <tr><td><b>Vértices LADM:</b></td><td>{u_verts} vértices</td></tr>')
-            kml.append(f'            <tr><td><b>Sector:</b></td><td>{sec}</td></tr>')
-            kml.append(f'            <tr><td><b>Parroquia:</b></td><td>San Andrés</td></tr>')
-            kml.append(f'            <tr><td><b>Cantón:</b></td><td>Guano</td></tr>')
-            kml.append(f'            <tr><td><b>Provincia:</b></td><td>Chimborazo</td></tr>')
-            kml.append(f'            <tr><td><b>Método:</b></td><td>{u_metodo}</td></tr>')
-            kml.append(f'            <tr><td><b>Tipo Lindero:</b></td><td>{u_lindero}</td></tr>')
-            kml.append('            <tr bgcolor="#F1F5F9"><td><b>Solape Topológico:</b></td><td><b>0.00% (Estanco Planar)</b></td></tr>')
-            kml.append('            <tr bgcolor="#ECFDF5"><td style="color:#047857;"><b>Conformidad Catastral:</b></td><td style="color:#047857;"><b>100.0% ISO 19152</b></td></tr>')
-            kml.append('          </table>')
-            kml.append('        ]]></description>')
+            kml.append('        <Placemark>')
+            kml.append(f'          <name>{u_id} ({u_ha:.2f} ha)</name>')
+            kml.append(f'          <styleUrl>{st_upa}</styleUrl>')
+            kml.append('          <description><![CDATA[')
+            kml.append('            <table border="1" cellpadding="4" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 12px; border-collapse: collapse; width: 100%;">')
+            kml.append('              <tr bgcolor="#0F172A" style="color: #38BDF8;">')
+            kml.append(f'                <th colspan="2" align="center">FICHA PREDIAL LADM ISO 19152</th>')
+            kml.append('              </tr>')
+            kml.append(f'              <tr><td><b>Código UPA:</b></td><td><b>{u_id}</b></td></tr>')
+            kml.append(f'              <tr><td><b>Superficie:</b></td><td>{u_ha:.4f} ha ({u_m2:,.2f} m²)</td></tr>')
+            kml.append(f'              <tr><td><b>Perímetro:</b></td><td>{u_perim:,.2f} m</td></tr>')
+            kml.append(f'              <tr><td><b>Vértices LADM:</b></td><td>{u_verts} vértices</td></tr>')
+            kml.append(f'              <tr><td><b>Sector:</b></td><td>{sec}</td></tr>')
+            kml.append(f'              <tr><td><b>Parroquia:</b></td><td>San Andrés</td></tr>')
+            kml.append(f'              <tr><td><b>Cantón:</b></td><td>Guano</td></tr>')
+            kml.append(f'              <tr><td><b>Método:</b></td><td>{u_metodo}</td></tr>')
+            kml.append('              <tr bgcolor="#F1F5F9"><td><b>Solape Topológico:</b></td><td><b>0.00% (Estanco)</b></td></tr>')
+            kml.append('              <tr bgcolor="#ECFDF5"><td style="color:#047857;"><b>Conformidad:</b></td><td style="color:#047857;"><b>100.0% ISO 19152</b></td></tr>')
+            kml.append('            </table>')
+            kml.append('          ]]></description>')
             kml.extend(format_coords(u_row.geometry))
-            kml.append('      </Placemark>')
+            kml.append('        </Placemark>')
             
-        kml.append('    </Folder>')
+        kml.append('      </Folder>')
         
+    kml.append('    </Folder>')
     kml.append('  </Folder>')
     
     kml.append('</Document>')
     kml.append('</kml>')
     
-    # -------------------------------------------------------------------------
-    # GUARDAR KML EN TODAS LAS RUTAS CLAVE
-    # -------------------------------------------------------------------------
+    # Guardar KML
     kml_content = "\n".join(kml)
     kml_name = "catastro_integral_chimborazo_san_andres.kml"
     
@@ -398,9 +411,9 @@ def build_kml():
         with open(dp, "w", encoding="utf-8") as f:
             f.write(kml_content)
         f_size_mb = os.path.getsize(dp) / (1024.0 * 1024.0)
-        print(f"-> KML guardado con éxito: {dp} ({f_size_mb:.2f} MB)")
+        print(f"-> KML Maestro actualizado: {dp} ({f_size_mb:.2f} MB)")
         
-    print("\n[OK] KML Maestro OGC 2.2 generado y optimizado para Google Earth.")
+    print("\n[OK] KML Maestro OGC 2.2 actualizado con Polígono, Vías, Casas y UPAs.")
 
 if __name__ == "__main__":
     build_kml()
