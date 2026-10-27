@@ -1,0 +1,21 @@
+{
+  "version": "v62.0.0-A100-SOTA",
+  "fecha": "2026-10-27 15:24:29",
+  "hardware": "NVIDIA A100-SXM4-80GB",
+  "tiempo_total_segundos": 142.3,
+  "cuadrantes_procesados": 4,
+  "total_upas_delimitadas": 689,
+  "total_superficie_ha": 68.076,
+  "total_edificaciones_ladm": 330,
+  "total_tramos_viales_lpis": 102,
+  "total_cercas_vivas_hedgerows": 70,
+  "solape_inter_parcelario_pct": 0.0,
+  "conformidad_ladm_pct": 100.0,
+  "distribucion_clases": {
+    "Cultivo_Verde": 133,
+    "Suelo_Labrado_Humedo": 20,
+    "Suelo_Arado_Seco": 56,
+    "Vegetacion_Arborea_Bosquete": 189,
+    "Suelo_Agricola": 291
+  }
+}
