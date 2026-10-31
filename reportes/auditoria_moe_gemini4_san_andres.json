@@ -1,0 +1,1005 @@
+[
+  {
+    "id_auditoria": 1,
+    "upa_encuesta_id": "UPA-CHIM-012",
+    "segmentacion_upa_id": "UPA-SA-0013",
+    "cultivo_declarado": "Papa (Solanum tuberosum)",
+    "cuadrante": "San Andrés Centro / Valle Aluvial",
+    "experto_agronomo": {
+      "puntaje": 96,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales ExG (0.2364) y VARI (0.1693), junto con la dominancia del canal verde en la firma RGB [115, 142, 92], confirman alta actividad fotosintética y vigor vegetativo. La textura morfológica de surcos paralelos detectada por el filtro Meijering con cobertura foliar densa es plenamente consistente con el cultivo de papa (Solanum tuberosum) en etapa de desarrollo vegetativo pleno o floración post-aporque.",
+      "observaciones": "Ausencia de estrés hídrico o fitosanitario evidente en el dosel; labranza en surcos característica de la zona aluvial de San Andrés."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 98,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "El polígono presenta una geometría óptima de 7 vértices (dentro del rango estándar de 4 a 10), garantizando regularidad vectorial. Se verifica un 100% de estanqueidad planar sin solapes con predios colindantes, respeto estricto al buffer de servidumbre vial LPIS de 3.5 m y exclusión total de edificaciones o patios dentro del área neta de cultivo."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 94,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento de 17.1 m entre la coordenada GPS de la vivienda encuestada y el centroide de la parcela se absorbe satisfactoriamente dentro del umbral de tolerancia operativa de campo (10 a 25 m). La discrepancia superficial entre el área declarada (1500.0 m2) y la delimitada por IA (1548.9 m2) representa un error marginal del 3.26%, demostrando altísima precisión dimensional."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 95.8,
+      "clasificacion": "CONCORDANTE",
+      "color_semaforo": "VERDE",
+      "resumen_ejecutivo": "Dictamen colegiado favorable con un ICPC de 95.8/100. Existe plena convergencia entre la declaración censal y la evidencia geoespacial: la firma espectral y morfológica valida inequívocamente el cultivo de papa en desarrollo, la discrepancia de superficie es mínima (3.26%) con desplazamiento GPS absorbido en rango normal, y la geometría cumple rigurosamente el estándar topológico LADM ISO 19152.",
+      "recomendacion_censo": "Aprobar e integrar directamente el polígono UPA-SA-0013 a la base de datos cartográfica oficial de RENAGRO/MAG sin necesidad de verificación presencial adicional."
+    },
+    "telemetria": {
+      "tiempo_segundos": 37.3,
+      "thinking_tokens": 1590,
+      "total_tokens": 4053,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.595701,
+        "lon": -78.702279
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.595559,
+        "lon": -78.702219
+      },
+      "utm_17s_centroide": {
+        "x": 755649.2,
+        "y": 9823483.85
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 1548.9,
+      "error_superficie_pct": 3.26,
+      "desplazamiento_gps_m": 17.1,
+      "n_vertices": 7,
+      "clase_ladm": "Vegetacion_Arborea_Cercas"
+    }
+  },
+  {
+    "id_auditoria": 2,
+    "upa_encuesta_id": "UPA-CHIM-019",
+    "segmentacion_upa_id": "UPA-SA-0122",
+    "cultivo_declarado": "Alfalfa / Pasto Forrajero (Medicago sativa)",
+    "cuadrante": "Chocaví / Laderas Andinas",
+    "experto_agronomo": {
+      "puntaje": 96,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales ExG (0.2894) y VARI (0.3075), sumados a la fuerte dominancia del canal verde en la tripleta RGB [95, 165, 80], evidencian una alta actividad clorofílica y cobertura foliar densa. La textura morfológica Meijering confirma un dosel continuo y homogéneo, lo cual es biológica y fenológicamente consistente con un lote establecido de Medicago sativa (alfalfa) en fase de crecimiento vegetativo vigoroso previo al corte.",
+      "observaciones": "Correspondencia biofísica sobresaliente entre el cultivo forrajero declarado y la respuesta espectral captada por el sensor."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 98,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "El polígono presenta una regularización geométrica óptima de 8 vértices (dentro del umbral normativo de 4 a 10) y un perímetro bien definido de 177.7 m. Se verifica un 100% de estanqueidad planar sin superposiciones con predios colindantes, estricto respeto al buffer de servidumbre vial LPIS de 3.5 m y exclusión absoluta de infraestructura habitacional dentro del área productiva."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 92,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento planimétrico de 14.2 m entre la coordenada GPS de la vivienda encuestada y el centroide de la UPA se absorbe satisfactoriamente dentro de la tolerancia operativa de campo (10 a 25 m). El error de superficie del 9.25% (1500.0 m2 declarados frente a 1638.7 m2 delimitados) refleja una desviación mínima atribuible al redondeo declarativo del productor, muy por debajo del umbral crítico de penalización."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 95.1,
+      "clasificacion": "CONCORDANTE",
+      "color_semaforo": "VERDE",
+      "resumen_ejecutivo": "El Sistema Colegiado MoE dictamina una concordancia plena (ICPC: 95.1) para la unidad productiva UPA-CHIM-019. La firma espectral valida inequívocamente la presencia de cobertura forrajera vigorosa (alfalfa), la discrepancia superficial es marginal (<10%) con desplazamiento GPS absorbido en rango normativo, y la estructura poligonal cumple rigurosamente los estándares topológicos LADM ISO 19152.",
+      "recomendacion_censo": "Validar y consolidar de forma automática el polígono delimitado por IA (1638.7 m2) en el registro oficial de RENAGRO/MAG, prescindiendo de inspección física en terreno."
+    },
+    "telemetria": {
+      "tiempo_segundos": 43.2,
+      "thinking_tokens": 1823,
+      "total_tokens": 4331,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.570376,
+        "lon": -78.718271
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.570249,
+        "lon": -78.718253
+      },
+      "utm_17s_centroide": {
+        "x": 753872.01,
+        "y": 9826287.27
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 1638.7,
+      "error_superficie_pct": 9.25,
+      "desplazamiento_gps_m": 14.2,
+      "n_vertices": 8,
+      "clase_ladm": "Cultivo_Horticola_Verde"
+    }
+  },
+  {
+    "id_auditoria": 3,
+    "upa_encuesta_id": "UPA-CHIM-035",
+    "segmentacion_upa_id": "UPA-SA-0168",
+    "cultivo_declarado": "Papa (Solanum tuberosum)",
+    "cuadrante": "Pulucate / Piedemonte Chimborazo",
+    "experto_agronomo": {
+      "puntaje": 96,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales (ExG: 0.279, VARI: 0.2256) y la dominancia del canal verde en la firma RGB [115, 142, 92] confirman una actividad fotosintética vigorosa y alta densidad de biomasa. La textura morfológica Meijering detecta surcos paralelos bien estructurados con cobertura foliar densa, patrón fenológico y agronómico característico del cultivo de papa (Solanum tuberosum) en fase de máximo desarrollo vegetativo o floración en la zona agroecológica de Pulucate.",
+      "observaciones": "Correspondencia biunívoca entre la declaración del productor y la firma radiométrica clasificada como Cultivo_Horticola_Verde."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 100,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "El polígono restituido presenta una geometría óptima de 5 vértices y 157.2 m de perímetro, cumpliendo estrictamente el rango de regularidad LADM (4 a 10 vértices). Se certifica un 100% de estanqueidad planar sin solapes con predios vecinos, respeto absoluto al buffer de servidumbre vial LPIS (3.5 m) y la exclusión verificada de infraestructura habitacional dentro del área cultivada."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 96,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento planimétrico de 15.2 m entre la toma GPS de la vivienda encuestada y el centroide de la UPA es absorbido satisfactoriamente dentro del rango de tolerancia operativa de campo (10 a 25 m). La desviación superficial entre el área declarada (1500.0 m2) y la delimitada por IA (1570.3 m2) es de apenas 4.69%, evidenciando una altísima precisión dimensional."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 97.0,
+      "clasificacion": "CONCORDANTE",
+      "color_semaforo": "VERDE",
+      "resumen_ejecutivo": "El Sistema Colegiado MoE dictamina una validación exitosa y altamente consistente (ICPC: 97.0/100). La firma espectral y el patrón de surcos validan sin ambigüedad la presencia de papa en pleno desarrollo, respaldados por una topología predial impecable bajo la norma ISO 19152 y una discrepancia métrica marginal (4.69%) plenamente absorbida por los parámetros geodésicos del censo.",
+      "recomendacion_censo": "Aprobar e incorporar directamente la unidad productiva UPA-SA-0168 al registro definitivo del RENAGRO sin necesidad de verificación en campo, oficializando la superficie cartográfica de 1570.3 m2."
+    },
+    "telemetria": {
+      "tiempo_segundos": 45.74,
+      "thinking_tokens": 2204,
+      "total_tokens": 4707,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.556862,
+        "lon": -78.73355
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.556985,
+        "lon": -78.73349
+      },
+      "utm_17s_centroide": {
+        "x": 752172.74,
+        "y": 9827784.01
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 1570.3,
+      "error_superficie_pct": 4.69,
+      "desplazamiento_gps_m": 15.2,
+      "n_vertices": 5,
+      "clase_ladm": "Cultivo_Horticola_Verde"
+    }
+  },
+  {
+    "id_auditoria": 4,
+    "upa_encuesta_id": "UPA-CHIM-046",
+    "segmentacion_upa_id": "UPA-SA-0310",
+    "cultivo_declarado": "Zanahoria Amarilla (Daucus carota)",
+    "cuadrante": "Batzacón / Interfase Vial Rural",
+    "experto_agronomo": {
+      "puntaje": 90,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales ExG (0.1749) y VARI (0.1711), junto con la dominancia del canal verde en la firma RGB (125, 150, 98), son altamente consistentes con un cultivo de Daucus carota en fase de desarrollo vegetativo y engrosamiento radicular. La textura Meijering de 'líneas finas con verdor intermedio' refleja con precisión la morfología de follaje pinnado sembrado en surcos o camellones, donde la exposición parcial del suelo interlínea modula la reflectancia global sin indicar deficiencia biológica.",
+      "observaciones": "La etiqueta LADM de vegetación arbórea/cercas sugiere que el filtro Meijering apoyó el cierre del polígono en cercas vivas perimetrales, sin afectar la pureza espectral del cultivo hortícola interno."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 96,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "Geometría poligonal óptima compuesta por 8 vértices, situada dentro del rango estándar LADM (4 a 10 vértices) para predios rurales regulares. Se verifica un 100% de estanqueidad planar sin solapes con predios colindantes, correcta aplicación del retranqueo por servidumbre vial LPIS (buffer de 3.5 m) en la interfase rural de Batzacón y exclusión absoluta de infraestructura habitacional dentro del área útil."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 84,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento de 21.9 metros entre la coordenada GPS de la entrevista (vivienda) y el centroide de la UPA es absorbido satisfactoriamente dentro del umbral de tolerancia de campo (10 a 25 m), validando la adyacencia vivienda-parcela. El error de superficie del 15.57% (1500.0 m2 declarados vs. 1266.4 m2 delimitados) se encuentra muy por debajo del límite de penalización (40%) y se explica geométricamente por el redondeo subjetivo del productor y la sustracción técnica de la vivienda, linderos y el buffer vial de 3.5 m."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 89.4,
+      "clasificacion": "CONCORDANTE",
+      "color_semaforo": "VERDE",
+      "resumen_ejecutivo": "El Sistema Colegiado dictamina alta concordancia predial-censal (ICPC: 89.4). La firma espectral y la textura de surcos validan fenológicamente el cultivo de zanahoria amarilla, mientras que la geometría generada por SAM 2.1 cumple estrictamente los parámetros topológicos ISO 19152. Las discrepancias métricas de superficie (15.57%) y desplazamiento GPS (21.9 m) responden al descuento de servidumbres viales y a la toma de coordenadas en la vivienda contigua, siendo plenamente coherentes con la realidad de campo en San Andrés de Guano.",
+      "recomendacion_censo": "Aprobar e integrar el polígono delimitado por IA (1266.4 m2) como la superficie neta cultivada en la base de datos oficial de RENAGRO, vinculándolo directamente a la boleta UPA-CHIM-046 sin necesidad de reinspección en campo."
+    },
+    "telemetria": {
+      "tiempo_segundos": 47.48,
+      "thinking_tokens": 1903,
+      "total_tokens": 4539,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.619446,
+        "lon": -78.683481
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.619254,
+        "lon": -78.683529
+      },
+      "utm_17s_centroide": {
+        "x": 757738.86,
+        "y": 9820854.74
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 1266.4,
+      "error_superficie_pct": 15.57,
+      "desplazamiento_gps_m": 21.9,
+      "n_vertices": 8,
+      "clase_ladm": "Vegetacion_Arborea_Cercas"
+    }
+  },
+  {
+    "id_auditoria": 5,
+    "upa_encuesta_id": "UPA-CHIM-054",
+    "segmentacion_upa_id": "UPA-SA-0006",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "cuadrante": "San Andrés Centro / Valle Aluvial",
+    "experto_agronomo": {
+      "puntaje": 50,
+      "compatibilidad": "Media",
+      "analisis_fenologico": "Los índices espectrales (ExG: 0.103, VARI: 0.0469) y la tripleta RGB (120, 148, 88) evidencian una cobertura vegetal incipiente o residual sobre suelo labrado húmedo, acorde a la textura Meijering. Aunque no refleja el vigor fotosintético de un dosel de Maíz Choclo (Zea mays) en desarrollo vegetativo pleno o floración, el estado es fenológicamente factible por desfase temporal entre la encuesta y la toma óptica, correspondiendo a una fase de preparación de cama de siembra, emergencia temprana (V1-V2) o rastrojo post-cosecha propio de la rotación intensiva en el valle aluvial.",
+      "observaciones": "Existe discrepancia entre la preclasificación LADM (Cultivo_Horticola_Verde) y la baja biomasa actual; se requiere serie multitemporal para confirmar la ventana de cultivo de Zea mays."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 98,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "El polígono restituido por SAM 2.1 cumple rigurosamente con la norma ISO 19152, presentando una geometría óptima de 7 vértices (dentro del rango regular de 4 a 10) y un perímetro bien definido de 305.6 m. Se verifica un 100% de estanqueidad planar sin solapes con predios vecinos, respeto absoluto al buffer de servidumbre vial LPIS (3.5 m) y exclusión total de infraestructura habitacional dentro del área productiva."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 20,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento GPS de 17.8 m entre la vivienda encuestada y el centroide de la parcela se absorbe correctamente dentro de la tolerancia operativa de campo (10 a 25 m). No obstante, se penaliza severamente el puntaje dimensional debido a un error crítico de superficie del 91.09% (superando ampliamente el umbral máximo del 40%) entre el área declarada (38000.0 m²) y la delimitada (3387.4 m²). La relación ~10:1 sugiere un error de digitación de orden de magnitud en la boleta (3800 m² reales vs 38000 m² registrados) o una UPA multiparcela no declarada."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 51.5,
+      "clasificacion": "DISCORDANTE",
+      "color_semaforo": "ROJO",
+      "resumen_ejecutivo": "El Sistema Colegiado MoE dictamina la auditoría de la UPA-CHIM-054 como DISCORDANTE (ICPC: 51.5/100). A pesar de la alta calidad geométrica y topológica bajo el estándar LADM ISO 19152 (98/100) y la absorción válida del desplazamiento GPS de 17.8 m, la consistencia predial-censal falla debido a la discrepancia extrema del 91.09% en la superficie auditada (20/100 en dimensión geodésica) y a la presencia de suelo labrado con escasa biomasa activa (50/100 en dimensión agronómica) que impide validar directamente el cultivo de Maíz Choclo en la fecha de captura.",
+      "recomendacion_censo": "Realizar validación de gabinete sobre la boleta RENAGRO para corregir un probable error tipográfico de factor 10x en la superficie declarada (38000 m² por 3800 m², lo que reduciría la discrepancia al 10.86%) o indagar la omisión de lotes adicionales pertenecientes al productor en el cuadrante San Andrés Centro, apoyándose en imágenes satelitales multitemporales para corroborar el ciclo de cosecha."
+    },
+    "telemetria": {
+      "tiempo_segundos": 75.2,
+      "thinking_tokens": 4574,
+      "total_tokens": 7334,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.594717,
+        "lon": -78.700615
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.594874,
+        "lon": -78.700581
+      },
+      "utm_17s_centroide": {
+        "x": 755834.64,
+        "y": 9823592.5
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 38000.0,
+      "superficie_delimitada_m2": 3387.4,
+      "error_superficie_pct": 91.09,
+      "desplazamiento_gps_m": 17.8,
+      "n_vertices": 7,
+      "clase_ladm": "Cultivo_Horticola_Verde"
+    }
+  },
+  {
+    "id_auditoria": 6,
+    "upa_encuesta_id": "UPA-CHIM-058",
+    "segmentacion_upa_id": "UPA-SA-0125",
+    "cultivo_declarado": "Cebolla Blanca (Allium fistulosum)",
+    "cuadrante": "Chocaví / Laderas Andinas",
+    "experto_agronomo": {
+      "puntaje": 88,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices ExG (0.1297) y VARI (0.0591) moderados, en conjunto con la tripleta RGB [135, 145, 110], responden con exactitud a la arquitectura foliar erecta y cilíndrica de Allium fistulosum, cuya baja cobertura cenital expone una fracción significativa de suelo. La textura Meijering de bandas estrechas alternadas con suelo arable confirma una disposición en surcos típica del cultivo establecido en laderas andinas.",
+      "observaciones": "El fondo edáfico atenúa los índices de verdor sin implicar ausencia de cultivo; patrón fenológico consistente con etapa de desarrollo vegetativo medio o manejo post-deshije tradicional en la zona de Guano."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 96,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "Polígono altamente regularizado de 8 vértices (dentro del rango óptimo de 4 a 10) y 192.1 m de perímetro, delimitado limpiamente por cercas vivas arbóreas. Cumple al 100% con la estanqueidad planar sin solapes prediales, aplica rigurosamente el buffer de servidumbre vial LPIS de 3.5 m y garantiza la exclusión total de infraestructura habitacional."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 85,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento horizontal de 18.7 m entre la toma GPS en la vivienda y el centroide de la UPA se absorbe íntegramente dentro de la tolerancia geodésica de campo (10 a 25 m). El error de superficie del 16.18% (1257.3 m2 delimitados frente a 1500.0 m2 declarados) se encuentra muy por debajo del umbral de penalización (40%) y se explica por la deducción geométrica de linderos arbóreos y retiros viales."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 88.95,
+      "clasificacion": "CONCORDANTE",
+      "color_semaforo": "VERDE",
+      "resumen_ejecutivo": "El Sistema Colegiado MoE dictamina una validación positiva con un ICPC de 88.95. Existe sólida coherencia biofísica entre la firma espectral-textural en surcos y el cultivo de Cebolla Blanca, respaldada por una geometría LADM libre de anomalías topológicas y una desviación superficial (16.18%) técnicamente justificada por el recorte de elementos improductivos perimetrales.",
+      "recomendacion_censo": "Validar e incorporar la parcela UPA-SA-0125 al catastro estadístico de RENAGRO sin requerir inspección in situ, ajustando el área neta de producción a los 1257.3 m2 restituidos por segmentación espacial."
+    },
+    "telemetria": {
+      "tiempo_segundos": 44.53,
+      "thinking_tokens": 2047,
+      "total_tokens": 4568,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.571496,
+        "lon": -78.718899
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.571331,
+        "lon": -78.718863
+      },
+      "utm_17s_centroide": {
+        "x": 753801.99,
+        "y": 9826163.41
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 1257.3,
+      "error_superficie_pct": 16.18,
+      "desplazamiento_gps_m": 18.7,
+      "n_vertices": 8,
+      "clase_ladm": "Vegetacion_Arborea_Cercas"
+    }
+  },
+  {
+    "id_auditoria": 7,
+    "upa_encuesta_id": "UPA-CHIM-060",
+    "segmentacion_upa_id": "UPA-SA-0167",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "cuadrante": "Pulucate / Piedemonte Chimborazo",
+    "experto_agronomo": {
+      "puntaje": 92,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales (ExG: 0.2489, VARI: 0.1814) y la dominancia del canal verde en la reflectancia RGB [120, 148, 88] confirman un dosel vegetal con alta actividad fotosintética y vigorosidad. La respuesta del filtro Meijering ('textura granular media con hileras espaciadas') es altamente consistente con la arquitectura de siembra en surcos de Zea mays en estado fenológico vegetativo avanzado o reproductivo temprano (V10-R2, formación de choclo), típico del piedemonte andino.",
+      "observaciones": "Aunque la etiqueta general sugiere presencia de cercas vivas perimetrales (Vegetacion_Arborea_Cercas), la firma radiométrica interna corresponde inequívocamente a gramínea anual en surcos."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 96,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "El polígono restituido presenta una geometría óptima de 8 vértices y 191.2 m de perímetro, cumpliendo rigurosamente con la simplicidad geométrica LADM. Se verifica un 100% de estanqueidad planar sin solapes con predios colindantes, respeto absoluto a la servidumbre vial LPIS (buffer de 3.5 m) y correcta exclusión de la infraestructura habitacional."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 89,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento planimétrico de 19.0 m entre la coordenada GPS de la entrevista en vivienda y el centroide de la parcela se absorbe satisfactoriamente dentro del umbral de tolerancia operativa (10 a 25 m). La discrepancia superficial entre lo declarado (1500.0 m2) y lo fotogramétricamente delimitado (1673.7 m2) representa un error relativo del 11.58%, muy por debajo del límite crítico de penalización (40%), reflejando una imprecisión normal de estimación subjetiva en minifundios andinos."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 91.95,
+      "clasificacion": "CONCORDANTE",
+      "color_semaforo": "VERDE",
+      "resumen_ejecutivo": "Dictamen colegiado favorable con un ICPC de 91.95/100. Existe plena coherencia espacial, topológica y agronómica entre la boleta censal UPA-CHIM-060 y la restitución automática UPA-SA-0167. La firma espectral y el patrón textural de hileras validan la presencia de Maíz Choclo en desarrollo activo, mientras que las métricas geodésicas y catastrales cumplen con los estándares ISO 19152 y LPIS.",
+      "recomendacion_censo": "Aprobar e integrar directamente el polígono restituido (1673.7 m2) a la base de datos gráfica del Censo Nacional Agropecuario, actualizando la superficie oficial de cultivo y reclasificando el atributo de cobertura principal de cerca arbórea a cultivo transitorio."
+    },
+    "telemetria": {
+      "tiempo_segundos": 46.09,
+      "thinking_tokens": 1583,
+      "total_tokens": 4157,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.559138,
+        "lon": -78.735669
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.559002,
+        "lon": -78.735565
+      },
+      "utm_17s_centroide": {
+        "x": 751936.67,
+        "y": 9827532.42
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 1673.7,
+      "error_superficie_pct": 11.58,
+      "desplazamiento_gps_m": 19.0,
+      "n_vertices": 8,
+      "clase_ladm": "Vegetacion_Arborea_Cercas"
+    }
+  },
+  {
+    "id_auditoria": 8,
+    "upa_encuesta_id": "UPA-CHIM-062",
+    "segmentacion_upa_id": "UPA-SA-0304",
+    "cultivo_declarado": "Alfalfa / Pasto Forrajero (Medicago sativa)",
+    "cuadrante": "Batzacón / Interfase Vial Rural",
+    "experto_agronomo": {
+      "puntaje": 96,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales ExG (0.3613) y VARI (0.2268), en conjunto con la dominancia del canal verde en la firma RGB [95, 165, 80], evidencian una actividad clorofílica intensa y cobertura vegetal densa. La textura Meijering continua y homogénea corresponde inequívocamente a un cuadro de Medicago sativa en estado de máxima biomasa vegetativa previo al corte.",
+      "observaciones": "La clase asignada (Vegetacion_Arborea_Cercas) obedece a la respuesta de linderos con cercas vivas perimetrales, sin comprometer la homogeneidad espectral del cultivo forrajero interno."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 96,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "El polígono presenta una regularidad geométrica óptima de 6 vértices (rango normativo de 4 a 10). Cumple al 100% con la estanqueidad planar (0 solapes con predios colindantes), respeta rigurosamente el buffer de servidumbre vial LPIS de 3.5 m y garantiza la exclusión total de infraestructura habitacional."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 78,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento lineal de 24.0 m entre la coordenada GPS de la vivienda y el centroide de la parcela se absorbe cerca del límite superior de la tolerancia de campo establecida (10 a 25 m). El error de superficie del 28.16% (1500.0 m2 declarados frente a 1922.5 m2 medidos) se mantiene por debajo del umbral de penalización severa (40%), reflejando una subestimación empírica común del productor."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 89.7,
+      "clasificacion": "CONCORDANTE",
+      "color_semaforo": "VERDE",
+      "resumen_ejecutivo": "El comité MoE dictamina una concordancia sólida (ICPC: 89.7/100). Se comprueba plena compatibilidad biológica y fenológica para el cultivo de alfalfa mediante firmas espectrales de alto vigor, respaldada por una delimitación catastral topológicamente perfecta bajo el estándar LADM ISO 19152. Tanto el desfase posicional del GPS (24.0 m) como la diferencia de área (28.16%) son absorbidos satisfactoriamente dentro de los márgenes técnicos tolerables del operativo de campo.",
+      "recomendacion_censo": "Aprobar la incorporación de la geometría SAM 2.1 (1922.5 m2) al registro cartográfico oficial de RENAGRO, rectificar el dato de superficie censal y homologar la etiqueta semántica LADM a pasto forrajero cultivado."
+    },
+    "telemetria": {
+      "tiempo_segundos": 45.93,
+      "thinking_tokens": 2027,
+      "total_tokens": 4553,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.617786,
+        "lon": -78.683112
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.617707,
+        "lon": -78.682911
+      },
+      "utm_17s_centroide": {
+        "x": 757780.22,
+        "y": 9821038.37
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 1922.5,
+      "error_superficie_pct": 28.16,
+      "desplazamiento_gps_m": 24.0,
+      "n_vertices": 6,
+      "clase_ladm": "Vegetacion_Arborea_Cercas"
+    }
+  },
+  {
+    "id_auditoria": 9,
+    "upa_encuesta_id": "UPA-CHIM-064",
+    "segmentacion_upa_id": "UPA-SA-0012",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "cuadrante": "San Andrés Centro / Valle Aluvial",
+    "experto_agronomo": {
+      "puntaje": 92,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales ExG (0.1827) y VARI (0.1425), sumados a la clara dominancia del canal verde en la reflectancia visible (RGB: 120, 148, 88), confirman vigor fotosintético activo característico de Zea mays en fase de desarrollo vegetativo avanzado o pre-floración (V8-VT). La respuesta del filtro Meijering (textura granular media con hileras espaciadas) es morfológicamente consistente con el dosel foliar del maíz sembrado en surcos bajo el marco de plantación tradicional del valle interandino.",
+      "observaciones": "Correspondencia biofísica óptima entre el cultivo declarado y la categoría Cultivo_Horticola_Verde asignada."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 100,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "Geometría poligonal óptima compuesta por 6 vértices y 165.3 m de perímetro, cumpliendo rigurosamente la norma de regularidad LADM ISO 19152 (rango de 4 a 10 vértices). Se verifica un 100% de estanqueidad planar sin solapes con predios colindantes, respeto absoluto a la servidumbre vial LPIS (buffer de 3.5 m) y exclusión total de edificaciones residenciales dentro del polígono de cultivo."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 82,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento planimétrico de 10.2 m entre la coordenada GPS de la vivienda encuestada y el centroide de la UPA se absorbe satisfactoriamente dentro de la tolerancia operativa de campo (10 a 25 m). El error de superficie del 18.56% (1500.0 m² declarados frente a 1778.4 m² delimitados) se encuentra muy por debajo del umbral crítico de penalización (40%) y responde al redondeo métrico subjetivo del productor respecto a medidas agrarias tradicionales de la zona (equivalente a un solar o cuarto de cuadra de 1764 m²)."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 90.5,
+      "clasificacion": "CONCORDANTE",
+      "color_semaforo": "VERDE",
+      "resumen_ejecutivo": "El Sistema Colegiado MoE emite un dictamen CONCORDANTE (ICPC: 90.5/100). Se comprueba una alta consistencia fenológica, espectral y morfológica para el cultivo de Maíz Choclo, respaldada por una calidad topológica impecable bajo el estándar LADM ISO 19152 y desviaciones geodésico-dimensionales plenamente justificadas dentro de los márgenes de tolerancia técnica.",
+      "recomendacion_censo": "Aprobar e integrar directamente el polígono UPA-SA-0012 al catastro agropecuario nacional (RENAGRO), actualizando el registro administrativo de superficie a los 1778.4 m² obtenidos mediante restitución por IA."
+    },
+    "telemetria": {
+      "tiempo_segundos": 47.46,
+      "thinking_tokens": 2305,
+      "total_tokens": 4862,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.596329,
+        "lon": -78.703517
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.596369,
+        "lon": -78.7036
+      },
+      "utm_17s_centroide": {
+        "x": 755511.3,
+        "y": 9823414.52
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 1778.4,
+      "error_superficie_pct": 18.56,
+      "desplazamiento_gps_m": 10.2,
+      "n_vertices": 6,
+      "clase_ladm": "Cultivo_Horticola_Verde"
+    }
+  },
+  {
+    "id_auditoria": 10,
+    "upa_encuesta_id": "UPA-CHIM-066",
+    "segmentacion_upa_id": "UPA-SA-0120",
+    "cultivo_declarado": "Zanahoria Amarilla (Daucus carota)",
+    "cuadrante": "Chocaví / Laderas Andinas",
+    "experto_agronomo": {
+      "puntaje": 92,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales ExG (0.1328) y VARI (0.1347), respaldados por la reflectancia RGB [125, 150, 98], indican una cobertura vegetal activa de densidad moderada, típica de Daucus carota en fase de desarrollo vegetativo y engrosamiento radicular. La firma morfológica de Meijering ('líneas finas con verdor intermedio') es altamente consistente con el follaje finamente dividido de la zanahoria dispuesto en surcos.",
+      "observaciones": "Concordancia espectral y textural óptima con la clase Cultivo_Horticola_Verde sin indicios de senescencia o suelo desnudo dominante."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 100,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "El polígono presenta una regularidad geométrica ideal con 8 vértices (rango óptimo LADM de 4 a 10). Se certifica el 100% de estanqueidad planar con predios colindantes (0 solapes), cumplimiento estricto de la servidumbre vial LPIS (buffer de 3.5 m) y exclusión total de infraestructura habitacional dentro del área productiva."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 76,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento de 13.7 m entre la coordenada GPS de la vivienda y el centroide de la parcela se absorbe correctamente dentro del umbral de tolerancia operativa de campo (10 a 25 m). El error de superficie del 29.79% (1500.0 m2 declarados frente a 1946.9 m2 delimitados) refleja una subestimación subjetiva común en topografía de laderas andinas, pero se mantiene por debajo del límite crítico de penalización severa (40%)."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 88.4,
+      "clasificacion": "CONCORDANTE",
+      "color_semaforo": "VERDE",
+      "resumen_ejecutivo": "La auditoría colegiada valida con alta confianza la consistencia entre la boleta censal UPA-CHIM-066 y la segmentación UPA-SA-0120. Existe plena compatibilidad fenológica para el cultivo de zanahoria amarilla, perfección topológica bajo el estándar LADM ISO 19152 y un desplazamiento GPS aceptable, logrando un ICPC de 88.4 puntos.",
+      "recomendacion_censo": "Aprobar e integrar el registro al Censo Nacional Agropecuario, actualizando la superficie oficial cultivada al valor geométrico restituido por IA (1946.9 m2) para corregir el sesgo de estimación del productor."
+    },
+    "telemetria": {
+      "tiempo_segundos": 56.15,
+      "thinking_tokens": 1978,
+      "total_tokens": 4465,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.573971,
+        "lon": -78.721495
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.574072,
+        "lon": -78.721567
+      },
+      "utm_17s_centroide": {
+        "x": 753512.7,
+        "y": 9825889.92
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 1946.9,
+      "error_superficie_pct": 29.79,
+      "desplazamiento_gps_m": 13.7,
+      "n_vertices": 8,
+      "clase_ladm": "Cultivo_Horticola_Verde"
+    }
+  },
+  {
+    "id_auditoria": 11,
+    "upa_encuesta_id": "UPA-CHIM-067",
+    "segmentacion_upa_id": "UPA-SA-0169",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "cuadrante": "Pulucate / Piedemonte Chimborazo",
+    "experto_agronomo": {
+      "puntaje": 52,
+      "compatibilidad": "Media",
+      "analisis_fenologico": "Los índices espectrales (ExG: 0.0957, VARI: 0.054) y la respuesta RGB [120, 148, 88] evidencian una actividad fotosintética mínima, concordante con la textura Meijering de suelo labrado húmedo. Esta firma no corresponde al dosel denso de Zea mays en estado fenológico de choclo (R3), indicando que la parcela se encuentra en preparación de suelo post-cosecha o en emergencia inicial (V1-V2).",
+      "observaciones": "Existe desfase fenológico temporal entre la encuesta y la captura del sensor, o inicio de rotación hacia cultivo de ciclo corto según la clase detectada (Cultivo_Horticola_Verde)."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 98,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "Geometría óptima de 5 vértices y 164.3 m de perímetro que cumple estrictamente el estándar LADM ISO 19152. Se verifica 100% de estanqueidad planar sin solapes prediales, respeto íntegro a la servidumbre vial LPIS (buffer de 3.5 m) y exclusión total de infraestructura habitacional."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 20,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento de 11.3 m entre la coordenada GPS de la vivienda y el centroide del polígono se absorbe satisfactoriamente dentro del rango de tolerancia de campo (10 a 25 m). No obstante, se aplica penalización máxima por el error de superficie del 95.95% entre el área declarada (38000.0 m2) y la delimitada algorítmicamente (1539.5 m2)."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 52.3,
+      "clasificacion": "DISCORDANTE",
+      "color_semaforo": "ROJO",
+      "resumen_ejecutivo": "El colegiado declara la auditoría como DISCORDANTE (ICPC: 52.3). Aunque la restitución catastral LADM es impecable (98/100) y el enlace geodésico vivienda-lote es válido, la discrepancia extrema de área (95.95% de error dimensional) sumada a la condición de suelo labrado sin cobertura de maíz desarrollada impiden validar la consistencia censal del predio.",
+      "recomendacion_censo": "Auditar la boleta censal para determinar si los 38000.0 m2 declarados corresponden a la suma de múltiples lotes dispersos (UPA multiparcelaria) no declarados individualmente o a un error de digitación de unidades, y actualizar el estado del lote a barbecho/rotación."
+    },
+    "telemetria": {
+      "tiempo_segundos": 63.3,
+      "thinking_tokens": 2686,
+      "total_tokens": 5203,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.556644,
+        "lon": -78.737023
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.556731,
+        "lon": -78.736968
+      },
+      "utm_17s_centroide": {
+        "x": 751786.24,
+        "y": 9827808.48
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 38000.0,
+      "superficie_delimitada_m2": 1539.5,
+      "error_superficie_pct": 95.95,
+      "desplazamiento_gps_m": 11.3,
+      "n_vertices": 5,
+      "clase_ladm": "Cultivo_Horticola_Verde"
+    }
+  },
+  {
+    "id_auditoria": 12,
+    "upa_encuesta_id": "UPA-CHIM-070",
+    "segmentacion_upa_id": "UPA-SA-0315",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "cuadrante": "Batzacón / Interfase Vial Rural",
+    "experto_agronomo": {
+      "puntaje": 90,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales (ExG: 0.2405, VARI: 0.1832) y la dominancia del canal verde en el perfil RGB [120, 148, 88] confirman alta actividad fotosintética y vigor foliar. La firma morfológica de Meijering (textura granular media con hileras espaciadas) es plenamente consistente con el marco de plantación en surcos de Zea mays en fase vegetativa avanzada o reproductiva temprana (choclo).",
+      "observaciones": "Concordancia temática validada; la clase LADM asignada refleja correctamente el dosel activo del cultivo."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 98,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "Geometría poligonal óptima con 7 vértices que garantiza simplicidad y regularidad LADM. Se verifica el 100% de estanqueidad planar sin solapes con predios colindantes, respeto estricto al buffer de servidumbre vial LPIS (3.5 m) y correcta exclusión de la infraestructura habitacional."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 38,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento planimétrico de 10.8 m entre la coordenada GPS de la vivienda y el centroide de la parcela se absorbe satisfactoriamente dentro de la tolerancia de captura en campo (10-25 m). Sin embargo, se aplica una penalización severa debido a que la discrepancia de superficie alcanza el 40.39% (1500.0 m2 declarados frente a 894.1 m2 netos delimitados), superando el umbral crítico del 40%."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 73.8,
+      "clasificacion": "OBSERVABLE",
+      "color_semaforo": "AMARILLO",
+      "resumen_ejecutivo": "El colegiado valida la existencia física, identidad botánica (Zea mays) y calidad topológica de la parcela (ISO 19152), así como su vinculación geodésica con la encuesta. No obstante, el Índice de Concordancia Predial-Censal (ICPC = 73.8) ubica el registro en estado OBSERVABLE debido a una sobreestimación del 40.39% en el área declarada por el productor respecto a la superficie neta cultivada.",
+      "recomendacion_censo": "Aprobar la validación temática del cultivo, pero rectificar en la base de datos censal la superficie agrícola efectiva a los 894.1 m2 delimitados por IA, asumiendo que la declaración original de 1500.0 m2 incluyó área bruta predial (vivienda, retiros viales y linderos improductivos)."
+    },
+    "telemetria": {
+      "tiempo_segundos": 43.03,
+      "thinking_tokens": 1691,
+      "total_tokens": 4184,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.619239,
+        "lon": -78.68664
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.619167,
+        "lon": -78.686705
+      },
+      "utm_17s_centroide": {
+        "x": 757387.2,
+        "y": 9820878.03
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 894.1,
+      "error_superficie_pct": 40.39,
+      "desplazamiento_gps_m": 10.8,
+      "n_vertices": 7,
+      "clase_ladm": "Cultivo_Horticola_Verde"
+    }
+  },
+  {
+    "id_auditoria": 13,
+    "upa_encuesta_id": "UPA-CHIM-073",
+    "segmentacion_upa_id": "UPA-SA-0022",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "cuadrante": "San Andrés Centro / Valle Aluvial",
+    "experto_agronomo": {
+      "puntaje": 92,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales ExG (0.2255) y VARI (0.1763), junto con la reflectancia RGB [120, 148, 88], confirman actividad fotosintética vigorosa propia de gramíneas en estado vegetativo avanzado o reproductivo temprano (etapa de choclo). El filtro morfológico de Meijering detecta una textura granular media con hileras espaciadas, lo cual es altamente consistente con el marco de plantación en surcos característico de Zea mays en valles interandinos.",
+      "observaciones": "La etiqueta de cobertura Vegetacion_Arborea_Cercas sugiere la presencia de cortinas rompevientos o cercas vivas perimetrales típicas de la zona de San Andrés, sin afectar la firma espectral dominante del cultivo anual en el interior del polígono."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 96,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "El polígono auditado presenta una geometría óptima de 7 vértices (dentro del umbral LADM de 4 a 10 vértices) y un perímetro bien definido de 136.8 m. Se verifica un 100% de estanqueidad planar sin solapes con predios colindantes, cumplimiento estricto de la servidumbre vial LPIS (buffer de 3.5 m) y exclusión total de edificaciones o patios residenciales."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 76,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento de 19.0 m entre la coordenada GPS de la vivienda encuestada y el centroide de la parcela se absorbe satisfactoriamente dentro del rango de tolerancia operativa de campo (10 a 25 m). La discrepancia de superficie del 25.11% (1500.0 m2 declarados vs. 1123.4 m2 delimitados) se mantiene por debajo del umbral crítico de penalización (40%) y se explica por la deducción de áreas de vivienda, linderos arbóreos y servidumbres viales que el productor suele incluir subjetivamente en su declaración."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 87.4,
+      "clasificacion": "CONCORDANTE",
+      "color_semaforo": "VERDE",
+      "resumen_ejecutivo": "La auditoría colegiada determina una alta concordancia (ICPC: 87.4) entre la declaración censal y la restitución fotogramétrica por IA. La firma espectral y el patrón de hileras validan inequívocamente el cultivo de Maíz Choclo, mientras que la geometría cumple rigurosamente el estándar LADM ISO 19152. La diferencia de área del 25.11% responde al descuento técnico de infraestructura y buffers viales.",
+      "recomendacion_censo": "Aprobar e integrar el polígono UPA-SA-0022 a la base cartográfica definitiva del RENAGRO, actualizando la superficie neta cultivable a 1123.4 m2 y recategorizando el atributo de clase LADM a cultivo transitorio con presencia de cercas vivas."
+    },
+    "telemetria": {
+      "tiempo_segundos": 40.77,
+      "thinking_tokens": 1749,
+      "total_tokens": 4331,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.593915,
+        "lon": -78.703983
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.593746,
+        "lon": -78.703957
+      },
+      "utm_17s_centroide": {
+        "x": 755459.78,
+        "y": 9823681.57
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 1123.4,
+      "error_superficie_pct": 25.11,
+      "desplazamiento_gps_m": 19.0,
+      "n_vertices": 7,
+      "clase_ladm": "Vegetacion_Arborea_Cercas"
+    }
+  },
+  {
+    "id_auditoria": 14,
+    "upa_encuesta_id": "UPA-CHIM-088",
+    "segmentacion_upa_id": "UPA-SA-0132",
+    "cultivo_declarado": "Alfalfa / Pasto Forrajero (Medicago sativa)",
+    "cuadrante": "Chocaví / Laderas Andinas",
+    "experto_agronomo": {
+      "puntaje": 95,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales ExG (0.3361) y VARI (0.207), respaldados por la fuerte dominancia del canal verde en la firma RGB (95, 165, 80), confirman un dosel vegetal denso con alta actividad fotosintética y vigor clorofílico. La textura Meijering de cobertura continua y homogénea es plenamente consistente con una parcela de alfalfa (Medicago sativa) en estado de desarrollo vegetativo óptimo o rebrote activo pre-corte.",
+      "observaciones": "Aunque la clase preliminar LADM se etiquetó como Cultivo_Horticola_Verde por similitud radiométrica, la homogeneidad estructural sin surcos visibles valida el cultivo forrajero declarado."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 98,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "El polígono restituido presenta una geometría óptima de 6 vértices (rango normativo de 4 a 10) y un perímetro bien definido de 131.7 m. Cumple al 100% con la estanqueidad planar sin solapes con predios colindantes, respeta rigurosamente el buffer de servidumbre vial LPIS de 3.5 m y verifica la exclusión total de edificaciones o patios residenciales."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 32,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El vector de desplazamiento entre el punto GPS de la vivienda encuestada y el centroide de la parcela (23.6 m) se absorbe al límite del umbral de tolerancia operativa de campo (10 a 25 m). Sin embargo, existe una discrepancia severa de superficie del 45.33% entre lo declarado (1500.0 m2) y lo delimitado por IA (820.1 m2), superando el umbral crítico del 40%, lo que conlleva una fuerte penalización dimensional por sobreestimación subjetiva del informante o fragmentación parcelaria."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 73.7,
+      "clasificacion": "OBSERVABLE",
+      "color_semaforo": "AMARILLO",
+      "resumen_ejecutivo": "El colegiado determina una validación parcial (ICPC 73.7). Existe plena concordancia fenológica-espectral para el cultivo de alfalfa (95/100) y excelencia en la topología catastral ISO 19152 (98/100). No obstante, la severa divergencia dimensional del 45.33% en el área cultivada y un desplazamiento GPS cercano al límite máximo (23.6 m) penalizan el componente geodésico (32/100), ubicando el caso en categoría OBSERVABLE.",
+      "recomendacion_censo": "Aprobar la geometría restituida (820.1 m2) como superficie efectiva cultivada para el ajuste estadístico del RENAGRO y verificar en gabinete si los 679.9 m2 restantes declarados corresponden a un lote contiguo en descanso, pastoreo o corte reciente no agrupado en la segmentación."
+    },
+    "telemetria": {
+      "tiempo_segundos": 45.41,
+      "thinking_tokens": 2273,
+      "total_tokens": 4847,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.571346,
+        "lon": -78.719461
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.571363,
+        "lon": -78.71925
+      },
+      "utm_17s_centroide": {
+        "x": 753739.42,
+        "y": 9826180.04
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 1500.0,
+      "superficie_delimitada_m2": 820.1,
+      "error_superficie_pct": 45.33,
+      "desplazamiento_gps_m": 23.6,
+      "n_vertices": 6,
+      "clase_ladm": "Cultivo_Horticola_Verde"
+    }
+  },
+  {
+    "id_auditoria": 15,
+    "upa_encuesta_id": "UPA-CHIM-095",
+    "segmentacion_upa_id": "UPA-SA-0173",
+    "cultivo_declarado": "Papa (Solanum tuberosum)",
+    "cuadrante": "Pulucate / Piedemonte Chimborazo",
+    "experto_agronomo": {
+      "puntaje": 96,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales (ExG: 0.2014, VARI: 0.1528) y la firma RGB [115, 142, 92] confirman una alta actividad fotosintética y vigor vegetativo, plenamente compatibles con Solanum tuberosum en etapa de desarrollo foliar máximo o floración. El filtro Meijering identifica surcos morfológicos paralelos con cobertura densa, patrón espacial característico del aporque tradicional en cultivos de papa andina.",
+      "observaciones": "Concordancia fenológica y morfológica óptima con la clase Cultivo_Horticola_Verde, descartando estados de cosecha reciente o barbecho."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 100,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "El polígono cumple estrictamente el estándar LADM ISO 19152, presentando una geometría regular de 9 vértices (rango óptimo de 4 a 10) y perímetro de 159.3 m. Se verifica un 100% de estanqueidad planar sin solapes con predios vecinos, respeto íntegro al buffer vial LPIS de 3.5 m y exclusión total de edificaciones."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 26,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento GPS de 19.7 m entre la coordenada de la vivienda y el centroide de la parcela es absorbido satisfactoriamente dentro del umbral de tolerancia de campo (10 a 25 m). Sin embargo, se aplica una penalización severa al puntaje dimensional debido a la discrepancia extrema de superficie del 93.53% (20,584.5 m² declarados frente a 1,331.5 m² delimitados)."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 72.5,
+      "clasificacion": "OBSERVABLE",
+      "color_semaforo": "AMARILLO",
+      "resumen_ejecutivo": "El Índice de Concordancia Predial-Censal (ICPC) alcanza 72.5 puntos, clasificando el registro como OBSERVABLE. La auditoría valida con excelencia la topología catastral LADM (100/100) y confirma espectralmente la presencia del cultivo de papa (96/100). No obstante, la crítica asimetría dimensional del 93.53% desploma la valoración geodésica (26/100), reflejando que la parcela fotointerpretada representa apenas una fracción marginal del área declarada.",
+      "recomendacion_censo": "Retener el registro para verificación en gabinete; se recomienda auditar la boleta censal para determinar si el productor declaró la superficie total de una UPA multiparcelaria (terrenos dispersos) o si existió un error de digitación en la unidad de superficie, dado que la IA confirma únicamente un lote hortícola de 0.13 ha adyacente a la vivienda."
+    },
+    "telemetria": {
+      "tiempo_segundos": 50.25,
+      "thinking_tokens": 2447,
+      "total_tokens": 4986,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.558416,
+        "lon": -78.734876
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.558593,
+        "lon": -78.734851
+      },
+      "utm_17s_centroide": {
+        "x": 752024.97,
+        "y": 9827612.22
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 20584.5,
+      "superficie_delimitada_m2": 1331.5,
+      "error_superficie_pct": 93.53,
+      "desplazamiento_gps_m": 19.7,
+      "n_vertices": 9,
+      "clase_ladm": "Cultivo_Horticola_Verde"
+    }
+  },
+  {
+    "id_auditoria": 16,
+    "upa_encuesta_id": "UPA-CHIM-111",
+    "segmentacion_upa_id": "UPA-SA-0313",
+    "cultivo_declarado": "Alfalfa / Pasto Forrajero (Medicago sativa)",
+    "cuadrante": "Batzacón / Interfase Vial Rural",
+    "experto_agronomo": {
+      "puntaje": 94,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales ExG (0.3034) y VARI (0.3056), respaldados por una fuerte dominancia del canal verde en el perfil RGB (95, 165, 80), confirman una alta densidad de biomasa fotosintéticamente activa. La respuesta morfológica de cobertura continua y homogénea es plenamente consistente con un lote de Medicago sativa en fase de desarrollo vegetativo vigoroso previo al corte.",
+      "observaciones": "Aunque la firma espectral valida con certeza el cultivo forrajero, la catalogación preliminar bajo la clase Vegetacion_Arborea_Cercas sugiere la presencia de cortinas rompevientos o cercas vivas perimetrales que pudieron inducir la sub-segmentación del lote por parte de SAM 2.1."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 96,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "La geometría poligonal cumple rigurosamente el estándar LADM ISO 19152 al estructurarse con 7 vértices (dentro del rango óptimo de 4 a 10). Se verifica un 100% de estanqueidad planar sin solapes con predios vecinos, respeto absoluto al buffer de servidumbre vial LPIS de 3.5 m y exclusión verificada de edificaciones o patios."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 30,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento planimétrico de 24.3 m entre la coordenada GPS de la vivienda y el centroide de la parcela se absorbe dentro del umbral máximo de tolerancia de campo (10 a 25 m). No obstante, se aplica una penalización severa al puntaje dimensional debido a la discrepancia de superficie del 71.15% (979.6 m2 delimitados frente a 3395.7 m2 declarados), superando ampliamente el límite crítico del 40%."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 72.1,
+      "clasificacion": "OBSERVABLE",
+      "color_semaforo": "AMARILLO",
+      "resumen_ejecutivo": "El Índice de Concordancia Predial-Censal alcanza 72.1 puntos, clasificando la auditoría como OBSERVABLE. Se registra una excelente consistencia fenológica para el cultivo de alfalfa (94/100) y una calidad topológica impecable bajo norma ISO 19152 (96/100); sin embargo, el severo déficit de área delimitada respecto a la declarada (error del 71.15%) degrada el componente geodésico-dimensional (30/100), evidenciando una partición incompleta de la unidad productiva.",
+      "recomendacion_censo": "Validar positivamente la existencia del cultivo forrajero y el enlace espacial vivienda-predio en la base RENAGRO, pero derivar el polígono a revisión cartográfica de gabinete para anexar sub-lotes contiguos omitidos por la segmentación automática o rectificar la sobre-declaración de superficie del informante."
+    },
+    "telemetria": {
+      "tiempo_segundos": 65.18,
+      "thinking_tokens": 2699,
+      "total_tokens": 5272,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.618899,
+        "lon": -78.683956
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.618725,
+        "lon": -78.684089
+      },
+      "utm_17s_centroide": {
+        "x": 757686.13,
+        "y": 9820915.32
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 3395.7,
+      "superficie_delimitada_m2": 979.6,
+      "error_superficie_pct": 71.15,
+      "desplazamiento_gps_m": 24.3,
+      "n_vertices": 7,
+      "clase_ladm": "Vegetacion_Arborea_Cercas"
+    }
+  },
+  {
+    "id_auditoria": 17,
+    "upa_encuesta_id": "UPA-CHIM-118",
+    "segmentacion_upa_id": "UPA-SA-0017",
+    "cultivo_declarado": "Alfalfa / Pasto Forrajero (Medicago sativa)",
+    "cuadrante": "San Andrés Centro / Valle Aluvial",
+    "experto_agronomo": {
+      "puntaje": 96,
+      "compatibilidad": "Alta",
+      "analisis_fenologico": "Los índices espectrales (ExG: 0.369, VARI: 0.2782) y la fuerte dominante verde en RGB [95, 165, 80] confirman una alta actividad fotosintética y cobertura de dosel cerrado, plenamente consistentes con Medicago sativa en estado de desarrollo vegetativo óptimo pre-corte. La textura Meijering ratifica un tapiz forrajero continuo y homogéneo.",
+      "observaciones": "Concordancia biológica total con la clase LADM Cultivo_Horticola_Verde; ausencia de suelo desnudo o signos de senescencia."
+    },
+    "experto_catastral_ladm": {
+      "puntaje": 98,
+      "cumplimiento_iso19152": true,
+      "analisis_topologico": "Geometría poligonal óptima estructurada con 8 vértices (rango normativo de 4 a 10). Presenta estanqueidad planar absoluta (0% solapes con colindantes), respeta íntegramente el buffer de servidumbre vial LPIS de 3.5 m y garantiza la exclusión total de infraestructura residencial."
+    },
+    "experto_geodesico_renagro": {
+      "puntaje": 28,
+      "absorcion_desplazamiento_gps": true,
+      "analisis_dimensional": "El desplazamiento GPS de 20.9 m entre la vivienda encuestada y el centroide del predio se absorbe satisfactoriamente dentro de la tolerancia de campo (10 a 25 m). Sin embargo, se registra una discrepancia dimensional crítica del 96.56% entre el área declarada (38000.0 m2) y la delimitada (1305.5 m2), aplicando penalización severa por exceder el umbral del 40%."
+    },
+    "dictamen_sintetizador": {
+      "icpc_puntaje": 72.7,
+      "clasificacion": "OBSERVABLE",
+      "color_semaforo": "AMARILLO",
+      "resumen_ejecutivo": "El Comité MoE emite un dictamen OBSERVABLE (ICPC: 72.7). Se valida con excelencia tanto la correspondencia fenológica del cultivo de alfalfa como la calidad topológica del polígono bajo estándar ISO 19152, logrando además absorber el vector de desplazamiento GPS. No obstante, la extrema divergencia de superficie (96.56%) impide la aprobación directa, evidenciando una probable declaración censal acumulada correspondiente a una UPA multipredial dispersa o un error de captura en la unidad de superficie.",
+      "recomendacion_censo": "Aprobar e integrar el polígono restituido (1305.5 m2) al catastro rural y generar una orden de revisión de gabinete sobre la boleta UPA-CHIM-118 para verificar la existencia de terrenos forrajeros adicionales no colindantes o corregir el error de escala en la cifra declarada."
+    },
+    "telemetria": {
+      "tiempo_segundos": 49.29,
+      "thinking_tokens": 2556,
+      "total_tokens": 5050,
+      "modelo": "gemini-4-argon",
+      "modo_razonamiento": "ThinkingLevel.HIGH"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.596616,
+        "lon": -78.701576
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.596797,
+        "lon": -78.701629
+      },
+      "utm_17s_centroide": {
+        "x": 755727.34,
+        "y": 9823382.53
+      }
+    },
+    "metricas_originales": {
+      "superficie_declarada_m2": 38000.0,
+      "superficie_delimitada_m2": 1305.5,
+      "error_superficie_pct": 96.56,
+      "desplazamiento_gps_m": 20.9,
+      "n_vertices": 8,
+      "clase_ladm": "Cultivo_Horticola_Verde"
+    }
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "pipeline_version": "v61.2.0-A100-SOTA",
+  "buffer_viviendas_m": 6.0,
+  "fecha": "2026-10-27",
+  "acelerador_hardware": "NVIDIA A100-SXM4-80GB (Google Colab Cloud)",
+  "vram_total_gb": 79.25,
+  "zona_piloto": "Parroquia San Andrés, Cantón Guano, Chimborazo",
+  "total_upas_delimitadas": 225,
+  "superficie_agricola_delimitada_ha": 20.06,
+  "superficie_media_parcela_m2": 891.6,
+  "media_vertices_por_poligono": 20.81,
+  "edificaciones_rurales_detectadas": 111,
+  "tramos_red_vial_lpis": 21,
+  "solape_inter_parcelario_pct": 0.0,
+  "solape_en_viviendas_o_vias_pct": 0.0,
+  "conformidad_ladm_iso19152_pct": 100.0,
+  "tiempo_total_ejecucion_s": 71.71
+}

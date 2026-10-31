@@ -1,0 +1,94 @@
+{
+  "upas_agricolas_puras_circulo": {
+    "count": 579,
+    "valid": 579,
+    "empty": 0,
+    "geom_types": {
+      "Polygon": 579
+    },
+    "total_area_ha": 93.8288,
+    "total_len_km": 0.0
+  },
+  "viviendas_rurales_ladm": {
+    "count": 54,
+    "valid": 54,
+    "empty": 0,
+    "geom_types": {
+      "Polygon": 54
+    },
+    "total_area_ha": 0.4396,
+    "total_len_km": 0.0
+  },
+  "estructuras_agroindustriales": {
+    "count": 18,
+    "valid": 18,
+    "empty": 0,
+    "geom_types": {
+      "Polygon": 18
+    },
+    "total_area_ha": 0.3597,
+    "total_len_km": 0.0
+  },
+  "patios_eras_campesinas": {
+    "count": 107,
+    "valid": 107,
+    "empty": 0,
+    "geom_types": {
+      "Polygon": 107
+    },
+    "total_area_ha": 0.7181,
+    "total_len_km": 0.0
+  },
+  "cercos_vivos_lpis": {
+    "count": 394,
+    "valid": 394,
+    "empty": 0,
+    "geom_types": {
+      "LineString": 394
+    },
+    "total_area_ha": 0.0,
+    "total_len_km": 10.6556
+  },
+  "bosques_quebradas_protegidas": {
+    "count": 459,
+    "valid": 459,
+    "empty": 0,
+    "geom_types": {
+      "Polygon": 459
+    },
+    "total_area_ha": 48.199,
+    "total_len_km": 0.0
+  },
+  "red_vial_lpis": {
+    "count": 66,
+    "valid": 66,
+    "empty": 0,
+    "geom_types": {
+      "LineString": 66
+    },
+    "total_area_ha": 0.0,
+    "total_len_km": 8.8713
+  },
+  "perimetros_cuadrantes_circulares": {
+    "count": 4,
+    "valid": 4,
+    "empty": 0,
+    "geom_types": {
+      "Polygon": 4
+    },
+    "total_area_ha": 153.6909,
+    "total_len_km": 0.0
+  },
+  "desglose_agroindustria": {
+    "Galpon_AMRI": 17,
+    "Invernadero_PGI": 1
+  },
+  "auditoria_ladm_topologica": {
+    "total_upas": 579,
+    "pares_solape": 0,
+    "area_solape_m2": 0.0,
+    "porcentaje_solape": 0.0,
+    "derrame_exterior_m2": 0.0,
+    "conformidad_ladm_iso_19152": "100.0%"
+  }
+}

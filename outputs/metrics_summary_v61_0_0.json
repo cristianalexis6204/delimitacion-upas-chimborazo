@@ -1,0 +1,37 @@
+{
+  "pipeline_version": "v61.0.0",
+  "fecha": "2026-10-27",
+  "zona_piloto": "Parroquia San Andrés, Cantón Guano, Chimborazo",
+  "innovaciones_clave": [
+    "shapely.coverage_simplify en espacio métrico planar",
+    "Filtro Hessian-Meijering bimodal (crestas oscuras y claras)",
+    "Geometría y buffers en EPSG:32717 nativo sin factor 111000",
+    "Inferencia acelerada con torch.inference_mode() y empty_cache()"
+  ],
+  "total_upas_delimitadas": 88,
+  "superficie_agricola_delimitada_ha": 6.9,
+  "superficie_media_parcela_m2": 783.6,
+  "media_vertices_por_poligono": 57.39,
+  "edificaciones_rurales_detectadas": 9,
+  "tramos_red_vial_lpis": 81,
+  "solape_inter_parcelario_pct": 3.4091,
+  "solape_en_viviendas_o_vias_pct": 0.0,
+  "conformidad_ladm_iso19152_pct": 100.0,
+  "tiempo_total_ejecucion_s": 264.37,
+  "benchmark_comparativo_vs_v60": {
+    "v60_0_0": {
+      "upas": 359,
+      "ha": 40.22,
+      "vertices": 7.15,
+      "solape": 0.0,
+      "tiempo_s": 84.5
+    },
+    "v61_0_0": {
+      "upas": 88,
+      "ha": 6.9,
+      "vertices": 57.39,
+      "solape": 3.4091,
+      "tiempo_s": 264.37
+    }
+  }
+}

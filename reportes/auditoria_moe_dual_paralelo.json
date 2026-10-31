@@ -1,0 +1,192 @@
+{
+  "metadata": {
+    "fecha_auditoria": "2026-10-27 07:46:38",
+    "proyecto": "tesis-bi-edison-paredes",
+    "region": "global",
+    "tiempo_total_paralelo_s": 130.41
+  },
+  "motor_a_gemini_4_argon": {
+    "modelo_auditor": "gemini-4-argon",
+    "scorecard_global": {
+      "calidad_deteccion_contornos": 88,
+      "conformidad_catastral_ladm": 85,
+      "arquitectura_software_y_modularidad": 74,
+      "eficiencia_hpc_y_cuda": 78,
+      "pertinencia_agronomica_censo": 83,
+      "puntuacion_promedio_general": 81.6
+    },
+    "evaluacion_expertos": {
+      "vision_por_computador": {
+        "puntaje": 88,
+        "analisis_critico": "El acoplamiento híbrido entre el modelo fundacional Meta SAM-2.1 (arquitectura jerárquica Hiera) y el tensor de energía diferencial de Hessian-Meijering constituye un acierto metodológico notable que explica el salto cuantitativo de +12.3 puntos en mIoU (80.5% vs. 68.2% de SAM ViT-B baseline en Calpi) y un BF1 de 92.4% en San Andrés. A una resolución espacial de Zoom 18 (GSD ~0.55 m/px), el banco de escalas de Meijering con sigmas [1.2, 2.0, 3.2] píxeles equivale a filtros sintonizados a anchos físicos característicos de 2.3 m a 6.1 m, lo cual captura con alta sensibilidad linderos andinos típicos como zanjas de drenaje, acequias, pircas y cercas vivas de cabuyo (Agave americana) o retama. Sin embargo, se identifican tres vulnerabilidades críticas en sensores remotos: 1) La configuración estricta en modo 'black_ridges' asume que todo lindero presenta una depresión radiométrica oscura; esto falla ante linderos brillantes (muros de cangahua seca expuesta al sol, rastrojos de cebada en bordes o techos de invernaderos colindantes). 2) En laderas escarpadas del nudo del Chimborazo (>25% de pendiente), las sombras orográficas y las sombras proyectadas por cortinas rompevientos de eucalipto (Eucalyptus globulus) generan gradientes de luminancia asimétricos que desplazan el centroide del autovector del Hessiano hasta 1.5–2.5 m hacia el interior de la parcela sombreada. 3) En el extractor de edificaciones, el umbral estático CIELAB (a* > 134.0) y el diferencial de sombra fija suroeste (Delta-L >= 14.0) carecen de invarianza ante cambios en el ángulo acimutal/cenital solar de distintas épocas de captura satelital y ante cubiertas de fibrocemento envejecido o zinc oxidado bajo sombra de nubes altas.",
+        "oportunidades_sota_lucas_2026": "En contraste con el estado del arte reciente de Lucas et al. (Science of Remote Sensing, 2026 / arXiv:2510.25239) sobre delineación de parcelas agrícolas mediante modelos fundacionales guiados por bordes y aprendizaje contrastivo de contornos, el pipeline auditado utiliza el mapa de Meijering únicamente de forma post-hoc o pasiva para ponderar máscaras generadas por un muestreo ciego en rejilla regular ('points_per_side=32' en SAM2AutomaticMaskGenerator). Siguiendo los hallazgos de Lucas et al., la arquitectura debe evolucionar hacia un esquema de 'Edge-Guided Active Prompting': calcular la transformada de distancia euclidiana sobre el inverso de la energía de Meijering y extraer sus máximos locales (esqueleto inverso o cuencas de watershed) para inyectarlos directamente como 'point prompts' positivos y las crestas de Meijering como 'negative prompts' o 'mask prompts' de atención en el decodificador de SAM-2.1. Esto evitaría que el modelo evalúe miles de puntos redundantes sobre los propios linderos, reduciendo la fragmentación espuria en micro-terrazas y mejorando el Boundary F1 en al menos 3–4 puntos adicionales."
+      },
+      "catastro_ladm_iso19152": {
+        "puntaje": 85,
+        "analisis_critico": "Desde la perspectiva geomática y del estándar LADM ISO 19152, la segregación explícita entre 'LA_SpatialUnit_Parcel', 'LA_SpatialUnit_Building' y la red vial mediante operaciones booleanas garantiza la condición topológica de partición planar sin solapes constructivos (0.00% en San Andrés). No obstante, la auditoría del código revela tres deficiencias geodésicas y topológicas de importancia: 1) Falsa proyección en etapas intermedias: tanto 'RuralRoadNetworkExtractor' como 'RuralBuildingExtractor' emplean un factor escalar rígido en coordenadas geográficas ('self.deg_per_meter = 1.0 / 111000.0') antes de exportar a EPSG:32717 (UTM Zona 17 Sur). Aunque la cercanía de Chimborazo al ecuador terrestre (latitud ~ -1.60°) minimiza la distorsión anisótropa del coseno de la latitud (~0.04%), ejecutar buffers métricos y simplificaciones geométricas en grados decimales (WGS84 elipsoidal) viola el rigor geodésico; toda operación métrica debe ejecutarse nativamente en el plano cartográfico UTM EPSG:32717 desde la ingesta del tile. 2) Simplificación independiente de polígonos: aplicar el algoritmo Ramer-Douglas-Peucker (RDP) de forma individual sobre cada polígono (forzando entre 4 y 10 vértices) después del argmax matricial rompe la co-linearidad de los arcos compartidos entre parcelas colindantes. Esto explica por qué en el benchmark de Calpi reaparece un 0.17% de solape residual y genera micro-huecos ('slivers' o polígonos astilla) entre linderos adyacentes. Se requiere una simplificación topológica basada en grafos de arcos compartidos (planar coverage simplification) donde los nodos de grado >= 3 (uniones triples de linderos) permanezcan anclados. 3) Sobre-penalización del buffer vial: aplicar un buffer simétrico estático de 3.5 m (7.0 m de ancho total de servidumbre LPIS) indistintamente a vías carrozables de OSM y a senderos peatonales detectados morfológicamente ('chaquiñanes' de 1.0–1.5 m de ancho real) mutila área agrícola útil en un entorno de minifundio extremo."
+      },
+      "software_mlops_hpc": {
+        "puntaje": 74,
+        "deuda_tecnica_identificada": "El análisis estático de las 1,940 líneas de código evidencia un fuerte contraste entre los módulos especialistas (bien encapsulados en clases de ~300 líneas) y el script orquestador 'run_san_andres_v60_master_pipeline.py' (991 líneas, 0 clases, 8 funciones procedimentales). Este último constituye un antipatrón 'God Object / Monolithic Script' que viola el Principio de Responsabilidad Única (SRP): acopla en un mismo archivo matemáticas de proyección Web Mercator, descargas HTTP, inferencia profunda en PyTorch, serialización de strings XML/KML a bajo nivel ('render_kml_polygon'), maquetación de gráficos Matplotlib y compilación de documentos PDF mediante ReportLab. Adicionalmente, se detectan prácticas de deuda técnica que comprometen la mantenibilidad en producción: silenciamiento global de advertencias ('warnings.filterwarnings(\"ignore\")'), uso de 'urllib.request' nativo sin gestión robusta de pools de conexiones ni backoff exponencial ante fallos transitorios de red, rutas relativas resueltas mediante encadenamiento frágil de 'os.path.dirname' triples y parámetros críticos de negocio (umbrales CIELAB, sigmas, áreas mínimas) dispersos en firmas de métodos en lugar de centralizarse en esquemas declarativos validados con Pydantic o Hydra/YAML.",
+        "recomendacion_cuda_memoria": "El tiempo de inferencia registrado de 84.5 segundos en CUDA para apenas 40.22 hectáreas (4 cuadrantes) proyecta un cuello de botella severo si se pretende escalar el pipeline a la totalidad de la superficie agrícola de Chimborazo (>250,000 ha, lo que tomaría ~146 horas continuas de GPU). Con 'points_per_side=32' y 'crop_n_layers=1' (con 'crop_overlap_ratio=0.25'), SAM2AutomaticMaskGenerator evalúa 5,120 puntos de prompt por escena, generando una huella masiva en VRAM al retener máscaras candidatas antes del NMS. Para optimizar el rendimiento HPC se recomienda: 1) Envolver toda la inferencia de Hiera en un contexto 'torch.inference_mode()' combinado con precisión mixta automática 'torch.amp.autocast(device_type=\"cuda\", dtype=torch.bfloat16)', lo cual reduce el consumo de VRAM en ~45% y duplica el throughput en Tensor Cores sin pérdida de precisión en los logits de contorno. 2) Portar el cálculo del filtro de Meijering desde 'skimage.filters.meijering' (actualmente ejecutado en CPU con transferencias host-to-device lentas) hacia un operador convolucional nativo en PyTorch ('torch.nn.functional.conv2d') utilizando kernels derivados de Gaussianas precalculados en GPU. 3) Liberar explícitamente tensores intermedios y ejecutar 'torch.cuda.empty_cache()' entre cuadrantes de inferencia."
+      },
+      "agronomia_renagro": {
+        "puntaje": 83,
+        "analisis_minifundio_andino": "Los resultados sobre la parroquia San Andrés (Cantón Guano) reflejan con notable fidelidad la estructura agraria atomizada de la Sierra Centro ecuatoriana: 359 unidades delimitadas en 40.22 ha arrojan una superficie promedio de 0.112 ha (1,120 m² por parcela), cifra plenamente coherente con el minifundio y microfundio de subsistencia reportado por la ESPAC-INEC y el MAG en zonas de producción de papa, cebolla colorada, haba, maíz suave y pastos cultivados (alfalfa/raygrass). El filtro de exclusión de patios urbanos ('filter_urban_settlement_courtyards') y la sustracción de 60 viviendas campesinas evitan un error histórico en los catastros automatizados: contabilizar huertos familiares traseros y corrales de especies menores (cuyes/ovinos) como superficie mecanizable. Sin embargo, desde la ortodoxia metodológica del Censo Nacional Agropecuario (RENAGRO / FAO), es imperativo precisar una distinción conceptual en la memoria del TFM: el algoritmo delimita 'Lotes o Terrenos Físicos de Cultivo' (unidades geomorfológicas/agronómicas homogéneas) y no estrictamente 'UPAs' en sentido censal, dado que en los Andes una sola UPA (bajo una misma gerencia técnica y económica familiar) suele estar fragmentada en múltiples terrenos no contiguos a distintos pisos altitudinales, o bien subdividida internamente en franjas de rotación ('suertes' de cultivo verde junto a suelo en barbecho) que el clasificador espectral separa como polígonos distintos por su divergencia radiométrica."
+      }
+    },
+    "sintesis_estrategica": {
+      "tres_mayores_fortalezas": [
+        "Innovación algorítmica de alto impacto al fusionar la capacidad semántica zero-shot de Meta SAM-2.1 (Hiera) con el operador diferencial multiescala de Hessian-Meijering, logrando un mIoU de 83.6% y un Boundary F1 de 92.4% que supera en +12.3 puntos al baseline de SAM puro en escenarios reales de minifundio andino.",
+        "Integración rigurosa de reglas de negocio catastral (LADM ISO 19152 y estándar europeo LPIS), destacando la arquitectura resiliente en tres niveles para la red vial (caché local, Overpass API y respaldo espectral-morfológico) y la heurística física 3D de sombras relativas para erradicar falsos positivos de edificaciones sobre suelos arados.",
+        "Completitud end-to-end y trazabilidad reproducible del sistema: desde la descarga automatizada de tiles satelitales VHR hasta la generación de productos cartográficos estandarizados (GeoPackage en EPSG:32717, KML cinemático validable en Google Earth y reporte técnico automatizado con métricas de validación cruzada sobre 5 arquitecturas)."
+      ],
+      "tres_mayores_cuellos_de_botella": [
+        "Riesgo de degradación topológica post-argmax: la aplicación secuencial e independiente del algoritmo Ramer-Douglas-Peucker (4 a 10 vértices) sobre polígonos individuales sin preservar una estructura de grafo planar de arcos compartidos puede inducir micro-fisuras (slivers) o pérdidas de colinealidad entre parcelas vecinas, además de realizar cálculos de buffers intermedios en grados geográficos en lugar de metros UTM nativos.",
+        "Monolitismo arquitectónico en 'run_san_andres_v60_master_pipeline.py' (991 líneas procedimentales sin clases) y penalización de rendimiento HPC (84.5 s para 40.22 ha) derivada de ejecutar el filtro de Meijering en CPU ('skimage') y un muestreo exhaustivo no guiado de 5,120 puntos por escena en SAM-2.1.",
+        "Sensibilidad radiométrica de los umbrales estáticos (modo 'black_ridges' en Meijering, 'a* > 134' en CIELAB y dirección fija suroeste de sombra 3D) frente a variaciones estacionales del ángulo solar, pendientes pronunciadas del Chimborazo y linderos claros (muros de cangahua o rastrojos secos)."
+      ],
+      "cinco_recomendaciones_prioritarias": [
+        {
+          "orden": 1,
+          "titulo": "Reproyección temprana a EPSG:32717 y simplificación topológica de arcos compartidos",
+          "tipo": "Quick Win",
+          "impacto": "Alto",
+          "esfuerzo": "Bajo",
+          "descripcion": "Eliminar el factor escalar aproximado 'deg_per_meter = 1.0 / 111000.0' proyectando todas las geometrías al CRS métrico oficial EPSG:32717 inmediatamente tras la vectorización inicial. Sustituir el 'regularize_polygon_ladm' individual por 'shapely.coverage_simplify' (disponible en Shapely >= 2.0) para garantizar que la reducción a 4-10 vértices preserve exactamente los linderos compartidos entre UPAs colindantes con 0.00% de micro-huecos y 0.00% de solapes."
+        },
+        {
+          "orden": 2,
+          "titulo": "Aceleración CUDA mediante BF16 Autocast y portabilidad de Meijering a PyTorch GPU",
+          "tipo": "Quick Win",
+          "impacto": "Alto",
+          "esfuerzo": "Bajo",
+          "descripcion": "Encapsular la inferencia de SAM-2.1 en 'torch.inference_mode()' y 'torch.amp.autocast(device_type=\"cuda\", dtype=torch.bfloat16)', e implementar el tensor Hessiano de Meijering (sigmas 1.2, 2.0, 3.2) mediante 'torch.nn.functional.conv2d' en GPU. Esto eliminará el cuello de botella de CPU en 'skimage', reduciendo el tiempo de ejecución de 84.5 s a menos de 25 s para los 4 cuadrantes."
+        },
+        {
+          "orden": 3,
+          "titulo": "Implementación de 'Edge-Guided Prompting' inspirado en Lucas et al. (2026)",
+          "tipo": "Estructural",
+          "impacto": "Alto",
+          "esfuerzo": "Medio",
+          "descripcion": "Reemplazar la rejilla uniforme ciega ('points_per_side=32') de SAM2AutomaticMaskGenerator por un generador de prompts guiado por la topografía del mapa de energía de Meijering: extraer los máximos locales de la transformada de distancia de las zonas interiores de baja energía como prompts positivos de semilla, reduciendo en un 70% el número de inferencias del decodificador y evitando la sobre-segmentación en surcos de labranza."
+        },
+        {
+          "orden": 4,
+          "titulo": "Refactorización modular del Pipeline Maestro y externalización de configuración",
+          "tipo": "Estructural",
+          "impacto": "Medio",
+          "esfuerzo": "Medio",
+          "descripcion": "Desacoplar 'run_san_andres_v60_master_pipeline.py' en cuatro módulos cohesivos bajo principios SOLID: 'TileIngestionService', 'CadastreTopologyEngine', 'CartographicRenderer' (KML/Matplotlib) y 'ReportLabCompiler'. Extraer todos los hiperparámetros (sigmas, umbrales CIELAB, buffers viales diferenciados por jerarquía OSM vs. chaquiñán) a un archivo 'config_chimborazo.yaml' validado con Pydantic."
+        },
+        {
+          "orden": 5,
+          "titulo": "Fusión bimodal de crestas (claras/oscuras) y agregación jerárquica Lote-UPA para RENAGRO",
+          "tipo": "Estructural",
+          "impacto": "Alto",
+          "esfuerzo": "Medio",
+          "descripcion": "Calcular el filtro de Meijering de forma dual ('black_ridges=True' para zanjas/sombras y 'black_ridges=False' para muros de cangahua/senderos secos) fusionando ambos tensores mediante norma L-infinito. Además, añadir en el GeoPackage de salida una capa jerárquica que agrupe parcelas adyacentes sin barrera física dura (separadas solo por cambio de cultivo/barbecho) como 'Macro-Parcelas Candidatas a UPA' para facilitar el cruce con la boleta censal del MAG."
+        }
+      ],
+      "veredicto_final_memoria_tfm": "El Comité Colegiado MoE otorga un dictamen SOBRESALIENTE (81.6/100) al desarrollo técnico auditado. El autor demuestra un dominio excepcional al trasladar modelos fundacionales de visión por computador de última generación (SAM-2.1 Hiera) hacia un problema geoespacial real de altísima complejidad como es el minifundio andino en la provincia de Chimborazo. A diferencia de los trabajos académicos convencionales que se limitan a entrenar redes sobre datasets sintéticos pre-recortados, este TFM construye un sistema integral de ingeniería geomática e inteligencia artificial que resuelve problemas críticos del mundo real: caídas de APIs cartográficas, sombras de edificaciones rurales, servidumbres viales LPIS y topología catastral LADM ISO 19152. Incorporando en la discusión de la memoria escrita la distinción conceptual entre 'lote físico de cultivo' y 'UPA censal', así como las líneas futuras de optimización en GPU y simplificación topológica de coberturas, el trabajo no solo cumple con creces los estándares de exigencia para la defensa del Trabajo Fin de Máster en UNIR, sino que posee madurez suficiente para convertirse en una publicación científica Q1 en revistas del ámbito de 'Remote Sensing' o 'Computers and Electronics in Agriculture' y en una herramienta operativa de transferencia tecnológica para el Ministerio de Agricultura y Ganadería (MAG) del Ecuador."
+    },
+    "telemetria": {
+      "tiempo_segundos": 130.4,
+      "thinking_tokens": 2888,
+      "total_tokens": 13409,
+      "modelo": "gemini-4-argon"
+    }
+  },
+  "motor_b_gemini_3_1_pro": {
+    "modelo_auditor": "gemini-3.1-pro-preview",
+    "scorecard_global": {
+      "calidad_deteccion_contornos": 92,
+      "conformidad_catastral_ladm": 98,
+      "arquitectura_software_y_modularidad": 75,
+      "eficiencia_hpc_y_cuda": 85,
+      "pertinencia_agronomica_censo": 90,
+      "puntuacion_promedio_general": 88.0
+    },
+    "evaluacion_expertos": {
+      "vision_por_computador": {
+        "puntaje": 92,
+        "analisis_critico": "La integracion arquitectonica de SAM-2.1 Hiera con la precision sub-pixel del tensor multiescala de Meijering (sigmas [1.2, 2.0, 3.2]) es de muy alto nivel. Los resultados de San Andres (mIoU 83.6%, Dice 91.1%) validan que esta hibridacion detecta eficazmente las cercas vivas y muros de piedra tipicos del fraccionamiento andino, superando ampliamente los baselines de Mask R-CNN o U-Net. Sin embargo, en un escenario de laderas pronunciadas caracteristicas de Chimborazo, las areas inmersas en sombras orograficas profundas pueden atenuar los gradientes espectrales, pudiendo inducir fallos de contorno si no existe una normalizacion topografica previa.",
+        "oportunidades_sota_lucas_2026": "Considerando las fronteras establecidas por Lucas et al. (2026) sobre representaciones temporales y fusion de datos, el pipeline podria dar un salto cualitativo hacia la SOTA integrando series de tiempo de radar de apertura sintetica (SAR Sentinel-1) y datos multiespectrales, permitiendo desambiguar linderos agricolas persistentes de transiciones fenologicas estacionales u obstaculos temporales, algo que una imagen VHR estatica no puede garantizar."
+      },
+      "catastro_ladm_iso19152": {
+        "puntaje": 98,
+        "analisis_critico": "La traduccion de mascaras probabilisticas a un espacio vectorial regido por el estandar LADM ISO 19152 es magistral. Lograr un 0.00% de solape constructivo y destructivo mediante un Argmax competitivo sobre tensores de confianza es un estandar de oro en catastro. Se destaca positivamente la segregacion taxonomica LPIS: aplicar buffers de servidumbre de 3.5m y aislar sistematicamente la clase LA_SpatialUnit_Building utilizando caracteristicas morfologicas y sombras relativas 3D previene la corrupcion de las metricas agronomicas. El filtrado de Douglas-Peucker focalizado en mantener de 4 a 10 vertices asegura bases de datos ligeras con minima perdida de topologia geometrica."
+      },
+      "software_mlops_hpc": {
+        "puntaje": 75,
+        "deuda_tecnica_identificada": "Existe una severa deuda arquitectonica en el orquestador principal 'run_san_andres_v60_master_pipeline.py' (991 lineas). Este God Object mezcla inferencia de tensores, operaciones geoespaciales I/O, renderizado de matplotlib y creacion de reportes PDF. La baja modularidad incrementa exponencialmente el riesgo de regresiones y bloquea el despliegue nativo microservicios o Kubernetes. A nivel provincial esto sera inviable de mantener.",
+        "recomendacion_cuda_memoria": "Para escalar la inferencia de SAM-2.1 Hiera y evitar desbordamientos de memoria (Out-of-Memory OOM), se requiere transicionar a precision mixta (AMP: FP16/BF16) mediante 'torch.autocast'. Tambien es vital asegurar rutinas 'torch.cuda.empty_cache()' despues de batches pesados, y refactorizar el dataloader geoespacial hacia un procesamiento asincrono multi-hilo para evitar cuellos de botella por latencia de disco."
+      },
+      "agronomia_renagro": {
+        "puntaje": 90,
+        "analisis_minifundio_andino": "El enfoque algoritmico demuestra un profundo entendimiento territorial de las parroquias andinas. Criterios de discriminacion como el umbral CIELAB a* > 134 para erradicar falsos positivos de tejas o la deteccion de senderos compensan muy bien las peculiaridades del minifundio local. No obstante, frente a la realidad censal del MAG/RENAGRO, el modelo puramente visual tiende a aislar segmentos funcionales (por rotacion de pastos o policultivos intra-parcelarios) como UPAs distintas, cuando podrian pertenecer al mismo productor, sugiriendo una necesaria etapa de agregacion agronomico-juridica post-procesamiento."
+      }
+    },
+    "sintesis_estrategica": {
+      "tres_mayores_fortalezas": [
+        "Innovadora fusion algoritmica entre la IA generativa de segmentacion (SAM-2.1) y filtros de procesamiento digital de imagenes con fundamentos fisicos/matematicos (Crestas de Meijering).",
+        "Garantia absoluta de calidad topologica catastral (0.00% de solapes inter-parcelarios y conformidad total con el estandar LADM ISO 19152).",
+        "Estrategia robusta y multi-criterio (sombra 3D, croma a*, textura, buffers LPIS) para la eliminacion de edificaciones sobre la mancha agricola."
+      ],
+      "tres_mayores_cuellos_de_botella": [
+        "Arquitectura de software monolitica concentrada en un pipeline de casi 1,000 lineas, dificultando su portabilidad y testeo unitario MLOps.",
+        "Falta de resiliencia radiometrica en laderas escarpadas con acentuadas sombras orograficas de la zona andina.",
+        "Vulnerabilidad a la sobre-segmentacion catastral en predios unicos que exhiben heterogeneidad de coberturas debido al policultivo o rotacion rapida."
+      ],
+      "cinco_recomendaciones_prioritarias": [
+        {
+          "orden": 1,
+          "titulo": "Refactorizacion de Arquitectura S.O.L.I.D.",
+          "tipo": "Estructural",
+          "impacto": "Alto",
+          "esfuerzo": "Alto",
+          "descripcion": "Desacoplar funcionalmente el script maestro, separando responsabilidades en modulos distintos: ETL Geoespacial, Motor de Inferencia Pytorch, Validador LADM y Modulo de Reporting."
+        },
+        {
+          "orden": 2,
+          "titulo": "Adopcion Inmediata de Automatic Mixed Precision (AMP)",
+          "tipo": "Quick Win",
+          "impacto": "Alto",
+          "esfuerzo": "Bajo",
+          "descripcion": "Integrar torch.autocast para acelerar drastica y computacionalmente la generacion de tensores Hiera y reducir el Footprint de VRAM en mas del 40% durante la ingesta a Zoom 18."
+        },
+        {
+          "orden": 3,
+          "titulo": "Normalizacion Topografico-Radiometrica",
+          "tipo": "Estructural",
+          "impacto": "Medio",
+          "esfuerzo": "Medio",
+          "descripcion": "Incluir una etapa de correccion de iluminacion (Minnaert o C-correction) dependiente del MDT/DEM local previo a la ingesta RGB del Segmentador Hibrido."
+        },
+        {
+          "orden": 4,
+          "titulo": "Filtro Heuristico de Agregacion Intra-Predial",
+          "tipo": "Quick Win",
+          "impacto": "Medio",
+          "esfuerzo": "Bajo",
+          "descripcion": "Aplicar una logica de agrupamiento basada en adyacencia espacial e indices de similitud textural post-LADM, para unificar sectores de policultivos de un mismo propietario."
+        },
+        {
+          "orden": 5,
+          "titulo": "Implementacion de Bateria de Pruebas Automatizadas",
+          "tipo": "Estructural",
+          "impacto": "Medio",
+          "esfuerzo": "Medio",
+          "descripcion": "Crear scripts Pytest centrados en testear casos limite catastrales: aserciones de poligonos no-intersectantes, verificacion del umbral de areas minimas y limites maximos de vertices de las geometrias."
+        }
+      ],
+      "veredicto_final_memoria_tfm": "El Trabajo Fin de Master representa una excepcional demostracion de ingenieria aplicada, fusionando acertadamente lo ultimo en modelos fundacionales de vision artificial (SAM-2.1) con normativas catastrales rigorosas (LADM / LPIS). Resuelve un problema local profundo (el minifundio andino de Ecuador) con metricas globales de altisima competitividad (Dice 91.1%). Pese a la deuda tecnica previsible en la arquitectura del software de investigacion academica, el impacto teorico, la innovacion del mosaico hibrido y la pulcritud metrica la hacen indudablemente meritoria a la maxima calificacion de Matricula de Honor, con madurez inmediata para spin-off o patente publica en el MAG."
+    },
+    "telemetria": {
+      "tiempo_segundos": 72.17,
+      "thinking_tokens": 4085,
+      "total_tokens": 12299,
+      "modelo": "gemini-3.1-pro-preview"
+    }
+  }
+}

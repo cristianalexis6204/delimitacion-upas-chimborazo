@@ -1,0 +1,212 @@
+{
+  "metadata": {
+    "proyecto": "TFM UNIR - Delimitacion UPAs Chimborazo",
+    "autor": "Cristian Alexis Garcia Pumagualle",
+    "scripts_auditados_count": 4,
+    "total_lineas_codigo": 1940
+  },
+  "scripts": [
+    {
+      "archivo": "run_san_andres_v60_master_pipeline.py",
+      "total_lineas": 991,
+      "tamano_kb": 51.9,
+      "clases": [],
+      "funciones_principales": [
+        "latlon_to_tile",
+        "tile_to_latlon",
+        "fetch_tile_imagery",
+        "get_scene_patch",
+        "render_kml_polygon",
+        "render_kml_linestring",
+        "generate_legend_image",
+        "run_v60_master_pipeline"
+      ],
+      "total_funciones": 8,
+      "librerias_clave": [
+        "cv2",
+        "download_sam2_and_samhq_weights",
+        "geopandas",
+        "numpy",
+        "sam2_ridge_hybrid_segmenter",
+        "shapely",
+        "shapely.geometry",
+        "shapely.ops",
+        "torch"
+      ],
+      "snippet_cabecera": "\"\"\"\nPIPELINE MASTER v60.0.0 - DELIMITACIÓN INTEGRAL DE UPAS EN LA PARROQUIA SAN ANDRÉS\nCANTÓN GUANO, PROVINCIA DE CHIMBORAZO (TFM UNIR - MAESTRÍA EN INTELIGENCIA ARTIFICIAL)\nAutor: Cristian Alexis García Pumagualle\nDirector: Fernando Antonio Rufo Jiménez\n\nEste script maestro ejecuta la inferencia real de visión por computador y catastro LADM:\n1. Ingesta satelital VHR a Zoom 18 (GSD ~0.55 m/px) en 4 Cuadrantes Agrícolas de San Andrés.\n2. Extracción de restricciones territoriales duras: Red Vial Rural (LPIS) y Edificaciones LADM con sombra 3D.\n3. Delineación de linderos por Meta SAM 2.1 Hiera-Large + Tensor de Crestas de Meijering multiescala.\n4. Mosaico planar competitivo Argmax y regularización topológica LADM ISO 19152 (0.00% solapes).\n5. Clasificación espectral multiclase: Cultivo Verde (#22C55E), Suelo Húmedo/Barbecho (#B78103), Arbóreo (#15803D), Reservorio (#2563EB).\n6. Exportación de GeoPackage oficial en EPSG:32717 (UTM Zona 17 Sur).\n7. Exportación de KML Unificado con Vistas Cinemáticas LookAt a 480 m y ScreenOverlay de Leyenda.\n8. Generación de las 4 comparativas lado a lado individuales a 300 DPI y suite completa.\n9. Centralización de métricas cuantitativas en metrics_summary_v60_0_0.json.\n10. Compilación del Informe Técnico Oficial en PDF de 6 páginas con ReportLab (INFORME_TECNICO_v60.pdf).\n\"\"\"\n\nimport os\nimport sys\nimport math\nimport json\nimport datetime\nimport shutil\nimport numpy as np\nimport cv2\nimport pandas as pd\nimport geopandas as gpd\nfrom shapely.geometry import Polygon, Point, MultiPolygon, LineString, MultiLineString\nfrom shapely.ops import unary_union\nimport shapely\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as mpatches\nfrom matplotlib.lines import Line2D"
+    },
+    {
+      "archivo": "sam2_ridge_hybrid_segmenter.py",
+      "total_lineas": 368,
+      "tamano_kb": 15.4,
+      "clases": [
+        "Sam2RidgeHybridSegmenter"
+      ],
+      "funciones_principales": [
+        "clean_poly",
+        "__init__",
+        "_init_generator",
+        "compute_boundary_energy",
+        "regularize_polygon_ladm",
+        "delineate_parcels"
+      ],
+      "total_funciones": 6,
+      "librerias_clave": [
+        "cv2",
+        "numpy",
+        "sam2.automatic_mask_generator",
+        "sam2.build_sam",
+        "shapely",
+        "shapely.geometry",
+        "shapely.validation",
+        "torch"
+      ],
+      "snippet_cabecera": "\"\"\"\nPIPELINE MASTER v58.0.0 - SEGMENTADOR HÍBRIDO META SAM-2.1 / SAM-HQ + CRESTAS MEIJERING + LADM\nTFM UNIR - Maestría en Inteligencia Artificial\nAutor: Cristian Alexis García Pumagualle\nDirector: Fernando Antonio Rufo Jiménez\n\nInnovaciones de la Versión v58.0.0:\n1. Integración de arquitectura Meta SAM-2.1 (Hierarchical Vision Transformer - Hiera) y SysCV SAM-HQ (High-Quality Token) con inferencia multiescala piramidal (crop_n_layers=1, crop_overlap_ratio=0.25).\n2. Fusión tensorial de energía de linderos Hessian-Meijering multiescala con ponderación de alineación de borde en el score competitivo.\n3. Mosaico Planar Argmax Competitivo con 0.00% solapes constructivos y clasificación espectral agronómica.\n4. Regularización topológica estricta LADM ISO 19152 en espacio isótropo (4 a 8 vértices por parcela).\n\"\"\"\n\nimport os\nimport sys\nimport warnings\nwarnings.filterwarnings(\"ignore\")\n\nimport numpy as np\nimport cv2\nimport torch\nfrom shapely.geometry import Polygon, MultiPolygon\nfrom shapely.validation import make_valid\nfrom skimage.filters import meijering\nimport shapely\n\n# Configuración de importación flexible (SAM-2, SAM-HQ o fallback a SAM-1)\nHAS_SAM2 = False\nHAS_SAMHQ = False\n\ntry:\n    from sam2.build_sam import build_sam2\n    from sam2.automatic_mask_generator import SAM2AutomaticMaskGenerator\n    HAS_SAM2 = True\nexcept ImportError:"
+    },
+    {
+      "archivo": "rural_road_network_extractor.py",
+      "total_lineas": 275,
+      "tamano_kb": 12.2,
+      "clases": [
+        "RuralRoadNetworkExtractor"
+      ],
+      "funciones_principales": [
+        "__init__",
+        "_load_from_master_geojson",
+        "fetch_osm_roads",
+        "detect_spectral_dirt_roads",
+        "extract_roads",
+        "partition_and_enforce_roads"
+      ],
+      "total_funciones": 6,
+      "librerias_clave": [
+        "cv2",
+        "numpy",
+        "shapely.geometry",
+        "shapely.ops"
+      ],
+      "snippet_cabecera": "\"\"\"\nMÓDULO EXTRACTOR DE RED VIAL Y VÍAS DE TERRACERÍA (TFM UNIR - v55.0.0 SOTA)\nAutor: Cristian Alexis García Pumagualle\n\nFundamentación Científica y Estándar LPIS (Reg. UE 640/2014 & RENAGRO):\n- Integra infraestructura vial oficial de alta fidelidad (OpenStreetMap con caché local offline).\n- Arquitectura Resiliente Multinivel:\n  1. Base vectorial local de alta resolución (GeoJSON precacheado de Chimborazo).\n  2. Consulta en vivo a Overpass API con auto-almacenamiento en caché.\n  3. Extractor espectral-morfológico de respaldo para caminos rurales y senderos (chaquiñanes).\n- Búfer de servidumbre vial reglamentario de 3.5 metros (LPIS) para partición planar estanco.\n- Cero fallos por HTTP 504 o desconexión de red: 100% de persistencia garantizada.\n\"\"\"\n\nimport os\nimport json\nimport math\nimport urllib.request\nimport urllib.parse\nimport numpy as np\nimport cv2\nfrom shapely.geometry import LineString, MultiLineString, Polygon, MultiPolygon, box, shape\nfrom shapely.ops import unary_union\n\n\nclass RuralRoadNetworkExtractor:\n    def __init__(self, road_buffer_m=3.5, cache_dir=None, default_geojson_path=None):\n        self.road_buffer_m = road_buffer_m\n        self.deg_per_meter = 1.0 / 111000.0\n        \n        src_dir = os.path.dirname(os.path.abspath(__file__))\n        repo_dir = os.path.dirname(src_dir)\n        root_tfm = os.path.dirname(repo_dir)\n        \n        if cache_dir is None or not os.path.exists(cache_dir):"
+    },
+    {
+      "archivo": "rural_building_extractor.py",
+      "total_lineas": 306,
+      "tamano_kb": 14.1,
+      "clases": [
+        "RuralBuildingExtractor"
+      ],
+      "funciones_principales": [
+        "__init__",
+        "extract_buildings",
+        "create_settlement_mask",
+        "filter_urban_settlement_courtyards",
+        "subtract_buildings_from_upas"
+      ],
+      "total_funciones": 5,
+      "librerias_clave": [
+        "cv2",
+        "numpy",
+        "shapely.geometry",
+        "shapely.ops"
+      ],
+      "snippet_cabecera": "\"\"\"\nMÓDULO EXTRACTOR DE EDIFICACIONES Y ASENTAMIENTOS RURALES (TFM UNIR - v57.0.0)\nAutor: Cristian Alexis García Pumagualle\n\nFundamentación Científica y Catastral (LADM ISO 19152 / RENAGRO / LPIS):\n- Segregación estricta entre LA_SpatialUnit_Building (Viviendas y Galpones) y LA_SpatialUnit_Parcel (UPAs Agrícolas).\n- Erradicación Total de Falsos Positivos sobre Suelo Agrícola Arado:\n  1. Disambiguación Espectral CIELAB: Canal cromático a* > 134 para separar teja de barro cocido del suelo andino pardo neutro.\n  2. Modelado de Sombra Relativa 3D: Contraste direccional suroeste (Delta-L >= 14.0 DN contra la propia cubierta).\n  3. Homogeneidad Textural: std(gray) <= 38.0 para rechazar surcos, rastrojos y rugosidad de suelos arados.\n  4. Rectangularidad Estructural: Rectangularidad real >= 0.62 y aspecto <= 3.8.\n  5. Contexto Topológico de Proximidad Vial LADM:\n     - Zona de Caserío / Camino (<= 35m de vía): se valida con sombra relativa, contraste perimetral o alta reflectancia de zinc.\n     - Interior de Cultivos (> 35m de vía): validación 3D estricta (sombra confirmada + alto contraste de borde + rectangularidad >= 0.70).\n\"\"\"\n\nimport numpy as np\nimport cv2\nfrom shapely.geometry import Polygon, MultiPolygon, Point\nfrom shapely.ops import unary_union\n\nclass RuralBuildingExtractor:\n    def __init__(self, min_area_m2=25.0, max_housing_m2=280.0, max_facility_m2=750.0, min_rectangularity=0.62):\n        self.min_area_m2 = min_area_m2\n        self.max_housing_m2 = max_housing_m2\n        self.max_facility_m2 = max_facility_m2\n        self.min_rectangularity = min_rectangularity\n        self.deg_per_meter = 1.0 / 111000.0\n\n    def extract_buildings(self, rgb_image, l_clahe, exg, bbox, shapely_roads=None):\n        \"\"\"\n        Detecta y georreferencia viviendas y galpones rurales mediante espectro cuádruple,\n        desagregación por watershed, verificación de sombra solar relativa y regularización ortogonal a 90°.\n        \"\"\"\n        h_img, w_img, _ = rgb_image.shape"
+    }
+  ],
+  "metricas_y_parametros": {
+    "san_andres_v60": {
+      "total_upas_delimitadas": 359,
+      "superficie_agricola_ha": 40.22,
+      "vertices_promedio": 7.15,
+      "viviendas_lpis_detectadas": 60,
+      "vias_rurales_lpis": 156,
+      "solape_inter_parcelario": 0.0,
+      "solape_en_viviendas_o_vias": 0.0,
+      "miou_real_terreno": 83.6,
+      "dice_coefficient": 91.1,
+      "boundary_f1_bf1": 92.4,
+      "conformidad_ladm_iso19152": 100.0,
+      "tiempo_inferencia_cuda_s": 84.5
+    },
+    "ground_truth_calpi_100_upas": {
+      "total_muestras_gt": 100,
+      "benchmark_5_modelos": {
+        "sam2_1_hiera_meijering_propuesto": {
+          "miou": 80.5,
+          "dice": 89.2,
+          "bf1": 89.8,
+          "ladm": 100.0,
+          "solape": 0.17
+        },
+        "sam_vit_b_baseline": {
+          "miou": 68.2,
+          "dice": 81.1,
+          "bf1": 77.4,
+          "ladm": 84.0,
+          "solape": 4.82
+        },
+        "mask_rcnn_resnet50": {
+          "miou": 61.4,
+          "dice": 76.0,
+          "bf1": 71.9,
+          "ladm": 72.0,
+          "solape": 6.15
+        },
+        "unet_vgg16": {
+          "miou": 58.7,
+          "dice": 73.9,
+          "bf1": 68.5,
+          "ladm": 65.0,
+          "solape": 8.9
+        },
+        "otsu_morphological": {
+          "miou": 42.1,
+          "dice": 59.2,
+          "bf1": 51.3,
+          "ladm": 41.0,
+          "solape": 14.5
+        }
+      }
+    },
+    "parametros_algoritmicos_troncales": {
+      "filtro_meijering": {
+        "sigmas": [
+          1.2,
+          2.0,
+          3.2
+        ],
+        "modo": "black_ridges",
+        "normalizacion": "min-max robusta percentile(1, 99)"
+      },
+      "sam2_1_hiera": {
+        "arquitectura": "sam2.1_hiera_base_plus / vit_b",
+        "points_per_side": 32,
+        "pred_iou_thresh": 0.86,
+        "stability_score_thresh": 0.91,
+        "min_mask_region_area": 120
+      },
+      "extraccion_edificaciones": {
+        "cielab_a_min": 134.0,
+        "contraste_sombra_3d_delta_l": 14.0,
+        "std_homogeneidad_gris_max": 38.0,
+        "rectangularidad_min": 0.62,
+        "buffer_asentamiento_m": 20.0
+      },
+      "extraccion_vias": {
+        "buffer_servidumbre_lpis_m": 3.5,
+        "snap_tolerance_m": 1.2,
+        "fuentes": [
+          "OSM Cache Local",
+          "Overpass API",
+          "Crestas Morfologicas"
+        ]
+      },
+      "regularizacion_ladm": {
+        "metodo": "Ramer-Douglas-Peucker anisotropo con snap de esquinas casi-rectangulares",
+        "rango_vertices_objetivo": [
+          4,
+          10
+        ],
+        "particion_planar": "Argmax competitivo matricial con 0.00% solape"
+      }
+    }
+  }
+}

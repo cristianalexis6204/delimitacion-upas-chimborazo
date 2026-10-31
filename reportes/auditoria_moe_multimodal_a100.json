@@ -1,0 +1,86 @@
+{
+  "fecha": "2026-10-27",
+  "tipo_auditoria": "Multimodal Visual MoE (4 Renders VHR A100)",
+  "acelerador": "NVIDIA A100-SXM4-80GB",
+  "cuadrantes_evaluados": 4,
+  "modelos": {
+    "gemini_4_argon": {
+      "modelo": "gemini-4-argon",
+      "tiempo_s": 62.42,
+      "thinking_tokens": 0,
+      "total_tokens": 9055,
+      "dictamen": {
+        "modelo_auditor": "Comité Colegiado MoE en Visión por Computador, Sensores Remotos VHR y Catastro LADM ISO 19152 (Auditoría v61.2.0-A100-SOTA)",
+        "scorecard_multimodal": {
+          "fidelidad_visual_linderos": 85,
+          "precision_exclusion_viviendas": 94,
+          "regularidad_topologica_ladm": 97,
+          "eficiencia_hpc_a100": 96,
+          "calidad_global_consolidada": 93
+        },
+        "diagnostico_visual_por_cuadrante": {
+          "cuadrante_1_valle_aluvial": "San Andrés Centro (55 UPAs, 36 viviendas, 4 tramos viales): Excelente discriminación de la cantera y laguna de oxidación/acumulación hídrica en el flanco medio-derecho, evitando falsos positivos sobre cuerpos de agua y taludes desnudos. Las viviendas dispersas con cubiertas de teja y zinc muestran un aislamiento topológico impecable mediante el buffer de 6 metros. Se observa omisión (sub-detección) en lotes agrícolas en barbecho o suelo arado seco en el sector centro-izquierdo, mientras que la cortina forestal superior es absorbida como macro-polígono agroforestal.",
+          "cuadrante_2_laderas_andinas": "Chocaví (52 UPAs, 46 viviendas, 11 tramos viales): Alta precisión en la captura de la estructura de minifundio en ladera con presencia de setos vivos y terrazas activas. El corredor vial principal y sus ramales articulan correctamente la partición espacial. Como oportunidad de mejora crítica, el equipamiento del extremo superior derecho (estructura amurallada tipo cementerio o complejo comunal denso) es clasificado erróneamente como UPA agrícola, y las parcelas secas del sector central en descanso agronómico quedan sin segmentar.",
+          "cuadrante_3_piedemonte_chimborazo": "Pulucate (78 UPAs, 9 viviendas, 1 tramo vial): Constituye el cuadrante de mayor fidelidad geométrica y agronómica. El mosaico intensivo de pasturas y cultivos andinos en el sector centro-inferior se ajusta milimétricamente a los linderos físicos de cabuya, lechero y zanjas de drenaje, sin sobre-segmentación interna. Las 9 edificaciones rurales están quirúrgicamente sustraídas. Persiste únicamente la inclusión parcial del bosque de eucalipto en la quebrada diagonal como superficie de UPA.",
+          "cuadrante_4_interfase_vial": "Batzacón (40 UPAs, 20 viviendas, 5 tramos viales): Escenario de alta complejidad espectral por predominio de suelos desnudos, rastrojos secos y reflectancia elevada. El algoritmo captura con éxito las parcelas con cobertura fotosintética activa y protege las 20 viviendas rurales sin invasión de bordes. Sin embargo, se registra una sub-segmentación marcada en los lotes agrícolas áridos del flanco izquierdo y sur, además de la absorción parcial de naves/invernaderos centrales dentro de la clase UPA."
+        },
+        "analisis_detallado": {
+          "fidelidad_linderos_vs_ortofoto": "El filtro neurálgico apoyado por Meijering bimodal demuestra una capacidad sobresaliente para adherirse a discontinuidades lineales oscuras y texturas de bordes vegetados (setos vivos, hileras de árboles y caminos de herradura), logrando aislar con gran nitidez los minifundios en producción activa (especialmente visible en Pulucate). No se detecta sobre-segmentación severa dentro de lotes homogéneos; por el contrario, el sesgo conservador del modelo tiende a omitir parcelas en barbecho desnudo o suelo recién arado donde el contraste espectral respecto a la matriz árida circundante es bajo.",
+          "comportamiento_en_laderas_y_terrazas": "En las topografías quebradas de Chocaví y el piedemonte de Pulucate, el pipeline mantiene la cohesión de las terrazas agrícolas sin fragmentar los lotes por sombras topográficas moderadas. La transición entre laderas cultivadas y quebradas boscosas es continua, aunque la similitud textural en el espectro visible entre cultivos densos y dosel forestal de eucalipto genera fusiones en los bordes de quebrada.",
+          "efectividad_buffer_viviendas": "La detección de las 111 edificaciones rurales (techos de teja de barro cocido, fibrocemento y zinc brillante) combinada con la operación booleana de exclusión mediante buffer perimetral (parametrizado a 6.0 metros en la versión v61.2.0-A100-SOTA) garantiza un 0.00% de solape entre la capa de construcciones y la capa de UPAs. Los patios de maniobra, corrales anexos y aleros quedan completamente resguardados, eliminando el clásico error de desborde de máscaras de segmentación semántica sobre techumbres rurales.",
+          "evaluacion_regularizacion_ladm_11_vertices": "La regularización planar mediante 'shapely.coverage_simplify' (operando en el rango de 11.97 a 20.81 vértices medios por polígono frente a los 57 vértices crudos previos) erradica por completo el efecto diente de sierra (pixelación de rasterización) a 0.30 m/px. Las esquinas ortogonales y agudas de las parcelas mantienen su silueta catastral fiel a la ortofoto, logrando un 100.0% de conformidad topológica LADM ISO 19152 con 0.00% de solapes inter-parcelarios."
+        },
+        "fortalezas_visuales_identificadas": [
+          "Inmunidad topológica absoluta (0.00% de solapes): Separación geométrica perfecta entre las 225 UPAs, las 111 viviendas con su halo de exclusión de 6m y los 21 tramos de la red vial LPIS, cumpliendo estrictamente el estándar catastral LADM ISO 19152.",
+          "Adherencia sub-métrica a linderos vivos en mosaicos activos: En zonas de cultivo consolidado (Pulucate y valles irrigados), los vectores verdes respetan con precisión quirúrgica los setos de cabuya, zanjas y cambios de textura foliar sin invadir parcelas colindantes.",
+          "Simplificación vectorial de alta pureza geométrica: La reducción drástica de complejidad fractal en los contornos produce polígonos limpios, ligeros y directamente ingestables en motores GIS corporativos (PostGIS/QGIS) sin pérdida de área agronómica útil."
+        ],
+        "oportunidades_de_mejora_visual_y_algoritmica": [
+          "Incorporación de un clasificador multitemporal o de textura de suelo arado (GLCM / Gabor / SAM fine-tuned en suelos áridos) para rescatar las parcelas agrícolas en barbecho o preparación de terreno que actualmente son omitidas en Batzacón y Chocaví.",
+          "Refinamiento de máscaras de exclusión para infraestructura no residencial: Entrenar una clase específica para equipamientos comunitarios densos (como el cementerio de Chocaví), invernaderos plásticos y galpones agroindustriales (Batzacón) para evitar su asimilación como UPAs cultivables.",
+          "Discriminación de dosel forestal en quebradas: Integrar índices de rugosidad de copa o métricas de sombra proyectada para separar los bosques de galería/eucalipto en quebradas profundas (Pulucate y norte de San Andrés Centro) respecto de las parcelas estrictamente agropecuarias."
+        ],
+        "veredicto_tribunal": "Aprobado con Distinción"
+      }
+    },
+    "gemini_3_1_pro": {
+      "modelo": "gemini-3.1-pro-preview",
+      "tiempo_s": 43.12,
+      "thinking_tokens": 0,
+      "total_tokens": 8408,
+      "dictamen": {
+        "modelo_auditor": "Comité Colegiado MoE - Visión por Computador y Catastro LADM",
+        "scorecard_multimodal": {
+          "fidelidad_visual_linderos": 92,
+          "precision_exclusion_viviendas": 96,
+          "regularidad_topologica_ladm": 99,
+          "eficiencia_hpc_a100": 95,
+          "calidad_global_consolidada": 95
+        },
+        "diagnostico_visual_por_cuadrante": {
+          "cuadrante_1_valle_aluvial": "Excelente captura de la alta densidad del minifundio. Los polígonos verdes se adaptan con precisión a la fragmentación extrema, y los buffers de las viviendas (líneas punteadas naranjas) excluyen correctamente las áreas residenciales del área agrícola.",
+          "cuadrante_2_laderas_andinas": "Notable adaptación a la topografía irregular. El modelo logra identificar los linderos basados en terrazas y cambios de pendiente sin forzar geometrías ortogonales artificiales. Se respeta adecuadamente la red vial LPIS (tramos azules).",
+          "cuadrante_3_piedemonte_chimborazo": "Alta fidelidad en parcelas de mayor extensión. La delimitación sigue claramente las barreras naturales (setos vivos y zanjas). La baja densidad de edificaciones permite polígonos agrícolas más continuos y limpios.",
+          "cuadrante_4_interfase_vial": "Gestión sobresaliente de la interacción entre parcelas y vías de comunicación. El modelo discrimina bien las áreas de cultivo de las infraestructuras antrópicas (invernaderos y caminos consolidados), manteniendo la integridad topológica."
+        },
+        "analisis_detallado": {
+          "fidelidad_linderos_vs_ortofoto": "La correspondencia visual es muy alta. El algoritmo de segmentación aprovecha eficazmente los gradientes de textura y color (cambios de cultivo, setos de cabuya/lechero) para trazar límites que coinciden con la realidad agronómica visible en la ortofoto VHR.",
+          "comportamiento_en_laderas_y_terrazas": "El pipeline demuestra robustez frente a la distorsión topográfica típica de los Andes. Los polígonos fluyen con las curvas de nivel y las terrazas de cultivo, evitando la sobre-simplificación en líneas rectas que no representarían la morfología real del terreno.",
+          "efectividad_buffer_viviendas": "Altamente efectiva. La aplicación del buffer (6m según leyenda) crea 'agujeros' topológicos perfectos dentro de las UPAs. Esto garantiza que el área neta agrícola no esté sobreestimada y previene conflictos de uso de suelo en la base de datos catastral.",
+          "evaluacion_regularizacion_ladm_11_vertices": "La simplificación geométrica (con una media de ~20 vértices según métricas) es un éxito rotundo. Elimina el efecto 'escalonado' de los píxeles, generando vectores suaves y manejables para bases de datos espaciales (PostGIS/LADM) sin deformar la silueta agronómica original ni generar solapes (0.00%)."
+        },
+        "fortalezas_visuales_identificadas": [
+          "Consistencia topológica perfecta (0.00% de solapes), cumpliendo a cabalidad con el estándar LADM ISO 19152.",
+          "Exclusión precisa de edificaciones rurales mediante buffers dinámicos que protegen la zona residencial del polígono agrícola.",
+          "Alta sensibilidad para detectar linderos naturales (setos, zanjas) en un entorno de minifundio andino altamente fragmentado."
+        ],
+        "oportunidades_de_mejora_visual_y_algoritmica": [
+          "Afinar la sensibilidad en zonas de transición de cultivos muy sutiles para evitar casos aislados de sub-segmentación (fusión de parcelas con fenología similar).",
+          "Mejorar la extracción de caminos de herradura o senderos de tierra secundarios que ocasionalmente quedan incluidos dentro de los polígonos agrícolas.",
+          "Integrar análisis multitemporal para resolver ambigüedades en linderos que actualmente están ocultos por la sombra de la topografía o la etapa de crecimiento del cultivo."
+        ],
+        "veredicto_tribunal": "Sobresaliente"
+      }
+    }
+  }
+}

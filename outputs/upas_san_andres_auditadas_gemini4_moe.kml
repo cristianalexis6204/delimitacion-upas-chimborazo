@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Auditoria MoE Gemini 4 Argon - San Andres Chimborazo</name>
+    <open>1</open>
+    <Style id="poly_verde"><LineStyle><color>ff22c53d</color><width>2.5</width></LineStyle><PolyStyle><color>7f3dc522</color></PolyStyle></Style>
+    <Style id="poly_amarillo"><LineStyle><color>ffeab308</color><width>2.5</width></LineStyle><PolyStyle><color>7f08b3ea</color></PolyStyle></Style>
+    <Style id="poly_rojo"><LineStyle><color>ffef4444</color><width>2.5</width></LineStyle><PolyStyle><color>7f4444ef</color></PolyStyle></Style>
+    <Style id="pin_verde"><IconStyle><scale>1.2</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href></Icon></IconStyle></Style>
+    <Style id="pin_amarillo"><IconStyle><scale>1.2</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href></Icon></IconStyle></Style>
+    <Style id="pin_rojo"><IconStyle><scale>1.2</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-circle.png</href></Icon></IconStyle></Style>
+    <Folder>
+      <name>1. Parcelas SAM 2.1 Auditadas (Semaforo MoE)</name>
+      <open>1</open>
+      <Placemark>
+        <name>UPA-SA-0013 [CONCORDANTE]</name>
+        <styleUrl>#poly_verde</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-012 → UPA-SA-0013
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               CONCORDANTE (ICPC: 95.8/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Papa (Solanum tuberosum)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1548.9 m² (Error: 3.26%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">17.1 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">7 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (96/100):</strong> Los índices espectrales ExG (0.2364) y VARI (0.1693), junto con la dominancia del canal verde en la firma RGB [115, 142, 92], confirman alta actividad fotosintética y vigor vegetativo. La textura morfológica de surcos paralelos detectada por el filtro Meijering con cobertura foliar densa es plenamente consistente con el cultivo de papa (Solanum tuberosum) en etapa de desarrollo vegetativo pleno o floración post-aporque.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (98/100):</strong> El polígono presenta una geometría óptima de 7 vértices (dentro del rango estándar de 4 a 10), garantizando regularidad vectorial. Se verifica un 100% de estanqueidad planar sin solapes con predios colindantes, respeto estricto al buffer de servidumbre vial LPIS de 3.5 m y exclusión total de edificaciones o patios dentro del área neta de cultivo.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (94/100):</strong> El desplazamiento de 17.1 m entre la coordenada GPS de la vivienda encuestada y el centroide de la parcela se absorbe satisfactoriamente dentro del umbral de tolerancia operativa de campo (10 a 25 m). La discrepancia superficial entre el área declarada (1500.0 m2) y la delimitada por IA (1548.9 m2) representa un error marginal del 3.26%, demostrando altísima precisión dimensional.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> Dictamen colegiado favorable con un ICPC de 95.8/100. Existe plena convergencia entre la declaración censal y la evidencia geoespacial: la firma espectral y morfológica valida inequívocamente el cultivo de papa en desarrollo, la discrepancia de superficie es mínima (3.26%) con desplazamiento GPS absorbido en rango normal, y la geometría cumple rigurosamente el estándar topológico LADM ISO 19152.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7021548,-1.5954828,0 -78.7023103,-1.5954560,0 -78.7023801,-1.5955257,0 -78.7024605,-1.5958206,0 -78.7024230,-1.5959279,0 -78.7021869,-1.5959118,0 -78.7020957,-1.5956169,0 -78.7021548,-1.5954828,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0122 [CONCORDANTE]</name>
+        <styleUrl>#poly_verde</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-019 → UPA-SA-0122
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               CONCORDANTE (ICPC: 95.1/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Alfalfa / Pasto Forrajero (Medicago sativa)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1638.7 m² (Error: 9.25%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">14.2 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">8 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (96/100):</strong> Los índices espectrales ExG (0.2894) y VARI (0.3075), sumados a la fuerte dominancia del canal verde en la tripleta RGB [95, 165, 80], evidencian una alta actividad clorofílica y cobertura foliar densa. La textura morfológica Meijering confirma un dosel continuo y homogéneo, lo cual es biológica y fenológicamente consistente con un lote establecido de Medicago sativa (alfalfa) en fase de crecimiento vegetativo vigoroso previo al corte.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (98/100):</strong> El polígono presenta una regularización geométrica óptima de 8 vértices (dentro del umbral normativo de 4 a 10) y un perímetro bien definido de 177.7 m. Se verifica un 100% de estanqueidad planar sin superposiciones con predios colindantes, estricto respeto al buffer de servidumbre vial LPIS de 3.5 m y exclusión absoluta de infraestructura habitacional dentro del área productiva.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (92/100):</strong> El desplazamiento planimétrico de 14.2 m entre la coordenada GPS de la vivienda encuestada y el centroide de la UPA se absorbe satisfactoriamente dentro de la tolerancia operativa de campo (10 a 25 m). El error de superficie del 9.25% (1500.0 m2 declarados frente a 1638.7 m2 delimitados) refleja una desviación mínima atribuible al redondeo declarativo del productor, muy por debajo del umbral crítico de penalización.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El Sistema Colegiado MoE dictamina una concordancia plena (ICPC: 95.1) para la unidad productiva UPA-CHIM-019. La firma espectral valida inequívocamente la presencia de cobertura forrajera vigorosa (alfalfa), la discrepancia superficial es marginal (<10%) con desplazamiento GPS absorbido en rango normativo, y la estructura poligonal cumple rigurosamente los estándares topológicos LADM ISO 19152.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7180388,-1.5701456,0 -78.7181836,-1.5701939,0 -78.7182426,-1.5701349,0 -78.7184733,-1.5702850,0 -78.7183607,-1.5706872,0 -78.7181622,-1.5705371,0 -78.7181354,-1.5703494,0 -78.7180656,-1.5702797,0 -78.7180388,-1.5701456,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0168 [CONCORDANTE]</name>
+        <styleUrl>#poly_verde</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-035 → UPA-SA-0168
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               CONCORDANTE (ICPC: 97.0/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Papa (Solanum tuberosum)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1570.3 m² (Error: 4.69%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">15.2 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">5 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (96/100):</strong> Los índices espectrales (ExG: 0.279, VARI: 0.2256) y la dominancia del canal verde en la firma RGB [115, 142, 92] confirman una actividad fotosintética vigorosa y alta densidad de biomasa. La textura morfológica Meijering detecta surcos paralelos bien estructurados con cobertura foliar densa, patrón fenológico y agronómico característico del cultivo de papa (Solanum tuberosum) en fase de máximo desarrollo vegetativo o floración en la zona agroecológica de Pulucate.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (100/100):</strong> El polígono restituido presenta una geometría óptima de 5 vértices y 157.2 m de perímetro, cumpliendo estrictamente el rango de regularidad LADM (4 a 10 vértices). Se certifica un 100% de estanqueidad planar sin solapes con predios vecinos, respeto absoluto al buffer de servidumbre vial LPIS (3.5 m) y la exclusión verificada de infraestructura habitacional dentro del área cultivada.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (96/100):</strong> El desplazamiento planimétrico de 15.2 m entre la toma GPS de la vivienda encuestada y el centroide de la UPA es absorbido satisfactoriamente dentro del rango de tolerancia operativa de campo (10 a 25 m). La desviación superficial entre el área declarada (1500.0 m2) y la delimitada por IA (1570.3 m2) es de apenas 4.69%, evidenciando una altísima precisión dimensional.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El Sistema Colegiado MoE dictamina una validación exitosa y altamente consistente (ICPC: 97.0/100). La firma espectral y el patrón de surcos validan sin ambigüedad la presencia de papa en pleno desarrollo, respaldados por una topología predial impecable bajo la norma ISO 19152 y una discrepancia métrica marginal (4.69%) plenamente absorbida por los parámetros geodésicos del censo.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7336010,-1.5565894,0 -78.7337780,-1.5568951,0 -78.7335259,-1.5571096,0 -78.7334669,-1.5571096,0 -78.7333328,-1.5568146,0 -78.7336010,-1.5565894,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0310 [CONCORDANTE]</name>
+        <styleUrl>#poly_verde</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-046 → UPA-SA-0310
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               CONCORDANTE (ICPC: 89.4/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Zanahoria Amarilla (Daucus carota)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1266.4 m² (Error: 15.57%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">21.9 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">8 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (90/100):</strong> Los índices espectrales ExG (0.1749) y VARI (0.1711), junto con la dominancia del canal verde en la firma RGB (125, 150, 98), son altamente consistentes con un cultivo de Daucus carota en fase de desarrollo vegetativo y engrosamiento radicular. La textura Meijering de 'líneas finas con verdor intermedio' refleja con precisión la morfología de follaje pinnado sembrado en surcos o camellones, donde la exposición parcial del suelo interlínea modula la reflectancia global sin indicar deficiencia biológica.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (96/100):</strong> Geometría poligonal óptima compuesta por 8 vértices, situada dentro del rango estándar LADM (4 a 10 vértices) para predios rurales regulares. Se verifica un 100% de estanqueidad planar sin solapes con predios colindantes, correcta aplicación del retranqueo por servidumbre vial LPIS (buffer de 3.5 m) en la interfase rural de Batzacón y exclusión absoluta de infraestructura habitacional dentro del área útil.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (84/100):</strong> El desplazamiento de 21.9 metros entre la coordenada GPS de la entrevista (vivienda) y el centroide de la UPA es absorbido satisfactoriamente dentro del umbral de tolerancia de campo (10 a 25 m), validando la adyacencia vivienda-parcela. El error de superficie del 15.57% (1500.0 m2 declarados vs. 1266.4 m2 delimitados) se encuentra muy por debajo del límite de penalización (40%) y se explica geométricamente por el redondeo subjetivo del productor y la sustracción técnica de la vivienda, linderos y el buffer vial de 3.5 m.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El Sistema Colegiado dictamina alta concordancia predial-censal (ICPC: 89.4). La firma espectral y la textura de surcos validan fenológicamente el cultivo de zanahoria amarilla, mientras que la geometría generada por SAM 2.1 cumple estrictamente los parámetros topológicos ISO 19152. Las discrepancias métricas de superficie (15.57%) y desplazamiento GPS (21.9 m) responden al descuento de servidumbres viales y a la toma de coordenadas en la vivienda contigua, siendo plenamente coherentes con la realidad de campo en San Andrés de Guano.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.6836207,-1.6192057,0 -78.6836797,-1.6192486,0 -78.6836475,-1.6193933,0 -78.6835670,-1.6194577,0 -78.6835563,-1.6195810,0 -78.6834383,-1.6197312,0 -78.6832774,-1.6194631,0 -78.6834061,-1.6193236,0 -78.6836207,-1.6192057,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0006 [DISCORDANTE]</name>
+        <styleUrl>#poly_rojo</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-054 → UPA-SA-0006
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #fee2e2; color: #991b1b; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               DISCORDANTE (ICPC: 51.5/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Maíz Choclo (Zea mays)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">38000.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">3387.4 m² (Error: 91.09%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">17.8 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">7 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (50/100):</strong> Los índices espectrales (ExG: 0.103, VARI: 0.0469) y la tripleta RGB (120, 148, 88) evidencian una cobertura vegetal incipiente o residual sobre suelo labrado húmedo, acorde a la textura Meijering. Aunque no refleja el vigor fotosintético de un dosel de Maíz Choclo (Zea mays) en desarrollo vegetativo pleno o floración, el estado es fenológicamente factible por desfase temporal entre la encuesta y la toma óptica, correspondiendo a una fase de preparación de cama de siembra, emergencia temprana (V1-V2) o rastrojo post-cosecha propio de la rotación intensiva en el valle aluvial.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (98/100):</strong> El polígono restituido por SAM 2.1 cumple rigurosamente con la norma ISO 19152, presentando una geometría óptima de 7 vértices (dentro del rango regular de 4 a 10) y un perímetro bien definido de 305.6 m. Se verifica un 100% de estanqueidad planar sin solapes con predios vecinos, respeto absoluto al buffer de servidumbre vial LPIS (3.5 m) y exclusión total de infraestructura habitacional dentro del área productiva.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (20/100):</strong> El desplazamiento GPS de 17.8 m entre la vivienda encuestada y el centroide de la parcela se absorbe correctamente dentro de la tolerancia operativa de campo (10 a 25 m). No obstante, se penaliza severamente el puntaje dimensional debido a un error crítico de superficie del 91.09% (superando ampliamente el umbral máximo del 40%) entre el área declarada (38000.0 m²) y la delimitada (3387.4 m²). La relación ~10:1 sugiere un error de digitación de orden de magnitud en la boleta (3800 m² reales vs 38000 m² registrados) o una UPA multiparcela no declarada.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El Sistema Colegiado MoE dictamina la auditoría de la UPA-CHIM-054 como DISCORDANTE (ICPC: 51.5/100). A pesar de la alta calidad geométrica y topológica bajo el estándar LADM ISO 19152 (98/100) y la absorción válida del desplazamiento GPS de 17.8 m, la consistencia predial-censal falla debido a la discrepancia extrema del 91.09% en la superficie auditada (20/100 en dimensión geodésica) y a la presencia de suelo labrado con escasa biomasa activa (50/100 en dimensión agronómica) que impide validar directamente el cultivo de Maíz Choclo en la fecha de captura.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7011945,-1.5945498,0 -78.7011623,-1.5947482,0 -78.7004328,-1.5948286,0 -78.7001914,-1.5950431,0 -78.7000734,-1.5948876,0 -78.7000787,-1.5947535,0 -78.7007064,-1.5945122,0 -78.7011945,-1.5945498,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0125 [CONCORDANTE]</name>
+        <styleUrl>#poly_verde</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-058 → UPA-SA-0125
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               CONCORDANTE (ICPC: 89.0/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Cebolla Blanca (Allium fistulosum)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1257.3 m² (Error: 16.18%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">18.7 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">8 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (88/100):</strong> Los índices ExG (0.1297) y VARI (0.0591) moderados, en conjunto con la tripleta RGB [135, 145, 110], responden con exactitud a la arquitectura foliar erecta y cilíndrica de Allium fistulosum, cuya baja cobertura cenital expone una fracción significativa de suelo. La textura Meijering de bandas estrechas alternadas con suelo arable confirma una disposición en surcos típica del cultivo establecido en laderas andinas.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (96/100):</strong> Polígono altamente regularizado de 8 vértices (dentro del rango óptimo de 4 a 10) y 192.1 m de perímetro, delimitado limpiamente por cercas vivas arbóreas. Cumple al 100% con la estanqueidad planar sin solapes prediales, aplica rigurosamente el buffer de servidumbre vial LPIS de 3.5 m y garantiza la exclusión total de infraestructura habitacional.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (85/100):</strong> El desplazamiento horizontal de 18.7 m entre la toma GPS en la vivienda y el centroide de la UPA se absorbe íntegramente dentro de la tolerancia geodésica de campo (10 a 25 m). El error de superficie del 16.18% (1257.3 m2 delimitados frente a 1500.0 m2 declarados) se encuentra muy por debajo del umbral de penalización (40%) y se explica por la deducción geométrica de linderos arbóreos y retiros viales.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El Sistema Colegiado MoE dictamina una validación positiva con un ICPC de 88.95. Existe sólida coherencia biofísica entre la firma espectral-textural en surcos y el cultivo de Cebolla Blanca, respaldada por una geometría LADM libre de anomalías topológicas y una desviación superficial (16.18%) técnicamente justificada por el recorte de elementos improductivos perimetrales.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7188274,-1.5711323,0 -78.7189293,-1.5712610,0 -78.7187288,-1.5716618,0 -78.7187421,-1.5717634,0 -78.7187940,-1.5718344,0 -78.7188153,-1.5718059,0 -78.7189737,-1.5715940,0 -78.7190795,-1.5712664,0 -78.7188274,-1.5711323,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0167 [CONCORDANTE]</name>
+        <styleUrl>#poly_verde</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-060 → UPA-SA-0167
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               CONCORDANTE (ICPC: 92.0/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Maíz Choclo (Zea mays)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1673.7 m² (Error: 11.58%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">19.0 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">8 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (92/100):</strong> Los índices espectrales (ExG: 0.2489, VARI: 0.1814) y la dominancia del canal verde en la reflectancia RGB [120, 148, 88] confirman un dosel vegetal con alta actividad fotosintética y vigorosidad. La respuesta del filtro Meijering ('textura granular media con hileras espaciadas') es altamente consistente con la arquitectura de siembra en surcos de Zea mays en estado fenológico vegetativo avanzado o reproductivo temprano (V10-R2, formación de choclo), típico del piedemonte andino.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (96/100):</strong> El polígono restituido presenta una geometría óptima de 8 vértices y 191.2 m de perímetro, cumpliendo rigurosamente con la simplicidad geométrica LADM. Se verifica un 100% de estanqueidad planar sin solapes con predios colindantes, respeto absoluto a la servidumbre vial LPIS (buffer de 3.5 m) y correcta exclusión de la infraestructura habitacional.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (89/100):</strong> El desplazamiento planimétrico de 19.0 m entre la coordenada GPS de la entrevista en vivienda y el centroide de la parcela se absorbe satisfactoriamente dentro del umbral de tolerancia operativa (10 a 25 m). La discrepancia superficial entre lo declarado (1500.0 m2) y lo fotogramétricamente delimitado (1673.7 m2) representa un error relativo del 11.58%, muy por debajo del límite crítico de penalización (40%), reflejando una imprecisión normal de estimación subjetiva en minifundios andinos.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> Dictamen colegiado favorable con un ICPC de 91.95/100. Existe plena coherencia espacial, topológica y agronómica entre la boleta censal UPA-CHIM-060 y la restitución automática UPA-SA-0167. La firma espectral y el patrón textural de hileras validan la presencia de Maíz Choclo en desarrollo activo, mientras que las métricas geodésicas y catastrales cumplen con los estándares ISO 19152 y LPIS.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7353605,-1.5590561,0 -78.7354463,-1.5589918,0 -78.7355751,-1.5590454,0 -78.7356824,-1.5588899,0 -78.7359506,-1.5591956,0 -78.7357306,-1.5593832,0 -78.7355322,-1.5591741,0 -78.7354624,-1.5592385,0 -78.7353605,-1.5590561,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0304 [CONCORDANTE]</name>
+        <styleUrl>#poly_verde</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-062 → UPA-SA-0304
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               CONCORDANTE (ICPC: 89.7/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Alfalfa / Pasto Forrajero (Medicago sativa)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1922.5 m² (Error: 28.16%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">24.0 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">6 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (96/100):</strong> Los índices espectrales ExG (0.3613) y VARI (0.2268), en conjunto con la dominancia del canal verde en la firma RGB [95, 165, 80], evidencian una actividad clorofílica intensa y cobertura vegetal densa. La textura Meijering continua y homogénea corresponde inequívocamente a un cuadro de Medicago sativa en estado de máxima biomasa vegetativa previo al corte.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (96/100):</strong> El polígono presenta una regularidad geométrica óptima de 6 vértices (rango normativo de 4 a 10). Cumple al 100% con la estanqueidad planar (0 solapes con predios colindantes), respeta rigurosamente el buffer de servidumbre vial LPIS de 3.5 m y garantiza la exclusión total de infraestructura habitacional.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (78/100):</strong> El desplazamiento lineal de 24.0 m entre la coordenada GPS de la vivienda y el centroide de la parcela se absorbe cerca del límite superior de la tolerancia de campo establecida (10 a 25 m). El error de superficie del 28.16% (1500.0 m2 declarados frente a 1922.5 m2 medidos) se mantiene por debajo del umbral de penalización severa (40%), reflejando una subestimación empírica común del productor.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El comité MoE dictamina una concordancia sólida (ICPC: 89.7/100). Se comprueba plena compatibilidad biológica y fenológica para el cultivo de alfalfa mediante firmas espectrales de alto vigor, respaldada por una delimitación catastral topológicamente perfecta bajo el estándar LADM ISO 19152. Tanto el desfase posicional del GPS (24.0 m) como la diferencia de área (28.16%) son absorbidos satisfactoriamente dentro de los márgenes técnicos tolerables del operativo de campo.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.6831915,-1.6174897,0 -78.6833686,-1.6177847,0 -78.6832452,-1.6179241,0 -78.6830145,-1.6180528,0 -78.6828858,-1.6178812,0 -78.6828643,-1.6177739,0 -78.6831915,-1.6174897,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0012 [CONCORDANTE]</name>
+        <styleUrl>#poly_verde</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-064 → UPA-SA-0012
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               CONCORDANTE (ICPC: 90.5/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Maíz Choclo (Zea mays)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1778.4 m² (Error: 18.56%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">10.2 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">6 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (92/100):</strong> Los índices espectrales ExG (0.1827) y VARI (0.1425), sumados a la clara dominancia del canal verde en la reflectancia visible (RGB: 120, 148, 88), confirman vigor fotosintético activo característico de Zea mays en fase de desarrollo vegetativo avanzado o pre-floración (V8-VT). La respuesta del filtro Meijering (textura granular media con hileras espaciadas) es morfológicamente consistente con el dosel foliar del maíz sembrado en surcos bajo el marco de plantación tradicional del valle interandino.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (100/100):</strong> Geometría poligonal óptima compuesta por 6 vértices y 165.3 m de perímetro, cumpliendo rigurosamente la norma de regularidad LADM ISO 19152 (rango de 4 a 10 vértices). Se verifica un 100% de estanqueidad planar sin solapes con predios colindantes, respeto absoluto a la servidumbre vial LPIS (buffer de 3.5 m) y exclusión total de edificaciones residenciales dentro del polígono de cultivo.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (82/100):</strong> El desplazamiento planimétrico de 10.2 m entre la coordenada GPS de la vivienda encuestada y el centroide de la UPA se absorbe satisfactoriamente dentro de la tolerancia operativa de campo (10 a 25 m). El error de superficie del 18.56% (1500.0 m² declarados frente a 1778.4 m² delimitados) se encuentra muy por debajo del umbral crítico de penalización (40%) y responde al redondeo métrico subjetivo del productor respecto a medidas agrarias tradicionales de la zona (equivalente a un solar o cuarto de cuadra de 1764 m²).</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El Sistema Colegiado MoE emite un dictamen CONCORDANTE (ICPC: 90.5/100). Se comprueba una alta consistencia fenológica, espectral y morfológica para el cultivo de Maíz Choclo, respaldada por una calidad topológica impecable bajo el estándar LADM ISO 19152 y desviaciones geodésico-dimensionales plenamente justificadas dentro de los márgenes de tolerancia técnica.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7036300,-1.5960995,0 -78.7037480,-1.5964856,0 -78.7036997,-1.5965231,0 -78.7033725,-1.5965231,0 -78.7032920,-1.5961906,0 -78.7033296,-1.5961585,0 -78.7036300,-1.5960995,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0120 [CONCORDANTE]</name>
+        <styleUrl>#poly_verde</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-066 → UPA-SA-0120
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               CONCORDANTE (ICPC: 88.4/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Zanahoria Amarilla (Daucus carota)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1946.9 m² (Error: 29.79%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">13.7 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">8 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (92/100):</strong> Los índices espectrales ExG (0.1328) y VARI (0.1347), respaldados por la reflectancia RGB [125, 150, 98], indican una cobertura vegetal activa de densidad moderada, típica de Daucus carota en fase de desarrollo vegetativo y engrosamiento radicular. La firma morfológica de Meijering ('líneas finas con verdor intermedio') es altamente consistente con el follaje finamente dividido de la zanahoria dispuesto en surcos.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (100/100):</strong> El polígono presenta una regularidad geométrica ideal con 8 vértices (rango óptimo LADM de 4 a 10). Se certifica el 100% de estanqueidad planar con predios colindantes (0 solapes), cumplimiento estricto de la servidumbre vial LPIS (buffer de 3.5 m) y exclusión total de infraestructura habitacional dentro del área productiva.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (76/100):</strong> El desplazamiento de 13.7 m entre la coordenada GPS de la vivienda y el centroide de la parcela se absorbe correctamente dentro del umbral de tolerancia operativa de campo (10 a 25 m). El error de superficie del 29.79% (1500.0 m2 declarados frente a 1946.9 m2 delimitados) refleja una subestimación subjetiva común en topografía de laderas andinas, pero se mantiene por debajo del límite crítico de penalización severa (40%).</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> La auditoría colegiada valida con alta confianza la consistencia entre la boleta censal UPA-CHIM-066 y la segmentación UPA-SA-0120. Existe plena compatibilidad fenológica para el cultivo de zanahoria amarilla, perfección topológica bajo el estándar LADM ISO 19152 y un desplazamiento GPS aceptable, logrando un ICPC de 88.4 puntos.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7219012,-1.5739958,0 -78.7217832,-1.5739636,0 -78.7216222,-1.5741352,0 -78.7211019,-1.5741352,0 -78.7216437,-1.5736205,0 -78.7215847,-1.5737170,0 -78.7217617,-1.5739583,0 -78.7218529,-1.5739315,0 -78.7219012,-1.5739958,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0169 [DISCORDANTE]</name>
+        <styleUrl>#poly_rojo</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-067 → UPA-SA-0169
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #fee2e2; color: #991b1b; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               DISCORDANTE (ICPC: 52.3/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Maíz Choclo (Zea mays)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">38000.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1539.5 m² (Error: 95.95%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">11.3 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">5 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (52/100):</strong> Los índices espectrales (ExG: 0.0957, VARI: 0.054) y la respuesta RGB [120, 148, 88] evidencian una actividad fotosintética mínima, concordante con la textura Meijering de suelo labrado húmedo. Esta firma no corresponde al dosel denso de Zea mays en estado fenológico de choclo (R3), indicando que la parcela se encuentra en preparación de suelo post-cosecha o en emergencia inicial (V1-V2).</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (98/100):</strong> Geometría óptima de 5 vértices y 164.3 m de perímetro que cumple estrictamente el estándar LADM ISO 19152. Se verifica 100% de estanqueidad planar sin solapes prediales, respeto íntegro a la servidumbre vial LPIS (buffer de 3.5 m) y exclusión total de infraestructura habitacional.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (20/100):</strong> El desplazamiento de 11.3 m entre la coordenada GPS de la vivienda y el centroide del polígono se absorbe satisfactoriamente dentro del rango de tolerancia de campo (10 a 25 m). No obstante, se aplica penalización máxima por el error de superficie del 95.95% entre el área declarada (38000.0 m2) y la delimitada algorítmicamente (1539.5 m2).</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El colegiado declara la auditoría como DISCORDANTE (ICPC: 52.3). Aunque la restitución catastral LADM es impecable (98/100) y el enlace geodésico vivienda-lote es válido, la discrepancia extrema de área (95.95% de error dimensional) sumada a la condición de suelo labrado sin cobertura de maíz desarrollada impiden validar la consistencia censal del predio.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7369752,-1.5563588,0 -78.7371469,-1.5564285,0 -78.7371469,-1.5569165,0 -78.7370825,-1.5569594,0 -78.7368250,-1.5566645,0 -78.7369752,-1.5563588,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0315 [OBSERVABLE]</name>
+        <styleUrl>#poly_amarillo</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-070 → UPA-SA-0315
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               OBSERVABLE (ICPC: 73.8/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Maíz Choclo (Zea mays)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">894.1 m² (Error: 40.39%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">10.8 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">7 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (90/100):</strong> Los índices espectrales (ExG: 0.2405, VARI: 0.1832) y la dominancia del canal verde en el perfil RGB [120, 148, 88] confirman alta actividad fotosintética y vigor foliar. La firma morfológica de Meijering (textura granular media con hileras espaciadas) es plenamente consistente con el marco de plantación en surcos de Zea mays en fase vegetativa avanzada o reproductiva temprana (choclo).</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (98/100):</strong> Geometría poligonal óptima con 7 vértices que garantiza simplicidad y regularidad LADM. Se verifica el 100% de estanqueidad planar sin solapes con predios colindantes, respeto estricto al buffer de servidumbre vial LPIS (3.5 m) y correcta exclusión de la infraestructura habitacional.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (38/100):</strong> El desplazamiento planimétrico de 10.8 m entre la coordenada GPS de la vivienda y el centroide de la parcela se absorbe satisfactoriamente dentro de la tolerancia de captura en campo (10-25 m). Sin embargo, se aplica una penalización severa debido a que la discrepancia de superficie alcanza el 40.39% (1500.0 m2 declarados frente a 894.1 m2 netos delimitados), superando el umbral crítico del 40%.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El colegiado valida la existencia física, identidad botánica (Zea mays) y calidad topológica de la parcela (ISO 19152), así como su vinculación geodésica con la encuesta. No obstante, el Índice de Concordancia Predial-Censal (ICPC = 73.8) ubica el registro en estado OBSERVABLE debido a una sobreestimación del 40.39% en el área declarada por el productor respecto a la superficie neta cultivada.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.6866570,-1.6190448,0 -78.6868179,-1.6192807,0 -78.6866999,-1.6193451,0 -78.6867213,-1.6194416,0 -78.6866677,-1.6193880,0 -78.6866140,-1.6194845,0 -78.6864853,-1.6191252,0 -78.6866570,-1.6190448,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0022 [CONCORDANTE]</name>
+        <styleUrl>#poly_verde</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-073 → UPA-SA-0022
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               CONCORDANTE (ICPC: 87.4/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Maíz Choclo (Zea mays)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1123.4 m² (Error: 25.11%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">19.0 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">7 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (92/100):</strong> Los índices espectrales ExG (0.2255) y VARI (0.1763), junto con la reflectancia RGB [120, 148, 88], confirman actividad fotosintética vigorosa propia de gramíneas en estado vegetativo avanzado o reproductivo temprano (etapa de choclo). El filtro morfológico de Meijering detecta una textura granular media con hileras espaciadas, lo cual es altamente consistente con el marco de plantación en surcos característico de Zea mays en valles interandinos.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (96/100):</strong> El polígono auditado presenta una geometría óptima de 7 vértices (dentro del umbral LADM de 4 a 10 vértices) y un perímetro bien definido de 136.8 m. Se verifica un 100% de estanqueidad planar sin solapes con predios colindantes, cumplimiento estricto de la servidumbre vial LPIS (buffer de 3.5 m) y exclusión total de edificaciones o patios residenciales.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (76/100):</strong> El desplazamiento de 19.0 m entre la coordenada GPS de la vivienda encuestada y el centroide de la parcela se absorbe satisfactoriamente dentro del rango de tolerancia operativa de campo (10 a 25 m). La discrepancia de superficie del 25.11% (1500.0 m2 declarados vs. 1123.4 m2 delimitados) se mantiene por debajo del umbral crítico de penalización (40%) y se explica por la deducción de áreas de vivienda, linderos arbóreos y servidumbres viales que el productor suele incluir subjetivamente en su declaración.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> La auditoría colegiada determina una alta concordancia (ICPC: 87.4) entre la declaración censal y la restitución fotogramétrica por IA. La firma espectral y el patrón de hileras validan inequívocamente el cultivo de Maíz Choclo, mientras que la geometría cumple rigurosamente el estándar LADM ISO 19152. La diferencia de área del 25.11% responde al descuento técnico de infraestructura y buffers viales.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7037426,-1.5939975,0 -78.7041396,-1.5940779,0 -78.7041503,-1.5937990,0 -78.7041235,-1.5938044,0 -78.7040448,-1.5937410,0 -78.7039905,-1.5937443,0 -78.7038285,-1.5938473,0 -78.7037426,-1.5939975,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0132 [OBSERVABLE]</name>
+        <styleUrl>#poly_amarillo</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-088 → UPA-SA-0132
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               OBSERVABLE (ICPC: 73.7/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Alfalfa / Pasto Forrajero (Medicago sativa)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">1500.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">820.1 m² (Error: 45.33%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">23.6 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">6 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (95/100):</strong> Los índices espectrales ExG (0.3361) y VARI (0.207), respaldados por la fuerte dominancia del canal verde en la firma RGB (95, 165, 80), confirman un dosel vegetal denso con alta actividad fotosintética y vigor clorofílico. La textura Meijering de cobertura continua y homogénea es plenamente consistente con una parcela de alfalfa (Medicago sativa) en estado de desarrollo vegetativo óptimo o rebrote activo pre-corte.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (98/100):</strong> El polígono restituido presenta una geometría óptima de 6 vértices (rango normativo de 4 a 10) y un perímetro bien definido de 131.7 m. Cumple al 100% con la estanqueidad planar sin solapes con predios colindantes, respeta rigurosamente el buffer de servidumbre vial LPIS de 3.5 m y verifica la exclusión total de edificaciones o patios residenciales.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (32/100):</strong> El vector de desplazamiento entre el punto GPS de la vivienda encuestada y el centroide de la parcela (23.6 m) se absorbe al límite del umbral de tolerancia operativa de campo (10 a 25 m). Sin embargo, existe una discrepancia severa de superficie del 45.33% entre lo declarado (1500.0 m2) y lo delimitado por IA (820.1 m2), superando el umbral crítico del 40%, lo que conlleva una fuerte penalización dimensional por sobreestimación subjetiva del informante o fragmentación parcelaria.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El colegiado determina una validación parcial (ICPC 73.7). Existe plena concordancia fenológica-espectral para el cultivo de alfalfa (95/100) y excelencia en la topología catastral ISO 19152 (98/100). No obstante, la severa divergencia dimensional del 45.33% en el área cultivada y un desplazamiento GPS cercano al límite máximo (23.6 m) penalizan el componente geodésico (32/100), ubicando el caso en categoría OBSERVABLE.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7195086,-1.5710733,0 -78.7195730,-1.5713414,0 -78.7194389,-1.5716096,0 -78.7193638,-1.5715452,0 -78.7193799,-1.5713307,0 -78.7194175,-1.5711645,0 -78.7195086,-1.5710733,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0173 [OBSERVABLE]</name>
+        <styleUrl>#poly_amarillo</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-095 → UPA-SA-0173
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               OBSERVABLE (ICPC: 72.5/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Papa (Solanum tuberosum)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">20584.5 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1331.5 m² (Error: 93.53%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">19.7 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">9 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (96/100):</strong> Los índices espectrales (ExG: 0.2014, VARI: 0.1528) y la firma RGB [115, 142, 92] confirman una alta actividad fotosintética y vigor vegetativo, plenamente compatibles con Solanum tuberosum en etapa de desarrollo foliar máximo o floración. El filtro Meijering identifica surcos morfológicos paralelos con cobertura densa, patrón espacial característico del aporque tradicional en cultivos de papa andina.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (100/100):</strong> El polígono cumple estrictamente el estándar LADM ISO 19152, presentando una geometría regular de 9 vértices (rango óptimo de 4 a 10) y perímetro de 159.3 m. Se verifica un 100% de estanqueidad planar sin solapes con predios vecinos, respeto íntegro al buffer vial LPIS de 3.5 m y exclusión total de edificaciones.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (26/100):</strong> El desplazamiento GPS de 19.7 m entre la coordenada de la vivienda y el centroide de la parcela es absorbido satisfactoriamente dentro del umbral de tolerancia de campo (10 a 25 m). Sin embargo, se aplica una penalización severa al puntaje dimensional debido a la discrepancia extrema de superficie del 93.53% (20,584.5 m² declarados frente a 1,331.5 m² delimitados).</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El Índice de Concordancia Predial-Censal (ICPC) alcanza 72.5 puntos, clasificando el registro como OBSERVABLE. La auditoría valida con excelencia la topología catastral LADM (100/100) y confirma espectralmente la presencia del cultivo de papa (96/100). No obstante, la crítica asimetría dimensional del 93.53% desploma la valoración geodésica (26/100), reflejando que la parcela fotointerpretada representa apenas una fracción marginal del área declarada.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7351191,-1.5585628,0 -78.7348455,-1.5582142,0 -78.7347436,-1.5581552,0 -78.7346470,-1.5582357,0 -78.7346685,-1.5583215,0 -78.7349487,-1.5586597,0 -78.7349518,-1.5586631,0 -78.7349534,-1.5586648,0 -78.7350118,-1.5586754,0 -78.7351191,-1.5585628,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0313 [OBSERVABLE]</name>
+        <styleUrl>#poly_amarillo</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-111 → UPA-SA-0313
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               OBSERVABLE (ICPC: 72.1/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Alfalfa / Pasto Forrajero (Medicago sativa)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">3395.7 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">979.6 m² (Error: 71.15%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">24.3 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">7 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (94/100):</strong> Los índices espectrales ExG (0.3034) y VARI (0.3056), respaldados por una fuerte dominancia del canal verde en el perfil RGB (95, 165, 80), confirman una alta densidad de biomasa fotosintéticamente activa. La respuesta morfológica de cobertura continua y homogénea es plenamente consistente con un lote de Medicago sativa en fase de desarrollo vegetativo vigoroso previo al corte.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (96/100):</strong> La geometría poligonal cumple rigurosamente el estándar LADM ISO 19152 al estructurarse con 7 vértices (dentro del rango óptimo de 4 a 10). Se verifica un 100% de estanqueidad planar sin solapes con predios vecinos, respeto absoluto al buffer de servidumbre vial LPIS de 3.5 m y exclusión verificada de edificaciones o patios.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (30/100):</strong> El desplazamiento planimétrico de 24.3 m entre la coordenada GPS de la vivienda y el centroide de la parcela se absorbe dentro del umbral máximo de tolerancia de campo (10 a 25 m). No obstante, se aplica una penalización severa al puntaje dimensional debido a la discrepancia de superficie del 71.15% (979.6 m2 delimitados frente a 3395.7 m2 declarados), superando ampliamente el límite crítico del 40%.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El Índice de Concordancia Predial-Censal alcanza 72.1 puntos, clasificando la auditoría como OBSERVABLE. Se registra una excelente consistencia fenológica para el cultivo de alfalfa (94/100) y una calidad topológica impecable bajo norma ISO 19152 (96/100); sin embargo, el severo déficit de área delimitada respecto a la declarada (error del 71.15%) degrada el componente geodésico-dimensional (30/100), evidenciando una partición incompleta de la unidad productiva.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.6842000,-1.6186748,0 -78.6842215,-1.6187499,0 -78.6841303,-1.6188625,0 -78.6837441,-1.6191252,0 -78.6836743,-1.6191145,0 -78.6836690,-1.6190770,0 -78.6839586,-1.6187874,0 -78.6842000,-1.6186748,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>UPA-SA-0017 [OBSERVABLE]</name>
+        <styleUrl>#poly_amarillo</styleUrl>
+        <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; max-width: 420px; line-height: 1.4; color: #1e293b;">
+          <h3 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px;">
+            Auditoría MoE: UPA-CHIM-118 → UPA-SA-0017
+          </h3>
+          <p style="margin: 4px 0;"><strong>Veredicto MoE:</strong> 
+             <span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
+               OBSERVABLE (ICPC: 72.7/100)
+             </span>
+          </p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Cultivo Declarado:</td><td style="padding: 4px;">Alfalfa / Pasto Forrajero (Medicago sativa)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Superficie Declarada:</td><td style="padding: 4px;">38000.0 m²</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Superficie SAM 2.1:</td><td style="padding: 4px;">1305.5 m² (Error: 96.56%)</td></tr>
+            <tr><td style="padding: 4px; font-weight: bold;">Desplazamiento GPS:</td><td style="padding: 4px;">20.9 m</td></tr>
+            <tr style="background: #f1f5f9;"><td style="padding: 4px; font-weight: bold;">Vértices LADM:</td><td style="padding: 4px;">8 vértices</td></tr>
+          </table>
+          <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;"/>
+          <div style="font-size: 11px;">
+            <p style="margin: 3px 0;"><strong>🌿 Agrónomo (96/100):</strong> Los índices espectrales (ExG: 0.369, VARI: 0.2782) y la fuerte dominante verde en RGB [95, 165, 80] confirman una alta actividad fotosintética y cobertura de dosel cerrado, plenamente consistentes con Medicago sativa en estado de desarrollo vegetativo óptimo pre-corte. La textura Meijering ratifica un tapiz forrajero continuo y homogéneo.</p>
+            <p style="margin: 3px 0;"><strong>📐 LADM (98/100):</strong> Geometría poligonal óptima estructurada con 8 vértices (rango normativo de 4 a 10). Presenta estanqueidad planar absoluta (0% solapes con colindantes), respeta íntegramente el buffer de servidumbre vial LPIS de 3.5 m y garantiza la exclusión total de infraestructura residencial.</p>
+            <p style="margin: 3px 0;"><strong>📍 Geodésico (28/100):</strong> El desplazamiento GPS de 20.9 m entre la vivienda encuestada y el centroide del predio se absorbe satisfactoriamente dentro de la tolerancia de campo (10 a 25 m). Sin embargo, se registra una discrepancia dimensional crítica del 96.56% entre el área declarada (38000.0 m2) y la delimitada (1305.5 m2), aplicando penalización severa por exceder el umbral del 40%.</p>
+            <p style="margin: 3px 0; font-style: italic; color: #475569;"><strong>⚖️ Juez MoE:</strong> El Comité MoE emite un dictamen OBSERVABLE (ICPC: 72.7). Se valida con excelencia tanto la correspondencia fenológica del cultivo de alfalfa como la calidad topológica del polígono bajo estándar ISO 19152, logrando además absorber el vector de desplazamiento GPS. No obstante, la extrema divergencia de superficie (96.56%) impide la aprobación directa, evidenciando una probable declaración censal acumulada correspondiente a una UPA multipredial dispersa o un error de captura en la unidad de superficie.</p>
+          </div>
+        </div>
+        ]]></description>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>clampToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-78.7017363,-1.5964212,0 -78.7017310,-1.5965017,0 -78.7017632,-1.5964856,0 -78.7017953,-1.5965660,0 -78.7016666,-1.5966411,0 -78.7016881,-1.5967859,0 -78.7014413,-1.5968395,0 -78.7014145,-1.5964749,0 -78.7017363,-1.5964212,0</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>2. Puntos GPS Boletas Censales RENAGRO (Viviendas)</name>
+      <open>1</open>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-012</name>
+        <styleUrl>#pin_verde</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-012 (Vivienda/Granja). Vinculado a UPA UPA-SA-0013 con desplazamiento de 17.1 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7022190,-1.5955590,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-019</name>
+        <styleUrl>#pin_verde</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-019 (Vivienda/Granja). Vinculado a UPA UPA-SA-0122 con desplazamiento de 14.2 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7182530,-1.5702490,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-035</name>
+        <styleUrl>#pin_verde</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-035 (Vivienda/Granja). Vinculado a UPA UPA-SA-0168 con desplazamiento de 15.2 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7334900,-1.5569850,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-046</name>
+        <styleUrl>#pin_verde</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-046 (Vivienda/Granja). Vinculado a UPA UPA-SA-0310 con desplazamiento de 21.9 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.6835290,-1.6192540,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-054</name>
+        <styleUrl>#pin_rojo</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-054 (Vivienda/Granja). Vinculado a UPA UPA-SA-0006 con desplazamiento de 17.8 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7005810,-1.5948740,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-058</name>
+        <styleUrl>#pin_verde</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-058 (Vivienda/Granja). Vinculado a UPA UPA-SA-0125 con desplazamiento de 18.7 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7188630,-1.5713310,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-060</name>
+        <styleUrl>#pin_verde</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-060 (Vivienda/Granja). Vinculado a UPA UPA-SA-0167 con desplazamiento de 19.0 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7355650,-1.5590020,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-062</name>
+        <styleUrl>#pin_verde</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-062 (Vivienda/Granja). Vinculado a UPA UPA-SA-0304 con desplazamiento de 24.0 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.6829110,-1.6177070,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-064</name>
+        <styleUrl>#pin_verde</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-064 (Vivienda/Granja). Vinculado a UPA UPA-SA-0012 con desplazamiento de 10.2 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7036000,-1.5963690,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-066</name>
+        <styleUrl>#pin_verde</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-066 (Vivienda/Granja). Vinculado a UPA UPA-SA-0120 con desplazamiento de 13.7 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7215670,-1.5740720,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-067</name>
+        <styleUrl>#pin_rojo</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-067 (Vivienda/Granja). Vinculado a UPA UPA-SA-0169 con desplazamiento de 11.3 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7369680,-1.5567310,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-070</name>
+        <styleUrl>#pin_amarillo</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-070 (Vivienda/Granja). Vinculado a UPA UPA-SA-0315 con desplazamiento de 10.8 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.6867050,-1.6191670,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-073</name>
+        <styleUrl>#pin_verde</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-073 (Vivienda/Granja). Vinculado a UPA UPA-SA-0022 con desplazamiento de 19.0 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7039570,-1.5937460,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-088</name>
+        <styleUrl>#pin_amarillo</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-088 (Vivienda/Granja). Vinculado a UPA UPA-SA-0132 con desplazamiento de 23.6 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7192500,-1.5713630,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-095</name>
+        <styleUrl>#pin_amarillo</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-095 (Vivienda/Granja). Vinculado a UPA UPA-SA-0173 con desplazamiento de 19.7 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7348510,-1.5585930,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-111</name>
+        <styleUrl>#pin_amarillo</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-111 (Vivienda/Granja). Vinculado a UPA UPA-SA-0313 con desplazamiento de 24.3 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.6840890,-1.6187250,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GPS Encuesta: UPA-CHIM-118</name>
+        <styleUrl>#pin_amarillo</styleUrl>
+        <description><![CDATA[Punto GPS tomado durante la boleta censal RENAGRO para UPA-CHIM-118 (Vivienda/Granja). Vinculado a UPA UPA-SA-0017 con desplazamiento de 20.9 m.]]></description>
+        <Point>
+          <altitudeMode>clampToGround</altitudeMode>
+          <coordinates>-78.7016290,-1.5967970,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

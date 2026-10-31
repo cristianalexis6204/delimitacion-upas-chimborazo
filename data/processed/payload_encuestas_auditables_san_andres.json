@@ -1,0 +1,801 @@
+[
+  {
+    "id_auditoria": 1,
+    "upa_encuesta_id": "UPA-CHIM-012",
+    "segmentacion_upa_id": "UPA-SA-0013",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "San Andrés Centro / Valle Aluvial",
+    "cultivo_declarado": "Papa (Solanum tuberosum)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 1548.9,
+    "error_superficie_pct": 3.26,
+    "desplazamiento_gps_m": 17.1,
+    "n_vertices": 7,
+    "perimetro_m": 151.6,
+    "clase_ladm": "Vegetacion_Arborea_Cercas",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.2364,
+      "vari_index": 0.1693,
+      "rgb_promedio": [
+        115,
+        142,
+        92
+      ],
+      "descripcion_textura_meijering": "Surcos morfológicos Meijering paralelos, cobertura foliar densa"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.595701,
+        "lon": -78.702279
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.595559,
+        "lon": -78.702219
+      },
+      "utm_17s_centroide": {
+        "x": 755649.2,
+        "y": 9823483.85
+      }
+    }
+  },
+  {
+    "id_auditoria": 2,
+    "upa_encuesta_id": "UPA-CHIM-019",
+    "segmentacion_upa_id": "UPA-SA-0122",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Chocaví / Laderas Andinas",
+    "cultivo_declarado": "Alfalfa / Pasto Forrajero (Medicago sativa)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 1638.7,
+    "error_superficie_pct": 9.25,
+    "desplazamiento_gps_m": 14.2,
+    "n_vertices": 8,
+    "perimetro_m": 177.7,
+    "clase_ladm": "Cultivo_Horticola_Verde",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.2894,
+      "vari_index": 0.3075,
+      "rgb_promedio": [
+        95,
+        165,
+        80
+      ],
+      "descripcion_textura_meijering": "Cobertura continua homogénea de alta reflectancia verde"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.570376,
+        "lon": -78.718271
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.570249,
+        "lon": -78.718253
+      },
+      "utm_17s_centroide": {
+        "x": 753872.01,
+        "y": 9826287.27
+      }
+    }
+  },
+  {
+    "id_auditoria": 3,
+    "upa_encuesta_id": "UPA-CHIM-035",
+    "segmentacion_upa_id": "UPA-SA-0168",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Pulucate / Piedemonte Chimborazo",
+    "cultivo_declarado": "Papa (Solanum tuberosum)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 1570.3,
+    "error_superficie_pct": 4.69,
+    "desplazamiento_gps_m": 15.2,
+    "n_vertices": 5,
+    "perimetro_m": 157.2,
+    "clase_ladm": "Cultivo_Horticola_Verde",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.279,
+      "vari_index": 0.2256,
+      "rgb_promedio": [
+        115,
+        142,
+        92
+      ],
+      "descripcion_textura_meijering": "Surcos morfológicos Meijering paralelos, cobertura foliar densa"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.556862,
+        "lon": -78.73355
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.556985,
+        "lon": -78.73349
+      },
+      "utm_17s_centroide": {
+        "x": 752172.74,
+        "y": 9827784.01
+      }
+    }
+  },
+  {
+    "id_auditoria": 4,
+    "upa_encuesta_id": "UPA-CHIM-046",
+    "segmentacion_upa_id": "UPA-SA-0310",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Batzacón / Interfase Vial Rural",
+    "cultivo_declarado": "Zanahoria Amarilla (Daucus carota)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 1266.4,
+    "error_superficie_pct": 15.57,
+    "desplazamiento_gps_m": 21.9,
+    "n_vertices": 8,
+    "perimetro_m": 153.8,
+    "clase_ladm": "Vegetacion_Arborea_Cercas",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.1749,
+      "vari_index": 0.1711,
+      "rgb_promedio": [
+        125,
+        150,
+        98
+      ],
+      "descripcion_textura_meijering": "Lineas finas con verdor intermedio"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.619446,
+        "lon": -78.683481
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.619254,
+        "lon": -78.683529
+      },
+      "utm_17s_centroide": {
+        "x": 757738.86,
+        "y": 9820854.74
+      }
+    }
+  },
+  {
+    "id_auditoria": 5,
+    "upa_encuesta_id": "UPA-CHIM-054",
+    "segmentacion_upa_id": "UPA-SA-0006",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "San Andrés Centro / Valle Aluvial",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "superficie_declarada_m2": 38000.0,
+    "superficie_delimitada_m2": 3387.4,
+    "error_superficie_pct": 91.09,
+    "desplazamiento_gps_m": 17.8,
+    "n_vertices": 7,
+    "perimetro_m": 305.6,
+    "clase_ladm": "Cultivo_Horticola_Verde",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.103,
+      "vari_index": 0.0469,
+      "rgb_promedio": [
+        120,
+        148,
+        88
+      ],
+      "descripcion_textura_meijering": "Suelo labrado húmedo con mínima biomasa verde visible (posible rotación o cosecha reciente)"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.594717,
+        "lon": -78.700615
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.594874,
+        "lon": -78.700581
+      },
+      "utm_17s_centroide": {
+        "x": 755834.64,
+        "y": 9823592.5
+      }
+    }
+  },
+  {
+    "id_auditoria": 6,
+    "upa_encuesta_id": "UPA-CHIM-058",
+    "segmentacion_upa_id": "UPA-SA-0125",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Chocaví / Laderas Andinas",
+    "cultivo_declarado": "Cebolla Blanca (Allium fistulosum)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 1257.3,
+    "error_superficie_pct": 16.18,
+    "desplazamiento_gps_m": 18.7,
+    "n_vertices": 8,
+    "perimetro_m": 192.1,
+    "clase_ladm": "Vegetacion_Arborea_Cercas",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.1297,
+      "vari_index": 0.0591,
+      "rgb_promedio": [
+        135,
+        145,
+        110
+      ],
+      "descripcion_textura_meijering": "Bandas estrechas alternadas con suelo arable expuesto"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.571496,
+        "lon": -78.718899
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.571331,
+        "lon": -78.718863
+      },
+      "utm_17s_centroide": {
+        "x": 753801.99,
+        "y": 9826163.41
+      }
+    }
+  },
+  {
+    "id_auditoria": 7,
+    "upa_encuesta_id": "UPA-CHIM-060",
+    "segmentacion_upa_id": "UPA-SA-0167",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Pulucate / Piedemonte Chimborazo",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 1673.7,
+    "error_superficie_pct": 11.58,
+    "desplazamiento_gps_m": 19.0,
+    "n_vertices": 8,
+    "perimetro_m": 191.2,
+    "clase_ladm": "Vegetacion_Arborea_Cercas",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.2489,
+      "vari_index": 0.1814,
+      "rgb_promedio": [
+        120,
+        148,
+        88
+      ],
+      "descripcion_textura_meijering": "Textura granular media con hileras espaciadas"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.559138,
+        "lon": -78.735669
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.559002,
+        "lon": -78.735565
+      },
+      "utm_17s_centroide": {
+        "x": 751936.67,
+        "y": 9827532.42
+      }
+    }
+  },
+  {
+    "id_auditoria": 8,
+    "upa_encuesta_id": "UPA-CHIM-062",
+    "segmentacion_upa_id": "UPA-SA-0304",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Batzacón / Interfase Vial Rural",
+    "cultivo_declarado": "Alfalfa / Pasto Forrajero (Medicago sativa)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 1922.5,
+    "error_superficie_pct": 28.16,
+    "desplazamiento_gps_m": 24.0,
+    "n_vertices": 6,
+    "perimetro_m": 172.1,
+    "clase_ladm": "Vegetacion_Arborea_Cercas",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.3613,
+      "vari_index": 0.2268,
+      "rgb_promedio": [
+        95,
+        165,
+        80
+      ],
+      "descripcion_textura_meijering": "Cobertura continua homogénea de alta reflectancia verde"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.617786,
+        "lon": -78.683112
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.617707,
+        "lon": -78.682911
+      },
+      "utm_17s_centroide": {
+        "x": 757780.22,
+        "y": 9821038.37
+      }
+    }
+  },
+  {
+    "id_auditoria": 9,
+    "upa_encuesta_id": "UPA-CHIM-064",
+    "segmentacion_upa_id": "UPA-SA-0012",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "San Andrés Centro / Valle Aluvial",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 1778.4,
+    "error_superficie_pct": 18.56,
+    "desplazamiento_gps_m": 10.2,
+    "n_vertices": 6,
+    "perimetro_m": 165.3,
+    "clase_ladm": "Cultivo_Horticola_Verde",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.1827,
+      "vari_index": 0.1425,
+      "rgb_promedio": [
+        120,
+        148,
+        88
+      ],
+      "descripcion_textura_meijering": "Textura granular media con hileras espaciadas"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.596329,
+        "lon": -78.703517
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.596369,
+        "lon": -78.7036
+      },
+      "utm_17s_centroide": {
+        "x": 755511.3,
+        "y": 9823414.52
+      }
+    }
+  },
+  {
+    "id_auditoria": 10,
+    "upa_encuesta_id": "UPA-CHIM-066",
+    "segmentacion_upa_id": "UPA-SA-0120",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Chocaví / Laderas Andinas",
+    "cultivo_declarado": "Zanahoria Amarilla (Daucus carota)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 1946.9,
+    "error_superficie_pct": 29.79,
+    "desplazamiento_gps_m": 13.7,
+    "n_vertices": 8,
+    "perimetro_m": 245.8,
+    "clase_ladm": "Cultivo_Horticola_Verde",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.1328,
+      "vari_index": 0.1347,
+      "rgb_promedio": [
+        125,
+        150,
+        98
+      ],
+      "descripcion_textura_meijering": "Lineas finas con verdor intermedio"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.573971,
+        "lon": -78.721495
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.574072,
+        "lon": -78.721567
+      },
+      "utm_17s_centroide": {
+        "x": 753512.7,
+        "y": 9825889.92
+      }
+    }
+  },
+  {
+    "id_auditoria": 11,
+    "upa_encuesta_id": "UPA-CHIM-067",
+    "segmentacion_upa_id": "UPA-SA-0169",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Pulucate / Piedemonte Chimborazo",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "superficie_declarada_m2": 38000.0,
+    "superficie_delimitada_m2": 1539.5,
+    "error_superficie_pct": 95.95,
+    "desplazamiento_gps_m": 11.3,
+    "n_vertices": 5,
+    "perimetro_m": 164.3,
+    "clase_ladm": "Cultivo_Horticola_Verde",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.0957,
+      "vari_index": 0.054,
+      "rgb_promedio": [
+        120,
+        148,
+        88
+      ],
+      "descripcion_textura_meijering": "Suelo labrado húmedo con mínima biomasa verde visible (posible rotación o cosecha reciente)"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.556644,
+        "lon": -78.737023
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.556731,
+        "lon": -78.736968
+      },
+      "utm_17s_centroide": {
+        "x": 751786.24,
+        "y": 9827808.48
+      }
+    }
+  },
+  {
+    "id_auditoria": 12,
+    "upa_encuesta_id": "UPA-CHIM-070",
+    "segmentacion_upa_id": "UPA-SA-0315",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Batzacón / Interfase Vial Rural",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 894.1,
+    "error_superficie_pct": 40.39,
+    "desplazamiento_gps_m": 10.8,
+    "n_vertices": 7,
+    "perimetro_m": 141.5,
+    "clase_ladm": "Cultivo_Horticola_Verde",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.2405,
+      "vari_index": 0.1832,
+      "rgb_promedio": [
+        120,
+        148,
+        88
+      ],
+      "descripcion_textura_meijering": "Textura granular media con hileras espaciadas"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.619239,
+        "lon": -78.68664
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.619167,
+        "lon": -78.686705
+      },
+      "utm_17s_centroide": {
+        "x": 757387.2,
+        "y": 9820878.03
+      }
+    }
+  },
+  {
+    "id_auditoria": 13,
+    "upa_encuesta_id": "UPA-CHIM-073",
+    "segmentacion_upa_id": "UPA-SA-0022",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "San Andrés Centro / Valle Aluvial",
+    "cultivo_declarado": "Maíz Choclo (Zea mays)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 1123.4,
+    "error_superficie_pct": 25.11,
+    "desplazamiento_gps_m": 19.0,
+    "n_vertices": 7,
+    "perimetro_m": 136.8,
+    "clase_ladm": "Vegetacion_Arborea_Cercas",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.2255,
+      "vari_index": 0.1763,
+      "rgb_promedio": [
+        120,
+        148,
+        88
+      ],
+      "descripcion_textura_meijering": "Textura granular media con hileras espaciadas"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.593915,
+        "lon": -78.703983
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.593746,
+        "lon": -78.703957
+      },
+      "utm_17s_centroide": {
+        "x": 755459.78,
+        "y": 9823681.57
+      }
+    }
+  },
+  {
+    "id_auditoria": 14,
+    "upa_encuesta_id": "UPA-CHIM-088",
+    "segmentacion_upa_id": "UPA-SA-0132",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Chocaví / Laderas Andinas",
+    "cultivo_declarado": "Alfalfa / Pasto Forrajero (Medicago sativa)",
+    "superficie_declarada_m2": 1500.0,
+    "superficie_delimitada_m2": 820.1,
+    "error_superficie_pct": 45.33,
+    "desplazamiento_gps_m": 23.6,
+    "n_vertices": 6,
+    "perimetro_m": 131.7,
+    "clase_ladm": "Cultivo_Horticola_Verde",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.3361,
+      "vari_index": 0.207,
+      "rgb_promedio": [
+        95,
+        165,
+        80
+      ],
+      "descripcion_textura_meijering": "Cobertura continua homogénea de alta reflectancia verde"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.571346,
+        "lon": -78.719461
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.571363,
+        "lon": -78.71925
+      },
+      "utm_17s_centroide": {
+        "x": 753739.42,
+        "y": 9826180.04
+      }
+    }
+  },
+  {
+    "id_auditoria": 15,
+    "upa_encuesta_id": "UPA-CHIM-095",
+    "segmentacion_upa_id": "UPA-SA-0173",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Pulucate / Piedemonte Chimborazo",
+    "cultivo_declarado": "Papa (Solanum tuberosum)",
+    "superficie_declarada_m2": 20584.5,
+    "superficie_delimitada_m2": 1331.5,
+    "error_superficie_pct": 93.53,
+    "desplazamiento_gps_m": 19.7,
+    "n_vertices": 9,
+    "perimetro_m": 159.3,
+    "clase_ladm": "Cultivo_Horticola_Verde",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.2014,
+      "vari_index": 0.1528,
+      "rgb_promedio": [
+        115,
+        142,
+        92
+      ],
+      "descripcion_textura_meijering": "Surcos morfológicos Meijering paralelos, cobertura foliar densa"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.558416,
+        "lon": -78.734876
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.558593,
+        "lon": -78.734851
+      },
+      "utm_17s_centroide": {
+        "x": 752024.97,
+        "y": 9827612.22
+      }
+    }
+  },
+  {
+    "id_auditoria": 16,
+    "upa_encuesta_id": "UPA-CHIM-111",
+    "segmentacion_upa_id": "UPA-SA-0313",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "Batzacón / Interfase Vial Rural",
+    "cultivo_declarado": "Alfalfa / Pasto Forrajero (Medicago sativa)",
+    "superficie_declarada_m2": 3395.7,
+    "superficie_delimitada_m2": 979.6,
+    "error_superficie_pct": 71.15,
+    "desplazamiento_gps_m": 24.3,
+    "n_vertices": 7,
+    "perimetro_m": 163.7,
+    "clase_ladm": "Vegetacion_Arborea_Cercas",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.3034,
+      "vari_index": 0.3056,
+      "rgb_promedio": [
+        95,
+        165,
+        80
+      ],
+      "descripcion_textura_meijering": "Cobertura continua homogénea de alta reflectancia verde"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.618899,
+        "lon": -78.683956
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.618725,
+        "lon": -78.684089
+      },
+      "utm_17s_centroide": {
+        "x": 757686.13,
+        "y": 9820915.32
+      }
+    }
+  },
+  {
+    "id_auditoria": 17,
+    "upa_encuesta_id": "UPA-CHIM-118",
+    "segmentacion_upa_id": "UPA-SA-0017",
+    "parroquia": "San Andrés",
+    "canton": "Guano",
+    "provincia": "Chimborazo",
+    "cuadrante": "San Andrés Centro / Valle Aluvial",
+    "cultivo_declarado": "Alfalfa / Pasto Forrajero (Medicago sativa)",
+    "superficie_declarada_m2": 38000.0,
+    "superficie_delimitada_m2": 1305.5,
+    "error_superficie_pct": 96.56,
+    "desplazamiento_gps_m": 20.9,
+    "n_vertices": 8,
+    "perimetro_m": 160.1,
+    "clase_ladm": "Cultivo_Horticola_Verde",
+    "calidad_topologica": {
+      "regularidad_ladm": "Cumple (4 a 10 vértices)",
+      "estanqueidad_planar": "100% (0 solapes con predios vecinos)",
+      "respeto_buffer_vial": "Cumple servidumbre LPIS (buffer 3.5m)",
+      "intrusion_vivienda": "Exclusión verificada (0 viviendas en cultivo)"
+    },
+    "firmas_espectrales": {
+      "exg_excess_green": 0.369,
+      "vari_index": 0.2782,
+      "rgb_promedio": [
+        95,
+        165,
+        80
+      ],
+      "descripcion_textura_meijering": "Cobertura continua homogénea de alta reflectancia verde"
+    },
+    "coordenadas": {
+      "centroide_upa_wgs84": {
+        "lat": -1.596616,
+        "lon": -78.701576
+      },
+      "gps_vivienda_encuesta_wgs84": {
+        "lat": -1.596797,
+        "lon": -78.701629
+      },
+      "utm_17s_centroide": {
+        "x": 755727.34,
+        "y": 9823382.53
+      }
+    }
+  }
+]
