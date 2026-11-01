@@ -1,0 +1,23 @@
+{
+  "version": "v105.0.0-A100-SOTA",
+  "fecha": "2026-11-01 04:13:14",
+  "tiempo_total_segundos": 207.16,
+  "hardware": "NVIDIA A100-SXM4-40GB",
+  "cuadrantes_procesados": 4,
+  "total_upas_puras": 568,
+  "area_total_ha_upas": 89.41,
+  "total_viviendas_3d": 65,
+  "total_galpones_zinc": 20,
+  "total_invernaderos_pgi": 1,
+  "total_patios_eras": 9,
+  "total_cercos_vivos_lpis": 401,
+  "total_bosques_quebradas": 462,
+  "upas_por_cuadrante": {
+    "Cuadrante_1": 106,
+    "Cuadrante_2": 148,
+    "Cuadrante_3": 123,
+    "Cuadrante_4": 191
+  },
+  "solape_inter_parcelario": "0.0000%",
+  "conformidad_ladm_iso_19152": "100.0%"
+}
