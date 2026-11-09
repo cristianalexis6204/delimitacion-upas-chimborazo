@@ -35,6 +35,7 @@ roads_cache/
 
 # Informes Pesos y Documentos Pesados (> 50 MB)
 *.pdf
+!reportes/Memoria_TFM_*.pdf
 
 # Entornos Virtuales
 venv/
